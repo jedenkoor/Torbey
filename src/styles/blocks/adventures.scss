@@ -1,0 +1,36 @@
+.adventures {
+  margin-bottom: 120px;
+  padding: 65px 0 66px;
+  background-color: $neutral-color-10;
+  &__title {
+    margin-top: 0;
+    margin-bottom: 63px;
+    font-weight: normal;
+    font-size: 39px;
+    line-height: 48px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+    padding: 0;
+    list-style: none;
+  }
+  &-item {
+    &__icon {
+      margin-bottom: 13px;
+    }
+    &__title {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+    }
+    &__text {
+      margin: 0;
+      line-height: 24px;
+      color: $neutral-color-6;
+    }
+  }
+}

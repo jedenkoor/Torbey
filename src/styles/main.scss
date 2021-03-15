@@ -1,0 +1,122 @@
+@import '~normalize.css';
+@import 'variables/mixins';
+@import 'variables/colors';
+@import 'variables/indents';
+@import 'variables/fonts';
+
+body {
+  font-family: 'Golos', sans-serif;
+  color: $text-color;
+  font-size: 16px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.container {
+  max-width: 1368px;
+  margin: 0 auto;
+  padding: $padding-container;
+  @include w767 {
+    padding: $mobile-padding-container;
+  }
+}
+
+.margin-section {
+  margin-bottom: $margin-section;
+  @include w1023 {
+    // margin-bottom: $tablet-margin-section;
+  }
+  @include w767 {
+    // margin-bottom: $mobile-margin-section;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.btn-border {
+  border: 2px solid $primary-color;
+  border-radius: 8px;
+  background: none;
+  color: $primary-color;
+}
+
+.btn-background {
+  border: none;
+  border-radius: 8px;
+  background: $primary-color;
+  color: #fff;
+}
+
+.h1title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-weight: normal;
+  font-size: 61px;
+  line-height: 72px;
+}
+
+.h2title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.popup-link {
+  padding: 0;
+  background: none;
+  border: none;
+  color: $secondary-color;
+}
+
+@import 'blocks/header';
+@import 'blocks/footer';
+@import 'blocks/banner';
+@import 'blocks/cards';
+@import 'blocks/adventures';
+@import 'blocks/promo';
+@import 'blocks/goods-slider';
