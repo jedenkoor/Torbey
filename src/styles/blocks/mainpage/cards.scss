@@ -18,6 +18,11 @@
       padding-left: 32px;
       border-radius: 8px;
       overflow: hidden;
+      transition: 0.3s;
+      &:hover,
+      &:focus {
+        box-shadow: 0px 6px 20px #e9ebec;
+      }
     }
     &__img {
       position: absolute;
@@ -53,12 +58,35 @@
   &-categories {
     &__link {
       display: block;
+      &:hover,
+      &:focus {
+        img {
+          transform: scale(1.13);
+        }
+        .arrow-after {
+          &:after {
+            transform: translateX(12px);
+          }
+        }
+      }
+      &:focus {
+        .arrow-after {
+          color: $secondary-shade-color;
+        }
+      }
+    }
+    picture {
+      display: block;
+      width: 100%;
+      height: 232px;
+      border-radius: 8px;
+      overflow: hidden;
     }
     &__img {
       width: 100%;
-      height: 232px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 8px;
+      transition: 0.7s;
     }
     &__title {
       margin-top: 16px;

@@ -20,7 +20,7 @@
   }
   &__row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
   &__select {
     position: relative;
@@ -81,11 +81,20 @@
       }
     }
   }
+  &__col {
+    margin-left: 16px;
+  }
   &__btn {
     padding: 14px 24px;
-    margin-left: 16px;
     font-weight: 500;
     line-height: 20px;
     cursor: pointer;
+  }
+  &__subtext {
+    max-width: 230px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 16px;
   }
 }

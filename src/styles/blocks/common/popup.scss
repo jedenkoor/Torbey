@@ -1,0 +1,117 @@
+.popup {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 748px;
+  background-color: #fff;
+  transition: transform 0.3s;
+  &--left {
+    transform: translateX(-100%);
+    .popup__container {
+      margin-left: auto;
+    }
+    .popup__close {
+      top: 28px;
+      left: 236px;
+    }
+  }
+  &--right {
+    transform: translateX(100%);
+    .popup__container {
+      margin-right: auto;
+    }
+  }
+  &__content {
+    position: relative;
+    flex: 1;
+    padding: 64px 40px 24px;
+    overflow: auto;
+  }
+  &__bot {
+    padding: 26px 40px;
+    border-top: 1px solid $neutral-color-8;
+  }
+  &__container {
+    max-width: 408px;
+  }
+  &__close {
+    position: fixed;
+    cursor: pointer;
+  }
+  &__top {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $neutral-color-8;
+  }
+  &-top {
+    input {
+      display: none;
+      &:checked {
+        & ~ .popup-top__title {
+          &:after {
+            transform: translateY(3px) rotate(-45deg) scale(-1, -1);
+          }
+        }
+        & ~ .popup-top__nav {
+          display: block;
+        }
+      }
+    }
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      cursor: pointer;
+      &:after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid #222;
+        border-bottom: 2px solid #222;
+        transform: translateY(-2px) rotate(-45deg);
+        transition: 0.2s;
+      }
+    }
+    &__nav {
+      display: none;
+    }
+    &__list {
+      padding-left: 0;
+      padding-top: 24px;
+      list-style: none;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+    &__link {
+      font-weight: 500;
+      line-height: 24px;
+      &--actions {
+        color: $primary-color;
+      }
+    }
+  }
+  &-nav {
+    &__list {
+      padding: 0;
+      list-style: none;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+    &__link {
+      line-height: 24px;
+    }
+  }
+}

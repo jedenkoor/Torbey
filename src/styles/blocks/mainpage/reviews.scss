@@ -15,17 +15,24 @@
     .swiper-button-next {
       right: -80px;
       top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 32px;
       height: 32px;
       background: #ffffff;
-      box-shadow: 0px 2px 12px #e9eaec;
+      border: 1px solid transparent;
+      border: 1px solid #f7f7f7;
       border-radius: 850%;
+      &:hover,
+      &:focus {
+        box-shadow: 0px 2px 12px #e9eaec;
+        path {
+          fill: $tertiary-shade-color;
+        }
+      }
       &:after {
-        font-size: 0;
-        width: 20px;
-        height: 10px;
-        background: url('../images/green-arr-right.svg') center/contain
-          no-repeat;
+        display: none;
       }
     }
   }
@@ -104,6 +111,7 @@
     width: 100%;
     flex: 1;
     padding-left: 2px;
+    overflow: visible;
   }
   &-content {
     &__wrapper {

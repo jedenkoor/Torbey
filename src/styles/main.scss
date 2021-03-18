@@ -148,7 +148,7 @@ img {
     height: 18px;
     flex-shrink: 0;
     margin-left: 12px;
-    transition: transform 0.1s;
+    transition: transform 0.3s;
     background: url('../images/arrow-right.svg') center/contain no-repeat;
   }
   &:hover {
@@ -218,6 +218,8 @@ img {
   }
 }
 
+@import 'blocks/common/popup';
+@import 'blocks/common/callback';
 @import 'blocks/common/header';
 @import 'blocks/common/footer';
 @import 'blocks/common/goods-slider';
