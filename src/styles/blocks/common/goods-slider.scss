@@ -1,0 +1,127 @@
+.goods-slider {
+  overflow: hidden;
+  &__container {
+    overflow: visible;
+  }
+  &__wrapper {
+    padding: 0;
+    list-style: none;
+  }
+  &__link {
+    &:hover {
+      .goods-slider-slide__cart {
+        opacity: 1;
+      }
+    }
+  }
+  &-slide {
+    &__img {
+      position: relative;
+      margin-bottom: 13px;
+      border-radius: 8px;
+      overflow: hidden;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.5);
+        mix-blend-mode: color;
+      }
+      img {
+        position: relative;
+        z-index: -1;
+        width: 424px;
+        height: 280px;
+        object-fit: cover;
+      }
+    }
+    &__tags {
+      position: absolute;
+      top: 13px;
+      right: 12px;
+      left: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      list-style: none;
+    }
+    &__tag {
+      margin-right: 12px;
+      margin-bottom: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      line-height: 16px;
+      &--best {
+        color: $secondary-color;
+        background: #e6e9f8;
+      }
+    }
+    &__fav {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      &--active {
+        path {
+          fill: $primary-shade-color;
+        }
+      }
+    }
+    &__info {
+      position: relative;
+    }
+    &__cart {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid $primary-color;
+      background: none;
+      cursor: pointer;
+      opacity: 0;
+      &:hover {
+        background: $primary-color;
+        path {
+          fill: #fff;
+        }
+      }
+      &:focus {
+        border-color: $primary-shade-color;
+        background: $primary-shade-color;
+        path {
+          fill: #fff;
+        }
+      }
+    }
+    &__price {
+      margin-right: 5px;
+      font-size: 25px;
+      line-height: 32px;
+      &--newprice {
+        color: $system-error-color;
+      }
+    }
+    &__oldprice {
+      color: $neutral-color-6;
+    }
+    &__name {
+      margin-top: 3px;
+      margin-bottom: 0;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+}

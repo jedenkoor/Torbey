@@ -1,0 +1,13 @@
+section.form 
+  h2.form__title Остались вопросы — мы поможем
+  p.form__text Оставьте свои контакты, и мы свяжемся с вами, чтобы всё объяснить
+  form.form__row(action="#")
+    .form__select.form-select 
+      .form-select__current.input-block
+        input(type="tel" id="form-input" placeholder=" " data-type="tel" data-required)
+        label(for="form-input") Телефон
+        button.form-select__show 
+      .form-select__block 
+        .form-select__item.form-select__item--current(data-select="tel") Телефон
+        .form-select__item(data-select="email") E-mail
+    button.form__btn.btn-background(type="submit") Проконсультироваться

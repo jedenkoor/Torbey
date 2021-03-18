@@ -8,6 +8,7 @@ body {
   font-family: 'Golos', sans-serif;
   color: $text-color;
   font-size: 16px;
+  transition: opacity 0.2s;
 }
 
 .wrapper {
@@ -81,6 +82,16 @@ img {
   border-radius: 8px;
   background: none;
   color: $primary-color;
+  transition: 0.1s;
+  &:hover {
+    color: #fff;
+    background: $primary-color;
+  }
+  &:focus {
+    color: #fff;
+    background: $primary-shade-color;
+    border-color: $primary-shade-color;
+  }
 }
 
 .btn-background {
@@ -88,6 +99,13 @@ img {
   border-radius: 8px;
   background: $primary-color;
   color: #fff;
+  transition: background 0.1s;
+  &:hover {
+    background: $primary-tint-color;
+  }
+  &:focus {
+    background: $primary-shade-color;
+  }
 }
 
 .h1title {
@@ -107,16 +125,106 @@ img {
 }
 
 .popup-link {
-  padding: 0;
-  background: none;
-  border: none;
   color: $secondary-color;
+  transition: color 0.1s;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    text-decoration: underline;
+    color: $secondary-shade-color;
+  }
 }
 
-@import 'blocks/header';
-@import 'blocks/footer';
-@import 'blocks/banner';
-@import 'blocks/cards';
-@import 'blocks/adventures';
-@import 'blocks/promo';
-@import 'blocks/goods-slider';
+.arrow-after {
+  display: flex;
+  align-items: center;
+  color: $secondary-color;
+  transition: color 0.1s;
+  &:after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-left: 12px;
+    transition: transform 0.1s;
+    background: url('../images/arrow-right.svg') center/contain no-repeat;
+  }
+  &:hover {
+    &:after {
+      transform: translateX(12px);
+    }
+  }
+  &:focus {
+    color: $secondary-shade-color;
+    &:after {
+      transform: translateX(12px);
+    }
+  }
+}
+
+.input-block {
+  position: relative;
+  &.input-err {
+    label {
+      color: $system-error-color;
+    }
+    input {
+      border-color: $system-error-color;
+    }
+  }
+  label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transition: 0.2s;
+    color: $neutral-color-7;
+  }
+  input {
+    width: 100%;
+    height: 48px;
+    padding: 15px 15px 0;
+    background-color: #ffffff;
+    border: 1px solid $neutral-color-9;
+    box-sizing: border-box;
+    border-radius: 8px;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+    &:not(:placeholder-shown) + label,
+    &:focus + label {
+      top: 4px;
+      left: 16px;
+      font-size: 10px;
+      line-height: 16px;
+    }
+    &.input-err {
+      border-color: $system-error-color;
+      & + label {
+        color: $system-error-color;
+      }
+    }
+    &.input-border {
+      border-color: $neutral-color-9;
+      & + label {
+        color: $neutral-color-7;
+      }
+    }
+  }
+}
+
+@import 'blocks/common/header';
+@import 'blocks/common/footer';
+@import 'blocks/common/goods-slider';
+@import 'blocks/common/form';
+@import 'blocks/mainpage/banner';
+@import 'blocks/mainpage/cards';
+@import 'blocks/mainpage/adventures';
+@import 'blocks/mainpage/promo';
+@import 'blocks/mainpage/reviews';
+@import 'blocks/mainpage/articles';

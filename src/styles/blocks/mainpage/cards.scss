@@ -61,20 +61,12 @@
       border-radius: 8px;
     }
     &__title {
-      display: flex;
-      align-items: center;
       margin-top: 16px;
+      margin-bottom: 0;
       font-weight: normal;
       font-size: 20px;
       line-height: 32px;
-      &:after {
-        content: '';
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-        margin-left: 12px;
-        background: url('../images/arrow-right.svg') center/contain no-repeat;
-      }
+      color: $text-color;
     }
   }
 }
