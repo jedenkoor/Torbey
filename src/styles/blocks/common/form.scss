@@ -50,7 +50,7 @@
         transform: translateY(-2px) rotate(-45deg);
         transition: 0.2s;
       }
-      &--active {
+      &.active {
         &:after {
           transform: translateY(3px) rotate(-45deg) scale(-1, -1);
         }
@@ -67,7 +67,7 @@
       box-shadow: 0px 2px 12px #e9eaec;
       border-radius: 8px;
       overflow: hidden;
-      &--active {
+      &.active {
         display: block;
       }
     }

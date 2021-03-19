@@ -1,0 +1,47 @@
+.popup.popup--left.popup--menu
+  label.popup__close(for="menu-burger" tabindex="0") 
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071Z" fill="#A94A24"/>
+    </svg>
+  .popup__content
+    .popup__container
+      .popup__top.popup-top
+        input(type="checkbox" id="popupmenu-top")
+        label.popup-top__title(for="popupmenu-top") Каталог
+        nav.popup-top__nav
+          ul.popup-top__list 
+            li.popup-top__item 
+              a.popup-top__link.popup-top__link--actions(href="#") Акции
+            li.popup-top__item 
+              a.popup-top__link(href="#") Матрасы
+            li.popup-top__item 
+              a.popup-top__link(href="#") Наматрасники
+            li.popup-top__item 
+              a.popup-top__link(href="#") Подушки
+            li.popup-top__item 
+              a.popup-top__link(href="#") Кроватные основания
+      nav.popup__nav.popup-nav
+        ul.popup-nav__list
+          li.popup-nav__item
+            a.popup-nav__link(href="#") О компании
+          li.popup-nav__item
+            a.popup-nav__link(href="#") Покупателям
+          li.popup-nav__item
+            a.popup-nav__link(href="#") Партнёрам
+          li.popup-nav__item
+            a.popup-nav__link(href="#") Доставка и оплата
+          li.popup-nav__item
+            a.popup-nav__link(href="#") Гарантия
+          li.popup-nav__item
+            a.popup-nav__link(href="#") Блог
+          li.popup-nav__item
+            a.popup-nav__link(href="#") Отзывы
+          li.popup-nav__item
+            a.popup-nav__link(href="#") Контакты
+  .popup__bot
+    .popup__container
+      .header__info
+        .header__time
+          a.header__phone(href="tel:84992880170") +7 499 288 01 70
+          .header__status.header__status--closed Закрыто. откроемся в 10.00
+        label.header__btn.btn-border(for="callback" tabindex="0")  Заказать звонок

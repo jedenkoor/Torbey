@@ -1,6 +1,9 @@
 import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.css'
+import noUiSlider from 'noUiSlider/distribute/nouislider.min.js'
+import 'noUiSlider/distribute/nouislider.min.css'
 import checkPhoneAndEmail from './functions/checkPhoneAndEmail.js'
+import numberFormat from './functions/numberFormat.js'
 ;(() => {
   window.addEventListener('DOMContentLoaded', () => {
     // Load opacity
@@ -114,13 +117,11 @@ import checkPhoneAndEmail from './functions/checkPhoneAndEmail.js'
 
     // Change form inputs
     const formInputs = document.querySelectorAll('.form-select__item')
-    const formCurrentBlock = document.querySelector('.form-select__current')
-    const formCurrentLabel = formCurrentBlock.querySelector('label')
-    const formCurrentBtn = formCurrentBlock.querySelector('button')
     if (formInputs.length) {
+      const formCurrentBlock = document.querySelector('.form-select__current')
+      const formCurrentLabel = formCurrentBlock.querySelector('label')
       formInputs.forEach((item) => {
         item.addEventListener('click', () => {
-          toggleOptions(formCurrentBtn)
           if (!item.classList.contains('form-select__item--current')) {
             formInputs.forEach((item) => {
               item.classList.remove('form-select__item--current')
@@ -148,34 +149,92 @@ import checkPhoneAndEmail from './functions/checkPhoneAndEmail.js'
     }
 
     // Open/close options
-    const showBlockBtn = document.querySelector('.form-select__show')
-    if (showBlockBtn) {
-      showBlockBtn.addEventListener('click', (e) => {
-        e.preventDefault()
-        toggleOptions(showBlockBtn)
+    const selectBtn = document.querySelectorAll('.select-open')
+    const selectItem = document.querySelectorAll('.select-item')
+    if (selectBtn.length) {
+      selectBtn.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault()
+          toggleOptions(item)
+        })
+        document.addEventListener('click', (e) => {
+          const container = document.querySelector('.select-block')
+          if (
+            e.target !== container &&
+            e.target.closest('.select-block') === null &&
+            e.target !== item
+          ) {
+            item.classList.remove('active')
+            item
+              .closest('.select')
+              .querySelector('.select-block')
+              .classList.remove('active')
+          }
+        })
       })
-      document.addEventListener('click', (e) => {
-        const container = document.querySelector('.form-select__block')
-        if (
-          e.target !== container &&
-          e.target.closest('.form-select__block') === null &&
-          e.target !== showBlockBtn
-        ) {
-          showBlockBtn.classList.remove('form-select__show--active')
-          showBlockBtn
-            .closest('.form__select')
-            .querySelector('.form-select__block ')
-            .classList.remove('form-select__block--active')
-        }
+      selectItem.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault()
+          toggleOptions(item.closest('.select').querySelector('.select-open'))
+        })
       })
     }
-
     function toggleOptions(btn) {
-      btn.classList.toggle('form-select__show--active')
+      btn.classList.toggle('active')
       btn
-        .closest('.form__select')
-        .querySelector('.form-select__block ')
-        .classList.toggle('form-select__block--active')
+        .closest('.select')
+        .querySelector('.select-block')
+        .classList.toggle('active')
+    }
+
+    // Init price range slider
+    const priceSliders = document.querySelectorAll('.price-slider')
+    if (priceSliders.length) {
+      priceSliders.forEach((item) => {
+        const min = +item.getAttribute('data-min')
+        const max = +item.getAttribute('data-max')
+        const minInput = item.nextSibling.querySelector('.price-slider-from')
+        const maxInput = item.nextSibling.querySelector('.price-slider-to')
+        noUiSlider.create(item, {
+          start: [min, max],
+          step: 100,
+          connect: true,
+          range: {
+            min: [min],
+            max: [max]
+          },
+          format: {
+            to: function (value) {
+              return numberFormat(Math.round(value))
+            },
+            from: function (value) {
+              return value
+            }
+          }
+        })
+
+        item.noUiSlider.on('update', function (values, handle) {
+          ;(handle ? maxInput : minInput).value = values[handle]
+        })
+
+        minInput.addEventListener('change', function () {
+          this.value = numberFormat(this.value)
+          item.noUiSlider.set([this.value.replace(/\s/g, ''), null])
+        })
+
+        minInput.addEventListener('focus', function () {
+          this.select()
+        })
+
+        maxInput.addEventListener('change', function () {
+          this.value = numberFormat(this.value)
+          item.noUiSlider.set([null, this.value.replace(/\s/g, '')])
+        })
+
+        maxInput.addEventListener('focus', function () {
+          this.select()
+        })
+      })
     }
   })
 })()

@@ -1,0 +1,88 @@
+form.popup.popup--right.popup--filter
+  label.popup__close(for="filter" tabindex="0") 
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071Z" fill="#A94A24"/>
+    </svg>
+  .popup__content
+    .popup__inverse
+      .popup__container
+        .popup__title Фильтр
+        .popup__top.popup-top
+          input(type="checkbox" id="filter1")
+          label.popup-top__title(for="filter1") Цена
+          nav.popup-top__nav
+            .popup-top__price.popup-top-price
+              .popup-top-price__slider.price-slider(data-min="300" data-max="78450")
+              .popup-top-price__row 
+                .popup-top-price__col
+                  span от
+                  input.price-slider-from(type="text")
+                .popup-top-price__col
+                  span до
+                  input.price-slider-to(type="text")
+        .popup__top.popup-top
+          input(type="checkbox" id="filter2")
+          label.popup-top__title(for="filter2") Жёсткость
+          .popup-top__nav
+            ul.popup-top__category.popup-top-category 
+              li.popup-top-category__subitem 
+                input(type="checkbox" id="filter2-1-1") 
+                label(for="filter2-1-1") Мягкий
+              li.popup-top-category__subitem 
+                input(type="checkbox" id="filter2-1-2") 
+                label(for="filter2-1-2") Полужесткий
+              li.popup-top-category__subitem 
+                input(type="checkbox" id="filter2-1-3") 
+                label(for="filter2-1-3") Жесткий
+        .popup__top.popup-top
+          input(type="checkbox" id="filter3")
+          label.popup-top__title(for="filter3") Размер
+          nav.popup-top__nav
+            ul.popup-top__category.popup-top-category 
+              li.popup-top-category__item
+                input(type="checkbox" id="filter3-1")
+                label.popup-top-category__title(for="filter3-1") Детский
+                ul.popup-top-category__list 
+                  li.popup-top-category__subitem 
+                    input(type="checkbox" id="filter3-1-1") 
+                    label(for="filter3-1-1")  140 × 200 см
+                  li.popup-top-category__subitem 
+                    input(type="checkbox" id="filter3-1-2") 
+                    label(for="filter3-1-2") 160 × 200 см
+                  li.popup-top-category__subitem 
+                    input(type="checkbox" id="filter3-1-3") 
+                    label(for="filter3-1-3") 180 × 200 см
+              li.popup-top-category__item
+                input(type="checkbox" id="filter3-2")
+                label.popup-top-category__title(for="filter3-2") Односпальный
+                ul.popup-top-category__list 
+                  li.popup-top-category__subitem 
+                    input(type="checkbox" id="filter3-2-1") 
+                    label(for="filter3-2-1") 140 × 200 см
+                  li.popup-top-category__subitem 
+                    input(type="checkbox" id="filter3-2-2") 
+                    label(for="filter3-2-2") 160 × 200 см
+                  li.popup-top-category__subitem 
+                    input(type="checkbox" id="filter3-2-3") 
+                    label(for="filter3-2-3") 180 × 200 см
+                  li.popup-top-category__subitem 
+                    input(type="checkbox" id="filter3-2-4") 
+                    label(for="filter3-2-4") 200 × 220 см
+        .popup__top.popup-top
+          input(type="checkbox" id="filter4")
+          label.popup-top__title(for="filter4") Тип
+          .popup-top__nav
+        .popup__top.popup-top
+          input(type="checkbox" id="filter5")
+          label.popup-top__title(for="filter5") Материал
+          .popup-top__nav
+        .popup__top.popup-top
+          input(type="checkbox" id="filter6")
+          label.popup-top__title(for="filter6") Нагрузка
+          .popup-top__nav
+
+  .popup__bot
+    .popup__container
+      .popup__row
+        button.popup__btn.btn-border Очистить
+        button.popup__btn.btn-background Смотреть (1045)

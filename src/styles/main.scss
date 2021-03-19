@@ -4,6 +4,22 @@
 @import 'variables/indents';
 @import 'variables/fonts';
 
+@include hover {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $primary-tint-color;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+}
+
 body {
   font-family: 'Golos', sans-serif;
   color: $text-color;
@@ -221,6 +237,7 @@ img {
 @import 'blocks/common/popup';
 @import 'blocks/common/callback';
 @import 'blocks/common/header';
+@import 'blocks/common/breadcrumbs';
 @import 'blocks/common/footer';
 @import 'blocks/common/goods-slider';
 @import 'blocks/common/form';
@@ -230,3 +247,4 @@ img {
 @import 'blocks/mainpage/promo';
 @import 'blocks/mainpage/reviews';
 @import 'blocks/mainpage/articles';
+@import 'blocks/otherpages/catalog.scss';

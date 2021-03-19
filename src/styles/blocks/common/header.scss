@@ -4,7 +4,19 @@
     & ~ .overlay--menu {
       display: block;
     }
-    & ~ .popup--left {
+    & ~ .popup--menu {
+      transform: translateX(0);
+    }
+  }
+}
+
+#filter {
+  display: none;
+  &:checked {
+    & ~ .overlay--filter {
+      display: block;
+    }
+    & ~ .content .popup--filter {
       transform: translateX(0);
     }
   }
@@ -29,7 +41,8 @@
   left: 0;
   display: none;
   background-color: rgba(0, 8, 20, 0.26);
-  &--menu {
+  &--menu,
+  &--filter {
     z-index: 30;
   }
   &--open {

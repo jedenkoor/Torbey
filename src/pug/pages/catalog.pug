@@ -1,0 +1,124 @@
+extends ../template
+
+block variables
+  - var title = 'Каталог'
+  - var breadrumbs = 1
+
+block content
+  section.catalog
+    .container
+      h1.h1title Матрасы
+
+      .catalog__top 
+        p.catalog__text У всех нас свои предпочтения, вкусы и привычки, но каждому необходим крепкий и здоровый сон, во время которого мы можем расслабиться и восстановить силы. Главная составляющая полноценного сна — правильно выбранный матрас.
+        .catalog__col 
+          label.catalog__link.popup-link(for="" tabindex="0") Как выбрать матрас?
+          label.catalog__link.popup-link(for="" tabindex="0") Гарантия до 25 лет на все матрасы
+
+      ul.catalog__categories 
+        li.catalog__category.catalog-category 
+          a.catalog-category__link(href="#")
+            picture.catalog-category__picture
+              source(type="image/webp" srcset="images/filter1.jpg")
+              img.catalog-category__img(src="images/filter1.jpg" alt="Односпальные")
+            .catalog-category__title Односпальные
+        li.catalog__category.catalog-category 
+          a.catalog-category__link(href="#")
+            picture.catalog-category__picture
+              source(type="image/webp" srcset="images/filter2.jpg")
+              img.catalog-category__img(src="images/filter2.jpg" alt="Двуспальные")
+            .catalog-category__title Двуспальные
+        li.catalog__category.catalog-category 
+          a.catalog-category__link(href="#")
+            picture.catalog-category__picture
+              source(type="image/webp" srcset="images/filter3.jpg")
+              img.catalog-category__img(src="images/filter3.jpg" alt="Детские матрасы")
+            .catalog-category__title Детские матрасы
+        li.catalog__category.catalog-category 
+          a.catalog-category__link(href="#")
+            picture.catalog-category__picture
+              source(type="image/webp" srcset="images/filter4.jpg")
+              img.catalog-category__img(src="images/filter4.jpg" alt="Матрасы для животных")
+            .catalog-category__title Матрасы для животных
+        li.catalog__category.catalog-category 
+          a.catalog-category__link(href="#")
+            picture.catalog-category__picture
+              source(type="image/webp" srcset="images/filter5.jpg")
+              img.catalog-category__img(src="images/filter5.jpg" alt="Топперы")
+            .catalog-category__title Топперы
+
+      .catalog__filters 
+        ul.catalog__tags.catalog-tags 
+          li.catalog-tags__item 
+            label.catalog-tags__btn(for="filter" tabindex="0") Цена
+          li.catalog-tags__item 
+            label.catalog-tags__btn(for="filter" tabindex="0") Жёсткость
+          li.catalog-tags__item 
+            label.catalog-tags__btn(for="filter" tabindex="0") Размер
+          li.catalog-tags__item 
+            label.catalog-tags__btn.catalog-tags__btn--active(for="filter" tabindex="0") Тип
+          li.catalog-tags__item 
+            label.catalog-tags__btn(for="filter" tabindex="0") Материал
+          li.catalog-tags__item 
+            label.catalog-tags__btn(for="filter" tabindex="0") Все фильтры
+        .catalog__sort.catalog-sort
+          span.catalog-sort__num 314 позиций
+          .catalog-sort__select.select
+            .catalog-sort__current.select-open Сортировать по
+            ul.catalog-sort__list.select-block
+              li.catalog-sort__item.select-item Цене по возрастанию
+              li.catalog-sort__item.select-item Цене по убыванию
+              li.catalog-sort__item.select-item Названию
+              li.catalog-sort__item.select-item Размеру
+              li.catalog-sort__item.select-item Новизне
+
+
+      include ../includes/popup-filter.pug
+
+      .catalog__wrapper
+        ul.catalog__items
+          -for(i = 0; i < 15; i++)
+            li.goods-slider__slide.goods-slider-slide
+              a.goods-slider__link(href="#")
+                .goods-slider-slide__img
+                  picture
+                    source(type="image/webp" srcset="images/good1.jpg")
+                    img(src="images/good1.jpg" alt="Матрас Царь")
+                  ul.goods-slider-slide__tags
+                    li.goods-slider-slide__tag.goods-slider-slide__tag--best Бестселлер
+                  button.goods-slider-slide__fav.goods-slider-slide__fav--active
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.9855 4.59133L10.2945 5.26101L10.9855 4.59133C9.99837 3.5727 8.65953 3.00053 7.26361 3.00053C5.86769 3.00053 4.52885 3.5727 3.54168 4.59133C2.5546 5.60986 2 6.99133 2 8.43187C2 9.87241 2.5546 11.2539 3.54167 12.2724L11.2816 20.259C11.47 20.4534 11.7291 20.5631 11.9997 20.5631C12.2704 20.5631 12.5295 20.4534 12.7179 20.259L20.4576 12.2726C20.4577 12.2725 20.4578 12.2725 20.4578 12.2724C20.9466 11.7682 21.3346 11.1694 21.5992 10.5105C21.8638 9.85148 22 9.14517 22 8.43187C22 7.71857 21.8638 7.01225 21.5992 6.35328C21.3345 5.69421 20.9463 5.09518 20.4575 4.59099C19.9689 4.08665 19.3887 3.68657 18.7503 3.41358C18.1116 3.14054 17.4272 3 16.7359 3C16.0446 3 15.3601 3.14054 14.7215 3.41358C14.0829 3.6866 13.5028 4.08674 13.0141 4.59116C13.0141 4.59122 13.014 4.59127 13.0139 4.59133L11.9997 5.63785L10.9855 4.59133Z" stroke="#A94A24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                .goods-slider-slide__info
+                  button.goods-slider-slide__cart 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L2.19297 0.778755C2.69116 1.27694 2.99811 1.93458 3.06004 2.63639L3.18036 4H22C22.2911 4 22.5678 4.12686 22.7577 4.34744C22.9477 4.56803 23.0321 4.86045 22.9889 5.14834L21.7444 13.445C21.5242 14.9136 20.2626 16 18.7776 16H4.23918L4.33517 17.0879C4.38072 17.6041 4.81308 18 5.3313 18H18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21C15 20.6494 15.0602 20.3128 15.1707 20H7.82929C7.93985 20.3128 8 20.6494 8 21C8 22.6569 6.65685 24 5 24C3.34315 24 2 22.6569 2 21C2 20.1392 2.36251 19.3632 2.94318 18.8161C2.61057 18.3793 2.39439 17.8471 2.34291 17.2637L1.06778 2.81218C1.04714 2.57824 0.944817 2.35903 0.778755 2.19297L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893ZM18 20C17.4477 20 17 20.4477 17 21C17 21.5523 17.4477 22 18 22C18.5523 22 19 21.5523 19 21C19 20.4477 18.5523 20 18 20ZM4.06271 14H18.7776C19.2726 14 19.6931 13.6379 19.7666 13.1483L20.8388 6H3.35683L4.06271 14ZM5 20C4.44772 20 4 20.4477 4 21C4 21.5523 4.44772 22 5 22C5.55228 22 6 21.5523 6 21C6 20.4477 5.55228 20 5 20Z" fill="#C56532"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  .goods-slider-slide__row
+                    span.goods-slider-slide__price.goods-slider-slide__price--newprice 21 600 руб.
+                    span.goods-slider-slide__oldprice 25 000 руб.
+                  h4.goods-slider-slide__name Матрас Царь
+
+        ul.catalog__pagination.catalog-pagination
+          li.catalog-pagination__item 
+            .catalog-pagination__link.catalog-pagination__link--arr ← назад
+          li.catalog-pagination__item 
+            .catalog-pagination__link.catalog-pagination__link--active 1
+          li.catalog-pagination__item 
+            a.catalog-pagination__link(href="#") 2
+          li.catalog-pagination__item 
+            a.catalog-pagination__link(href="#") 3
+          li.catalog-pagination__item 
+            a.catalog-pagination__link(href="#") 4
+          li.catalog-pagination__item 
+            a.catalog-pagination__link.catalog-pagination__link--arr(href="#") далее →
+
+    include ../includes/form.pug

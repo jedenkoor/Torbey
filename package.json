@@ -46,6 +46,7 @@
     "@babel/polyfill": "^7.12.1",
     "imask": "^6.0.7",
     "normalize.css": "^8.0.1",
+    "nouislider": "^14.6.4",
     "swiper": "^6.5.0"
   }
 }

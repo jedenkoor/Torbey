@@ -1,75 +1,11 @@
 input(type="checkbox" id="menu-burger")
 input(type="checkbox" id="callback")
+input(type="checkbox" id="filter")
 
 label.overlay.overlay--menu(for="menu-burger") 
+label.overlay.overlay--filter(for="filter") 
 
-.popup.popup--left
-  .popup__content
-    .popup__container
-      label.popup__close(for="menu-burger" tabindex="0") 
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071Z" fill="#A94A24"/>
-        </svg>
-      .popup__top.popup-top
-        input(type="checkbox" id="popupmenu-top")
-        label.popup-top__title(for="popupmenu-top")  Каталог
-        nav.popup-top__nav
-          ul.popup-top__list 
-            li.popup-top__item 
-              a.popup-top__link.popup-top__link--actions(href="#") Акции
-            li.popup-top__item 
-              a.popup-top__link(href="#") Матрасы
-            li.popup-top__item 
-              a.popup-top__link(href="#") Наматрасники
-            li.popup-top__item 
-              a.popup-top__link(href="#") Подушки
-            li.popup-top__item 
-              a.popup-top__link(href="#") Кроватные основания
-      nav.popup__nav.popup-nav
-        ul.popup-nav__list
-          li.popup-nav__item
-            a.popup-nav__link(href="#") О компании
-          li.popup-nav__item
-            a.popup-nav__link(href="#") Покупателям
-          li.popup-nav__item
-            a.popup-nav__link(href="#") Партнёрам
-          li.popup-nav__item
-            a.popup-nav__link(href="#") Доставка и оплата
-          li.popup-nav__item
-            a.popup-nav__link(href="#") Гарантия
-          li.popup-nav__item
-            a.popup-nav__link(href="#") Блог
-          li.popup-nav__item
-            a.popup-nav__link(href="#") Отзывы
-          li.popup-nav__item
-            a.popup-nav__link(href="#") Контакты
-  .popup__bot
-    .popup__container
-      .header__info
-        .header__time
-          a.header__phone(href="tel:84992880170") +7 499 288 01 70
-          .header__status.header__status--closed Закрыто. откроемся в 10.00
-        label.header__btn.btn-border(for="callback" tabindex="0")  Заказать звонок
-
-.callback
-  label.overlay.overlay--callback(for="callback") 
-  form.callback__content(action="#") 
-    label.callback__close(for="callback" tabindex="0") 
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#A94A24"/>
-      </svg>
-    h3.callback__title Перезвоним и проконсультируем
-    p.callback__text Оставьте свои контакты, и мы свяжемся с вами
-    .callback__input.input-block
-      input(type="text" id="callback-name" placeholder=" " data-required)
-      label(for="callback-name") Ваше имя
-    .callback__input.input-block
-      input(type="tel" id="callback-phone" placeholder=" " data-type="tel" data-required)
-      label(for="callback-phone") Телефон
-    .callback__row 
-      p.callback__subtext Нажимая на кнопку, вы соглашаетесь на 
-        a.popup-link(href="#") обработку персональных данных
-      button.callback__btn.btn-background(type="submit" tabindex="0") Заказать звонок
+include popup-menu.pug
 
 header.header
   .header__row
@@ -218,7 +154,7 @@ header.header
                 input.header-icons-search__input(type="text" id="search" placeholder="Поиск")
                 button.header-icons-search__btn(type="submit")
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#3249C5"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#B1B1B1"/>
                   </svg>
 
           li.header-icons__item 

@@ -61,27 +61,37 @@
       top: 0;
       right: 0;
       bottom: 0;
+      width: 40px;
       background: linear-gradient(
         90deg,
         rgba(255, 255, 255, 0) 0%,
         #ffffff 100%
       );
-      width: 40px;
     }
   }
   &-authors {
     &__wrapper {
       padding: 0;
+      list-style: none;
     }
     &__slide {
+      width: 400px;
+      &.swiper-slide-active .reviews-authors__wrap {
+        border: 1px solid #30c18a;
+      }
+    }
+    &__wrap {
       display: flex;
       align-items: center;
-      width: 400px;
       background: #ffffff;
       box-shadow: 0px 4px 6px #eaf5f2;
       border-radius: 8px;
-      &.swiper-slide-active {
-        border: 1px solid #30c18a;
+      border: 1px solid transparent;
+      transition: 0.2s;
+      &:hover,
+      &:focus {
+        border: 1px solid $neutral-color-9;
+        box-shadow: 0px 2px 12px #e9eaec;
       }
     }
     &__ava {
