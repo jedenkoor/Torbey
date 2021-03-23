@@ -24,6 +24,7 @@ body {
   font-family: 'Golos', sans-serif;
   color: $text-color;
   font-size: 16px;
+  line-height: 24px;
   transition: opacity 0.2s;
 }
 
@@ -80,6 +81,15 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 .visually-hidden {
@@ -192,7 +202,7 @@ img {
   }
   label {
     position: absolute;
-    top: 15px;
+    top: 11px;
     left: 15px;
     transition: 0.2s;
     color: $neutral-color-7;
@@ -234,6 +244,10 @@ img {
   }
 }
 
+.glightbox-open {
+  overflow: visible;
+}
+
 @import 'blocks/common/popup';
 @import 'blocks/common/callback';
 @import 'blocks/common/header';
@@ -241,10 +255,14 @@ img {
 @import 'blocks/common/footer';
 @import 'blocks/common/goods-slider';
 @import 'blocks/common/form';
+@import 'blocks/common/addtobasket';
 @import 'blocks/mainpage/banner';
 @import 'blocks/mainpage/cards';
-@import 'blocks/mainpage/adventures';
+@import 'blocks/mainpage/advantages';
 @import 'blocks/mainpage/promo';
 @import 'blocks/mainpage/reviews';
 @import 'blocks/mainpage/articles';
-@import 'blocks/otherpages/catalog.scss';
+@import 'blocks/otherpages/catalog';
+@import 'blocks/otherpages/good';
+@import 'blocks/otherpages/about';
+@import 'blocks/otherpages/achievements';

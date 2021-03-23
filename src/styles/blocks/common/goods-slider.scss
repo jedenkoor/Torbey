@@ -1,7 +1,9 @@
 .goods-slider {
-  overflow: hidden;
   &__container {
     overflow: visible;
+  }
+  &__wrap {
+    overflow: hidden;
   }
   &__wrapper {
     padding: 0;
@@ -138,6 +140,7 @@
     }
     &__oldprice {
       color: $neutral-color-6;
+      text-decoration: line-through;
     }
     &__name {
       margin-top: 0;

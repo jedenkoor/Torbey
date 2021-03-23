@@ -1,0 +1,32 @@
+.achievements {
+  overflow: hidden;
+  &__slider {
+    overflow: visible;
+  }
+  &__wrapper {
+    padding: 0;
+    list-style: none;
+  }
+  &-slide {
+    width: min-content;
+    &__link {
+      display: block;
+      width: max-content;
+    }
+    &__img {
+      width: auto;
+      height: 280px;
+      margin-bottom: 9px;
+    }
+    &__title {
+      margin-bottom: 4px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__date {
+      font-size: 12px;
+      line-height: 16px;
+      color: $neutral-color-5;
+    }
+  }
+}

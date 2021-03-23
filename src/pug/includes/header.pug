@@ -1,11 +1,16 @@
 input(type="checkbox" id="menu-burger")
 input(type="checkbox" id="callback")
 input(type="checkbox" id="filter")
+input(type="checkbox" id="offers")
+input(type="checkbox" id="content")
 
 label.overlay.overlay--menu(for="menu-burger") 
 label.overlay.overlay--filter(for="filter") 
+label.overlay.overlay--offers(for="offers") 
+label.overlay.overlay--content(for="content") 
 
 include popup-menu.pug
+include popup-content.pug
 
 header.header
   .header__row

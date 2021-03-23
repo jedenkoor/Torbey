@@ -1,0 +1,356 @@
+extends ../template
+
+block variables
+  - var title = 'Страница товара'
+  - var breadrumbs = 1
+
+block content
+  section.good.margin-section
+    .container 
+      .good__row
+        ul.good__tags.good-tags
+          li.good-tags__item.good-tags__item--best Бестселлер
+          li.good-tags__item.good-tags__item--spec Специальное предложение
+        .good__id Артикул: 182482
+      h1.good__title Кроватное основание с широкими ламелями (врезными)
+      .good__row 
+        .good__rate.rate(data-rate="4.5" title="4.5")
+          <svg width="96" height="16" viewBox="0 0 96 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.69222 1.76668C8.60568 1.60265 8.43546 1.5 8.25 1.5C8.06454 1.5 7.89432 1.60265 7.80778 1.76668L6.10511 4.99383C5.98453 5.22238 5.76474 5.38207 5.51011 5.42613L1.91475 6.04821C1.73201 6.07983 1.58178 6.21 1.52447 6.38638C1.46716 6.56276 1.51219 6.75638 1.64144 6.88937L4.18449 9.50595C4.3646 9.69126 4.44855 9.94963 4.41177 10.2054L3.89238 13.817C3.86598 14.0006 3.94336 14.1837 4.09339 14.2927C4.24343 14.4017 4.44148 14.4187 4.60791 14.3369L7.88227 12.7269C8.11416 12.6129 8.38584 12.6129 8.61773 12.7269L11.8921 14.3369C12.0585 14.4187 12.2566 14.4017 12.4066 14.2927C12.5566 14.1837 12.634 14.0006 12.6076 13.817L12.0882 10.2054C12.0515 9.94963 12.1354 9.69126 12.3155 9.50595L14.8586 6.88937C14.9878 6.75638 15.0328 6.56276 14.9755 6.38638C14.9182 6.21 14.768 6.07983 14.5852 6.04821L10.9899 5.42613C10.7353 5.38207 10.5155 5.22238 10.3949 4.99383L8.69222 1.76668Z" stroke="#DC9360" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M28.6922 1.76668C28.6057 1.60265 28.4355 1.5 28.25 1.5C28.0645 1.5 27.8943 1.60265 27.8078 1.76668L26.1051 4.99383C25.9845 5.22238 25.7647 5.38207 25.5101 5.42613L21.9148 6.04821C21.732 6.07983 21.5818 6.21 21.5245 6.38638C21.4672 6.56276 21.5122 6.75638 21.6414 6.88937L24.1845 9.50595C24.3646 9.69126 24.4485 9.94963 24.4118 10.2054L23.8924 13.817C23.866 14.0006 23.9434 14.1837 24.0934 14.2927C24.2434 14.4017 24.4415 14.4187 24.6079 14.3369L27.8823 12.7269C28.1142 12.6129 28.3858 12.6129 28.6177 12.7269L31.8921 14.3369C32.0585 14.4187 32.2566 14.4017 32.4066 14.2927C32.5566 14.1837 32.634 14.0006 32.6076 13.817L32.0882 10.2054C32.0515 9.94963 32.1354 9.69126 32.3155 9.50595L34.8586 6.88937C34.9878 6.75638 35.0328 6.56276 34.9755 6.38638C34.9182 6.21 34.768 6.07983 34.5852 6.04821L30.9899 5.42613C30.7353 5.38207 30.5155 5.22238 30.3949 4.99383L28.6922 1.76668Z" stroke="#DC9360" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M48.6922 1.76668C48.6057 1.60265 48.4355 1.5 48.25 1.5C48.0645 1.5 47.8943 1.60265 47.8078 1.76668L46.1051 4.99383C45.9845 5.22238 45.7647 5.38207 45.5101 5.42613L41.9148 6.04821C41.732 6.07983 41.5818 6.21 41.5245 6.38638C41.4672 6.56276 41.5122 6.75638 41.6414 6.88937L44.1845 9.50595C44.3646 9.69126 44.4485 9.94963 44.4118 10.2054L43.8924 13.817C43.866 14.0006 43.9434 14.1837 44.0934 14.2927C44.2434 14.4017 44.4415 14.4187 44.6079 14.3369L47.8823 12.7269C48.1142 12.6129 48.3858 12.6129 48.6177 12.7269L51.8921 14.3369C52.0585 14.4187 52.2566 14.4017 52.4066 14.2927C52.5566 14.1837 52.634 14.0006 52.6076 13.817L52.0882 10.2054C52.0515 9.94963 52.1354 9.69126 52.3155 9.50595L54.8586 6.88937C54.9878 6.75638 55.0328 6.56276 54.9755 6.38638C54.9182 6.21 54.768 6.07983 54.5852 6.04821L50.9899 5.42613C50.7353 5.38207 50.5155 5.22238 50.3949 4.99383L48.6922 1.76668Z" stroke="#DC9360" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M68.6922 1.76668C68.6057 1.60265 68.4355 1.5 68.25 1.5C68.0645 1.5 67.8943 1.60265 67.8078 1.76668L66.1051 4.99383C65.9845 5.22238 65.7647 5.38207 65.5101 5.42613L61.9148 6.04821C61.732 6.07983 61.5818 6.21 61.5245 6.38638C61.4672 6.56276 61.5122 6.75638 61.6414 6.88937L64.1845 9.50595C64.3646 9.69126 64.4485 9.94963 64.4118 10.2054L63.8924 13.817C63.866 14.0006 63.9434 14.1837 64.0934 14.2927C64.2434 14.4017 64.4415 14.4187 64.6079 14.3369L67.8823 12.7269C68.1142 12.6129 68.3858 12.6129 68.6177 12.7269L71.8921 14.3369C72.0585 14.4187 72.2566 14.4017 72.4066 14.2927C72.5566 14.1837 72.634 14.0006 72.6076 13.817L72.0882 10.2054C72.0515 9.94963 72.1354 9.69126 72.3155 9.50595L74.8586 6.88937C74.9878 6.75638 75.0328 6.56276 74.9755 6.38638C74.9182 6.21 74.768 6.07983 74.5852 6.04821L70.9899 5.42613C70.7353 5.38207 70.5155 5.22238 70.3949 4.99383L68.6922 1.76668Z" stroke="#DC9360" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M88.6922 1.76668C88.6057 1.60265 88.4355 1.5 88.25 1.5C88.0645 1.5 87.8943 1.60265 87.8078 1.76668L86.1051 4.99383C85.9845 5.22238 85.7647 5.38207 85.5101 5.42613L81.9148 6.04821C81.732 6.07983 81.5818 6.21 81.5245 6.38638C81.4672 6.56276 81.5122 6.75638 81.6414 6.88937L84.1845 9.50595C84.3646 9.69126 84.4485 9.94963 84.4118 10.2054L83.8924 13.817C83.866 14.0006 83.9434 14.1837 84.0934 14.2927C84.2434 14.4017 84.4415 14.4187 84.6079 14.3369L87.8823 12.7269C88.1142 12.6129 88.3858 12.6129 88.6177 12.7269L91.8921 14.3369C92.0585 14.4187 92.2566 14.4017 92.4066 14.2927C92.5566 14.1837 92.634 14.0006 92.6076 13.817L92.0882 10.2054C92.0515 9.94963 92.1354 9.69126 92.3155 9.50595L94.8586 6.88937C94.9878 6.75638 95.0328 6.56276 94.9755 6.38638C94.9182 6.21 94.768 6.07983 94.5852 6.04821L90.9899 5.42613C90.7353 5.38207 90.5155 5.22238 90.3949 4.99383L88.6922 1.76668Z" stroke="#DC9360" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          span 26 отзывов
+        button.good__fav.good__fav--active 
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71794 13.738L13.8777 8.41375C13.8778 8.4137 13.8779 8.41364 13.8779 8.41359C14.2342 8.04608 14.5164 7.61017 14.7088 7.13118C14.9011 6.6522 15 6.13915 15 5.62125C15 5.10335 14.9011 4.5903 14.7088 4.11132C14.5164 3.63221 14.234 3.19614 13.8776 2.82863C13.5215 2.46101 13.098 2.16881 12.6312 1.96923L12.2403 2.88345L12.6312 1.96923C12.1643 1.76958 11.6634 1.66667 11.1573 1.66667C10.6511 1.66667 10.1502 1.76958 9.68328 1.96923L10.0764 2.88872L9.68328 1.96923C9.21642 2.16884 8.79292 2.4611 8.4367 2.8288C8.43665 2.82886 8.4366 2.82892 8.43654 2.82897L7.99983 3.2796L7.56306 2.82891L6.86716 3.50333L7.56306 2.82891C6.84328 2.0862 5.86484 1.66702 4.84241 1.66702C3.81998 1.66702 2.84153 2.0862 2.12175 2.82892C1.40241 3.57118 1 4.57578 1 5.62125C1 6.66672 1.40241 7.67132 2.12175 8.41358L7.28172 13.738C7.47008 13.9323 7.72918 14.0421 7.99983 14.0421C8.27048 14.0421 8.52958 13.9323 8.71794 13.738Z" stroke="#DC9360" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          | В избранное
+
+      include ../includes/popup-offers.pug
+
+      .good__main 
+        .good__content.good-content
+          .good-content__gallery 
+            .good-content__slider.good-content-slider.swiper-container
+              ul.good-content-slider__wrapper.swiper-wrapper
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good1.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good2.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good2.jpg")
+                      img(src="images/good2.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good3.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good3.jpg")
+                      img(src="images/good3.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good1.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good2.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good2.jpg")
+                      img(src="images/good2.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good3.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good3.jpg")
+                      img(src="images/good3.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good1.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good2.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good2.jpg")
+                      img(src="images/good2.jpg" alt="Матрас Царь")
+                li.good-content-slider__slide.swiper-slide
+                  a.glightbox(href="images/good3.jpg" data-gallery="gallery1") 
+                    picture
+                      source(type="image/webp" srcset="images/good3.jpg")
+                      img(src="images/good3.jpg" alt="Матрас Царь")
+            .good-content__wrap
+              .good-content__thumbs.good-content-thumbs.swiper-container
+                ul.good-content-thumbs__wrapper.swiper-wrapper
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good2.jpg")
+                      img(src="images/good2.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good3.jpg")
+                      img(src="images/good3.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good2.jpg")
+                      img(src="images/good2.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good3.jpg")
+                      img(src="images/good3.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good2.jpg")
+                      img(src="images/good2.jpg" alt="Матрас Царь")
+                  li.good-content-thumbs__slide.swiper-slide
+                    picture
+                      source(type="image/webp" srcset="images/good3.jpg")
+                      img(src="images/good3.jpg" alt="Матрас Царь")
+              .swiper-button-prev 
+                <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.66284 0.17157L0.117254 2.71715C-0.038956 2.87336 -0.038956 3.12663 0.117254 3.28284L2.66284 5.82842C2.81905 5.98463 3.07231 5.98463 3.22852 5.82842C3.38473 5.67222 3.38473 5.41895 3.22852 5.26274L1.36578 3.4H19.6001V2.6H1.36578L3.22852 0.737256C3.38473 0.581046 3.38473 0.32778 3.22852 0.17157C3.07231 0.0153604 2.81905 0.0153604 2.66284 0.17157Z" fill="#00996E"/>
+                </svg>
+              .swiper-button-next
+                <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3372 0.171601L19.8827 2.71719C20.039 2.87339 20.039 3.12666 19.8827 3.28287L17.3372 5.82846C17.181 5.98467 16.9277 5.98467 16.7715 5.82846C16.6153 5.67225 16.6153 5.41898 16.7715 5.26277L18.6342 3.40003H0.399902V2.60003H18.6342L16.7715 0.737286C16.6153 0.581076 16.6153 0.32781 16.7715 0.171601C16.9277 0.0153909 17.181 0.0153909 17.3372 0.171601Z" fill="#00996e"/>
+                </svg>
+          .good-content__tabs.tabs
+            ul.good-content__navigation.good-content-navigation
+              li.good-content-navigation__item
+                button.good-content-navigation__btn.tabs__btn.tabs__btn--active(data-tab="1") Описание
+              li.good-content-navigation__item
+                button.good-content-navigation__btn.tabs__btn(data-tab="2") Характеристики
+              li.good-content-navigation__item
+                button.good-content-navigation__btn.tabs__btn(data-tab="3") Отзывы 
+            .good-content__tab.good-content-tab.tabs__container.tabs__container--active(data-tab="1")
+              p Дорогие покупатели, эстетика играет не последнюю роль в интерьере спальни! Любая ваша фантазия может найти воплощение в виде нестандартного матраса,который мы изготовим по Вашему эскизу — любой формы и с нужными Вам наполнителями в кратчайшие сроки.
+              p Матрас обладает отличными эксплуатационными качествами и восстанавливается после любой деформации.
+              p Учитывая многочисленные просьбы наших клиентов, специалисты нашей компании разработали этот высокий, беспружинный, разносторонний матрас. Этот матрас типа «сэндвич» изготовлен путем чередования десяти слоев латексированного кокоса и натурального латекса. Помимо этих материалов мы использовали холкон, благодаря которому матрас прослужит Вам очень долго и сохранит превосходный внешний вид.
+            .good-content__tab.good-content-tab.tabs__container(data-tab="2")
+              .good-content-tab__row 
+                .good-content-tab__col
+                  h3.good-content-tab__title Размеры
+                  ul.good-content-tab__list
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Длина
+                      .good-content-tab__value 160 см
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Ширина
+                      .good-content-tab__value 200 см
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Высота
+                      .good-content-tab__value 20 см
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Масса
+                      .good-content-tab__value 25 кг
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Упаковка
+                      .good-content-tab__value 24 x 90 x 190 см
+                .good-content-tab__col
+                  h3.good-content-tab__title Детали
+                  ul.good-content-tab__list
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Наполнитель
+                      label.good-content-tab__value.popup-link.arrow-after(for="")  Кокосовая койра
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Жёсткость
+                      label.good-content-tab__value.popup-link.arrow-after(for="")  Очень жёсткий
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Уход
+                      .good-content-tab__value Только профессиональная чистка
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Для кого
+                      .good-content-tab__value Двуспальный
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Материал чехла
+                      .good-content-tab__value Трикотаж
+                    li.good-content-tab__subrow 
+                      .good-content-tab__name Производитель
+                      .good-content-tab__value Торбеевские матрасы
+            .good-content__tab.good-content-tab.tabs__container(data-tab="3")
+
+        aside.good__aside.good-aside
+          .good-aside__content
+            span.good-aside__price.good-aside__price--newprice 21 600 руб.
+            span.good-aside__oldprice 25 000 руб.
+            .good-aside__size.input-block
+              input(id="good-input" value="Двуспальный 160 × 200 см" disabled)
+              label Размеры
+              .form-select__show
+              label.good-aside__show(for="offers" tabindex="0") 
+            .good-aside__row
+              .good-aside__num.good-aside-num
+                button.good-aside-num__btn(disabled) -
+                input.good-aside-num__input(type="number" value="1")
+                button.good-aside-num__btn +
+              button.good-aside__buy.btn-background В корзину
+            .good-aside__info
+              label(for="content" tabindex="0") Гарантия 25 лет на этот матрас
+            .good-aside__info
+              label.good-aside__info(for="content" tabindex="0") Бесплатный возврат
+            .good-aside__info
+              label.good-aside__info(for="content" tabindex="0") Доставка от 1 до 15 календарных дней
+            .good-aside__info
+              label.good-aside__info(for="content" tabindex="0") Задать вопрос о товаре
+
+
+
+  section.goods-slider.margin-section
+    .container 
+      h2.h2title.goods-slider__title С этим товаром покупают
+    .goods-slider__wrap
+      .container 
+        .goods-slider__container.swiper-container
+          ul.goods-slider__wrapper.swiper-wrapper 
+            li.goods-slider__slide.goods-slider-slide.swiper-slide
+              a.goods-slider__link(href="#")
+                .goods-slider-slide__img
+                  picture
+                    source(type="image/webp" srcset="images/good1.jpg")
+                    img(src="images/good1.jpg" alt="Матрас Царь")
+                  ul.goods-slider-slide__tags
+                    li.goods-slider-slide__tag.goods-slider-slide__tag--best Бестселлер
+                  button.goods-slider-slide__fav.goods-slider-slide__fav--active
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.9855 4.59133L10.2945 5.26101L10.9855 4.59133C9.99837 3.5727 8.65953 3.00053 7.26361 3.00053C5.86769 3.00053 4.52885 3.5727 3.54168 4.59133C2.5546 5.60986 2 6.99133 2 8.43187C2 9.87241 2.5546 11.2539 3.54167 12.2724L11.2816 20.259C11.47 20.4534 11.7291 20.5631 11.9997 20.5631C12.2704 20.5631 12.5295 20.4534 12.7179 20.259L20.4576 12.2726C20.4577 12.2725 20.4578 12.2725 20.4578 12.2724C20.9466 11.7682 21.3346 11.1694 21.5992 10.5105C21.8638 9.85148 22 9.14517 22 8.43187C22 7.71857 21.8638 7.01225 21.5992 6.35328C21.3345 5.69421 20.9463 5.09518 20.4575 4.59099C19.9689 4.08665 19.3887 3.68657 18.7503 3.41358C18.1116 3.14054 17.4272 3 16.7359 3C16.0446 3 15.3601 3.14054 14.7215 3.41358C14.0829 3.6866 13.5028 4.08674 13.0141 4.59116C13.0141 4.59122 13.014 4.59127 13.0139 4.59133L11.9997 5.63785L10.9855 4.59133Z" stroke="#A94A24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                .goods-slider-slide__info
+                  button.goods-slider-slide__cart 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L2.19297 0.778755C2.69116 1.27694 2.99811 1.93458 3.06004 2.63639L3.18036 4H22C22.2911 4 22.5678 4.12686 22.7577 4.34744C22.9477 4.56803 23.0321 4.86045 22.9889 5.14834L21.7444 13.445C21.5242 14.9136 20.2626 16 18.7776 16H4.23918L4.33517 17.0879C4.38072 17.6041 4.81308 18 5.3313 18H18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21C15 20.6494 15.0602 20.3128 15.1707 20H7.82929C7.93985 20.3128 8 20.6494 8 21C8 22.6569 6.65685 24 5 24C3.34315 24 2 22.6569 2 21C2 20.1392 2.36251 19.3632 2.94318 18.8161C2.61057 18.3793 2.39439 17.8471 2.34291 17.2637L1.06778 2.81218C1.04714 2.57824 0.944817 2.35903 0.778755 2.19297L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893ZM18 20C17.4477 20 17 20.4477 17 21C17 21.5523 17.4477 22 18 22C18.5523 22 19 21.5523 19 21C19 20.4477 18.5523 20 18 20ZM4.06271 14H18.7776C19.2726 14 19.6931 13.6379 19.7666 13.1483L20.8388 6H3.35683L4.06271 14ZM5 20C4.44772 20 4 20.4477 4 21C4 21.5523 4.44772 22 5 22C5.55228 22 6 21.5523 6 21C6 20.4477 5.55228 20 5 20Z" fill="#C56532"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  .goods-slider-slide__row
+                    span.goods-slider-slide__price.goods-slider-slide__price--newprice 21 600 руб.
+                    span.goods-slider-slide__oldprice 25 000 руб.
+                  h4.goods-slider-slide__name Матрас Царь
+            li.goods-slider__slide.goods-slider-slide.swiper-slide
+              a.goods-slider__link(href="#")
+                .goods-slider-slide__img
+                  picture
+                    source(type="image/webp" srcset="images/good2.jpg")
+                    img(src="images/good2.jpg" alt="Матрас Царь")
+                  ul.goods-slider-slide__tags
+                    li.goods-slider-slide__tag.goods-slider-slide__tag--best Бестселлер
+                  button.goods-slider-slide__fav 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.9855 4.59133L10.2945 5.26101L10.9855 4.59133C9.99837 3.5727 8.65953 3.00053 7.26361 3.00053C5.86769 3.00053 4.52885 3.5727 3.54168 4.59133C2.5546 5.60986 2 6.99133 2 8.43187C2 9.87241 2.5546 11.2539 3.54167 12.2724L11.2816 20.259C11.47 20.4534 11.7291 20.5631 11.9997 20.5631C12.2704 20.5631 12.5295 20.4534 12.7179 20.259L20.4576 12.2726C20.4577 12.2725 20.4578 12.2725 20.4578 12.2724C20.9466 11.7682 21.3346 11.1694 21.5992 10.5105C21.8638 9.85148 22 9.14517 22 8.43187C22 7.71857 21.8638 7.01225 21.5992 6.35328C21.3345 5.69421 20.9463 5.09518 20.4575 4.59099C19.9689 4.08665 19.3887 3.68657 18.7503 3.41358C18.1116 3.14054 17.4272 3 16.7359 3C16.0446 3 15.3601 3.14054 14.7215 3.41358C14.0829 3.6866 13.5028 4.08674 13.0141 4.59116C13.0141 4.59122 13.014 4.59127 13.0139 4.59133L11.9997 5.63785L10.9855 4.59133Z" stroke="#A94A24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                .goods-slider-slide__info
+                  button.goods-slider-slide__cart 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L2.19297 0.778755C2.69116 1.27694 2.99811 1.93458 3.06004 2.63639L3.18036 4H22C22.2911 4 22.5678 4.12686 22.7577 4.34744C22.9477 4.56803 23.0321 4.86045 22.9889 5.14834L21.7444 13.445C21.5242 14.9136 20.2626 16 18.7776 16H4.23918L4.33517 17.0879C4.38072 17.6041 4.81308 18 5.3313 18H18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21C15 20.6494 15.0602 20.3128 15.1707 20H7.82929C7.93985 20.3128 8 20.6494 8 21C8 22.6569 6.65685 24 5 24C3.34315 24 2 22.6569 2 21C2 20.1392 2.36251 19.3632 2.94318 18.8161C2.61057 18.3793 2.39439 17.8471 2.34291 17.2637L1.06778 2.81218C1.04714 2.57824 0.944817 2.35903 0.778755 2.19297L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893ZM18 20C17.4477 20 17 20.4477 17 21C17 21.5523 17.4477 22 18 22C18.5523 22 19 21.5523 19 21C19 20.4477 18.5523 20 18 20ZM4.06271 14H18.7776C19.2726 14 19.6931 13.6379 19.7666 13.1483L20.8388 6H3.35683L4.06271 14ZM5 20C4.44772 20 4 20.4477 4 21C4 21.5523 4.44772 22 5 22C5.55228 22 6 21.5523 6 21C6 20.4477 5.55228 20 5 20Z" fill="#C56532"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  .goods-slider-slide__row
+                    span.goods-slider-slide__price 21 600 руб.
+                  h4.goods-slider-slide__name Матрас Царь
+            li.goods-slider__slide.goods-slider-slide.swiper-slide
+              a.goods-slider__link(href="#")
+                .goods-slider-slide__img
+                  picture
+                    source(type="image/webp" srcset="images/good3.jpg")
+                    img(src="images/good3.jpg" alt="Матрас Царь")
+                  ul.goods-slider-slide__tags
+                    li.goods-slider-slide__tag.goods-slider-slide__tag--best Бестселлер
+                  button.goods-slider-slide__fav 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.9855 4.59133L10.2945 5.26101L10.9855 4.59133C9.99837 3.5727 8.65953 3.00053 7.26361 3.00053C5.86769 3.00053 4.52885 3.5727 3.54168 4.59133C2.5546 5.60986 2 6.99133 2 8.43187C2 9.87241 2.5546 11.2539 3.54167 12.2724L11.2816 20.259C11.47 20.4534 11.7291 20.5631 11.9997 20.5631C12.2704 20.5631 12.5295 20.4534 12.7179 20.259L20.4576 12.2726C20.4577 12.2725 20.4578 12.2725 20.4578 12.2724C20.9466 11.7682 21.3346 11.1694 21.5992 10.5105C21.8638 9.85148 22 9.14517 22 8.43187C22 7.71857 21.8638 7.01225 21.5992 6.35328C21.3345 5.69421 20.9463 5.09518 20.4575 4.59099C19.9689 4.08665 19.3887 3.68657 18.7503 3.41358C18.1116 3.14054 17.4272 3 16.7359 3C16.0446 3 15.3601 3.14054 14.7215 3.41358C14.0829 3.6866 13.5028 4.08674 13.0141 4.59116C13.0141 4.59122 13.014 4.59127 13.0139 4.59133L11.9997 5.63785L10.9855 4.59133Z" stroke="#A94A24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                .goods-slider-slide__info
+                  button.goods-slider-slide__cart 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L2.19297 0.778755C2.69116 1.27694 2.99811 1.93458 3.06004 2.63639L3.18036 4H22C22.2911 4 22.5678 4.12686 22.7577 4.34744C22.9477 4.56803 23.0321 4.86045 22.9889 5.14834L21.7444 13.445C21.5242 14.9136 20.2626 16 18.7776 16H4.23918L4.33517 17.0879C4.38072 17.6041 4.81308 18 5.3313 18H18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21C15 20.6494 15.0602 20.3128 15.1707 20H7.82929C7.93985 20.3128 8 20.6494 8 21C8 22.6569 6.65685 24 5 24C3.34315 24 2 22.6569 2 21C2 20.1392 2.36251 19.3632 2.94318 18.8161C2.61057 18.3793 2.39439 17.8471 2.34291 17.2637L1.06778 2.81218C1.04714 2.57824 0.944817 2.35903 0.778755 2.19297L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893ZM18 20C17.4477 20 17 20.4477 17 21C17 21.5523 17.4477 22 18 22C18.5523 22 19 21.5523 19 21C19 20.4477 18.5523 20 18 20ZM4.06271 14H18.7776C19.2726 14 19.6931 13.6379 19.7666 13.1483L20.8388 6H3.35683L4.06271 14ZM5 20C4.44772 20 4 20.4477 4 21C4 21.5523 4.44772 22 5 22C5.55228 22 6 21.5523 6 21C6 20.4477 5.55228 20 5 20Z" fill="#C56532"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  .goods-slider-slide__row
+                    span.goods-slider-slide__price 21 600 руб.
+                  h4.goods-slider-slide__name Матрас Царь
+            li.goods-slider__slide.goods-slider-slide.swiper-slide
+              a.goods-slider__link(href="#")
+                .goods-slider-slide__img
+                  picture
+                    source(type="image/webp" srcset="images/good1.jpg")
+                    img(src="images/good1.jpg" alt="Матрас Царь")
+                  ul.goods-slider-slide__tags
+                    li.goods-slider-slide__tag.goods-slider-slide__tag--best Бестселлер
+                  button.goods-slider-slide__fav 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.9855 4.59133L10.2945 5.26101L10.9855 4.59133C9.99837 3.5727 8.65953 3.00053 7.26361 3.00053C5.86769 3.00053 4.52885 3.5727 3.54168 4.59133C2.5546 5.60986 2 6.99133 2 8.43187C2 9.87241 2.5546 11.2539 3.54167 12.2724L11.2816 20.259C11.47 20.4534 11.7291 20.5631 11.9997 20.5631C12.2704 20.5631 12.5295 20.4534 12.7179 20.259L20.4576 12.2726C20.4577 12.2725 20.4578 12.2725 20.4578 12.2724C20.9466 11.7682 21.3346 11.1694 21.5992 10.5105C21.8638 9.85148 22 9.14517 22 8.43187C22 7.71857 21.8638 7.01225 21.5992 6.35328C21.3345 5.69421 20.9463 5.09518 20.4575 4.59099C19.9689 4.08665 19.3887 3.68657 18.7503 3.41358C18.1116 3.14054 17.4272 3 16.7359 3C16.0446 3 15.3601 3.14054 14.7215 3.41358C14.0829 3.6866 13.5028 4.08674 13.0141 4.59116C13.0141 4.59122 13.014 4.59127 13.0139 4.59133L11.9997 5.63785L10.9855 4.59133Z" stroke="#A94A24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                .goods-slider-slide__info
+                  button.goods-slider-slide__cart 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L2.19297 0.778755C2.69116 1.27694 2.99811 1.93458 3.06004 2.63639L3.18036 4H22C22.2911 4 22.5678 4.12686 22.7577 4.34744C22.9477 4.56803 23.0321 4.86045 22.9889 5.14834L21.7444 13.445C21.5242 14.9136 20.2626 16 18.7776 16H4.23918L4.33517 17.0879C4.38072 17.6041 4.81308 18 5.3313 18H18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21C15 20.6494 15.0602 20.3128 15.1707 20H7.82929C7.93985 20.3128 8 20.6494 8 21C8 22.6569 6.65685 24 5 24C3.34315 24 2 22.6569 2 21C2 20.1392 2.36251 19.3632 2.94318 18.8161C2.61057 18.3793 2.39439 17.8471 2.34291 17.2637L1.06778 2.81218C1.04714 2.57824 0.944817 2.35903 0.778755 2.19297L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893ZM18 20C17.4477 20 17 20.4477 17 21C17 21.5523 17.4477 22 18 22C18.5523 22 19 21.5523 19 21C19 20.4477 18.5523 20 18 20ZM4.06271 14H18.7776C19.2726 14 19.6931 13.6379 19.7666 13.1483L20.8388 6H3.35683L4.06271 14ZM5 20C4.44772 20 4 20.4477 4 21C4 21.5523 4.44772 22 5 22C5.55228 22 6 21.5523 6 21C6 20.4477 5.55228 20 5 20Z" fill="#C56532"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  .goods-slider-slide__row
+                    span.goods-slider-slide__price 21 600 руб.
+                  h4.goods-slider-slide__name Матрас Царь
+            li.goods-slider__slide.goods-slider-slide.swiper-slide
+              a.goods-slider__link(href="#")
+                .goods-slider-slide__img
+                  picture
+                    source(type="image/webp" srcset="images/good2.jpg")
+                    img(src="images/good2.jpg" alt="Матрас Царь")
+                  ul.goods-slider-slide__tags
+                    li.goods-slider-slide__tag.goods-slider-slide__tag--best Бестселлер
+                  button.goods-slider-slide__fav 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.9855 4.59133L10.2945 5.26101L10.9855 4.59133C9.99837 3.5727 8.65953 3.00053 7.26361 3.00053C5.86769 3.00053 4.52885 3.5727 3.54168 4.59133C2.5546 5.60986 2 6.99133 2 8.43187C2 9.87241 2.5546 11.2539 3.54167 12.2724L11.2816 20.259C11.47 20.4534 11.7291 20.5631 11.9997 20.5631C12.2704 20.5631 12.5295 20.4534 12.7179 20.259L20.4576 12.2726C20.4577 12.2725 20.4578 12.2725 20.4578 12.2724C20.9466 11.7682 21.3346 11.1694 21.5992 10.5105C21.8638 9.85148 22 9.14517 22 8.43187C22 7.71857 21.8638 7.01225 21.5992 6.35328C21.3345 5.69421 20.9463 5.09518 20.4575 4.59099C19.9689 4.08665 19.3887 3.68657 18.7503 3.41358C18.1116 3.14054 17.4272 3 16.7359 3C16.0446 3 15.3601 3.14054 14.7215 3.41358C14.0829 3.6866 13.5028 4.08674 13.0141 4.59116C13.0141 4.59122 13.014 4.59127 13.0139 4.59133L11.9997 5.63785L10.9855 4.59133Z" stroke="#A94A24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                .goods-slider-slide__info
+                  button.goods-slider-slide__cart 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L2.19297 0.778755C2.69116 1.27694 2.99811 1.93458 3.06004 2.63639L3.18036 4H22C22.2911 4 22.5678 4.12686 22.7577 4.34744C22.9477 4.56803 23.0321 4.86045 22.9889 5.14834L21.7444 13.445C21.5242 14.9136 20.2626 16 18.7776 16H4.23918L4.33517 17.0879C4.38072 17.6041 4.81308 18 5.3313 18H18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21C15 20.6494 15.0602 20.3128 15.1707 20H7.82929C7.93985 20.3128 8 20.6494 8 21C8 22.6569 6.65685 24 5 24C3.34315 24 2 22.6569 2 21C2 20.1392 2.36251 19.3632 2.94318 18.8161C2.61057 18.3793 2.39439 17.8471 2.34291 17.2637L1.06778 2.81218C1.04714 2.57824 0.944817 2.35903 0.778755 2.19297L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893ZM18 20C17.4477 20 17 20.4477 17 21C17 21.5523 17.4477 22 18 22C18.5523 22 19 21.5523 19 21C19 20.4477 18.5523 20 18 20ZM4.06271 14H18.7776C19.2726 14 19.6931 13.6379 19.7666 13.1483L20.8388 6H3.35683L4.06271 14ZM5 20C4.44772 20 4 20.4477 4 21C4 21.5523 4.44772 22 5 22C5.55228 22 6 21.5523 6 21C6 20.4477 5.55228 20 5 20Z" fill="#C56532"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  .goods-slider-slide__row
+                    span.goods-slider-slide__price 21 600 руб.
+                  h4.goods-slider-slide__name Матрас Царь
+
+  include ../includes/form.pug

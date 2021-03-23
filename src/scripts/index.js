@@ -4,6 +4,8 @@ import noUiSlider from 'noUiSlider/distribute/nouislider.min.js'
 import 'noUiSlider/distribute/nouislider.min.css'
 import checkPhoneAndEmail from './functions/checkPhoneAndEmail.js'
 import numberFormat from './functions/numberFormat.js'
+import GLightbox from 'glightbox'
+import 'glightbox/dist/css/glightbox.min.css'
 ;(() => {
   window.addEventListener('DOMContentLoaded', () => {
     // Load opacity
@@ -37,12 +39,10 @@ import numberFormat from './functions/numberFormat.js'
       ;(() =>
         new Swiper('.goods-slider__container', {
           speed: 500,
+          freeMode: true,
           spaceBetween: 24,
           slidesPerView: 3,
-          slideToClickedSlide: true,
-          lazy: {
-            loadPrevNext: true
-          }
+          slideToClickedSlide: true
         }))()
     }
 
@@ -51,23 +51,20 @@ import numberFormat from './functions/numberFormat.js'
       initSliderReviews()
     }
     function initSliderReviews() {
-      const galleryThumbs = new Swiper('.reviews__content', {
-        loop: true,
-        effect: 'fade',
-        slidesPerView: 1,
-        allowTouchMove: false
+      const galleryThumbs = new Swiper('.reviews__authors', {
+        spaceBetween: 24,
+        slidesPerView: 'auto',
+        slidesOffsetAfter: 64,
+        navigation: {
+          prevEl: '.reviews__col .swiper-button-prev',
+          nextEl: '.reviews__col .swiper-button-next'
+        }
       })
 
       ;(() =>
-        new Swiper('.reviews__authors', {
-          loop: true,
-          speed: 500,
-          spaceBetween: 24,
-          slidesPerView: 'auto',
-          slideToClickedSlide: true,
-          navigation: {
-            nextEl: '.reviews__col .swiper-button-next'
-          },
+        new Swiper('.reviews__content', {
+          effect: 'fade',
+          allowTouchMove: false,
           thumbs: {
             swiper: galleryThumbs,
             autoScrollOffset: 1
@@ -76,7 +73,7 @@ import numberFormat from './functions/numberFormat.js'
     }
 
     // Hide reviews
-    const reviewsRates = document.querySelectorAll('.reviews-authors__rate')
+    const reviewsRates = document.querySelectorAll('.rate')
     if (reviewsRates.length) {
       reviewsRates.forEach((item, index) => {
         const stars = item.querySelectorAll('path')
@@ -235,6 +232,91 @@ import numberFormat from './functions/numberFormat.js'
           this.select()
         })
       })
+    }
+
+    // Good slider
+    if (document.querySelectorAll('.good-content__slider').length) {
+      initSliderGood()
+    }
+    function initSliderGood() {
+      const galleryThumbs = new Swiper('.good-content__thumbs', {
+        spaceBetween: 24,
+        slidesPerView: 'auto',
+        slideToClickedSlide: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        navigation: {
+          prevEl: '.good-content__wrap .swiper-button-prev',
+          nextEl: '.good-content__wrap .swiper-button-next'
+        }
+      })
+
+      ;(() =>
+        new Swiper('.good-content__slider', {
+          effect: 'fade',
+          thumbs: {
+            swiper: galleryThumbs,
+            autoScrollOffset: 1
+          }
+        }))()
+    }
+
+    // Lightbox
+    if (document.querySelectorAll('.glightbox').length) {
+      ;(() =>
+        new GLightbox({
+          selector: '.glightbox'
+        }))()
+    }
+
+    // Tabs
+    if (document.querySelectorAll('.tabs').length) {
+      const allTabsNavigationItems = document.querySelectorAll('.tabs__btn')
+      allTabsNavigationItems.forEach((item) =>
+        item.addEventListener('click', tabChange)
+      )
+    }
+
+    function tabChange(e) {
+      e.preventDefault()
+      const tabDataAttr = e.target.getAttribute('data-tab')
+      const tabContainers = e.target
+        .closest('.tabs')
+        .querySelectorAll('.tabs__container')
+      const tabNavigationItem = e.target
+        .closest('.tabs')
+        .querySelectorAll('.tabs__btn')
+
+      tabContainers.forEach((item) => {
+        item.classList.remove('tabs__container--active')
+        if (item.getAttribute('data-tab') === tabDataAttr) {
+          item.classList.add('tabs__container--active')
+        }
+      })
+
+      tabNavigationItem.forEach((item) => {
+        if (item.getAttribute('data-tab') !== tabDataAttr) {
+          item.classList.remove('tabs__btn--active')
+        }
+      })
+
+      e.target.classList.add('tabs__btn--active')
+    }
+
+    // Achievements slider
+    if (document.querySelectorAll('.achievements__slider').length) {
+      initSliderAchieve()
+    }
+    function initSliderAchieve() {
+      const swiper = new Swiper('.achievements__slider', {
+        freeMode: true,
+        spaceBetween: 24,
+        slidesPerView: 'auto',
+        watchSlidesVisibility: true
+      })
+      setTimeout(function () {
+        swiper.update()
+      }, 100)
     }
   })
 })()

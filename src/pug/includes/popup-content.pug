@@ -1,0 +1,48 @@
+.popup.popup--right.popup--content
+  label.popup__close(for="content" tabindex="0") 
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071Z" fill="#A94A24"/>
+    </svg>
+  .popup__content
+    .popup__inverse
+      .popup__container
+        .popup__title Информация о доставке
+        .popup__subtitle Мы доставляем ваши заказы по Москве и области, а также по всей России.
+        .popup__text 
+          p В назначенный срок мы доставляем Вам товар, Вы его осматриваете и только после этого оплачиваете, подписывая сопроводительные документы о получении товара надлежащего качества.
+          p Расчёт стоимости и согласование даты доставки — непосредственно в момент принятия и подтверждения заказа.
+          p Непосредственно перед выездом курьер или водитель-экспедитор информирует Вас о приблизительном времени доставки.
+        .popup__top.popup-top
+          input(type="checkbox" id="content1")
+          label.popup-top__title(for="content1") Стоимость
+          .popup-top__nav.popup-top__content
+            .popup__subtext 
+              p Оплата товара и доставки осуществляется в рублях по факту принятия товара, строго в соответствии с ценой, указанной в товарном чеке или товарной накладной.
+            ul.good-content-tab__list
+              li.good-content-tab__subrow 
+                .good-content-tab__name Утилизация старого матраса
+                .good-content-tab__value Бесплатно
+              li.good-content-tab__subrow 
+                .good-content-tab__name По Москве в пределах МКАД
+                .good-content-tab__value 600 руб.
+              li.good-content-tab__subrow 
+                .good-content-tab__name За пределы МКАД
+                .good-content-tab__value 600 руб. + 30 руб./км
+              li.good-content-tab__subrow 
+                .good-content-tab__name Подъём на грузовом лифте
+                .good-content-tab__value 200 рублей за каждое изделие
+              li.good-content-tab__subrow 
+                .good-content-tab__name Подъём вручную
+                .good-content-tab__value Занос на 1 этаж — 200 руб. + 100 руб. за каждый следующий этаж
+
+        .popup__top.popup-top
+          input(type="checkbox" id="content2")
+          label.popup-top__title(for="content2") Сроки
+          .popup-top__nav.popup-top__content
+            ul.good-content-tab__list
+              li.good-content-tab__subrow 
+                .good-content-tab__name По Москве и области
+                .good-content-tab__value 1–3 рабочих дня с момента подачи заявки и согласования условий доставки
+              li.good-content-tab__subrow 
+                .good-content-tab__name Доставка кроватей и ортопедических оснований
+                .good-content-tab__value 1–15 рабочих дней

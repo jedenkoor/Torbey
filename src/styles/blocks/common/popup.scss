@@ -73,9 +73,9 @@
     line-height: 32px;
   }
   &__top {
-    margin-bottom: 32px;
-    padding-bottom: 32px;
     &:not(:last-child) {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
       border-bottom: 1px solid $neutral-color-8;
     }
   }
@@ -258,8 +258,20 @@
         list-style: none;
       }
       &__subitem {
+        position: relative;
         &:not(:last-child) {
           margin-bottom: 24px;
+        }
+        &:before {
+          content: attr(data-price);
+          position: absolute;
+          z-index: -1;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 16px;
+          line-height: 24px;
+          color: $neutral-color-5;
         }
         input {
           display: none;
@@ -270,12 +282,18 @@
         label {
           display: block;
           padding: 15px;
-          background: #ffffff;
           border: 1px solid $neutral-color-9;
           border-radius: 8px;
           line-height: 24px;
           cursor: pointer;
         }
+      }
+    }
+    &__content {
+      padding-top: 16px;
+      .good-content-tab__name,
+      .good-content-tab__value {
+        flex: 0 0 50%;
       }
     }
   }
@@ -301,5 +319,33 @@
     flex: 0 0 calc(50% - 12px);
     padding: 9px 0;
     cursor: pointer;
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  &__text {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $neutral-color-9;
+    p {
+      margin: 0;
+    }
+    p + p {
+      margin-top: 16px;
+    }
+  }
+  &__subtext {
+    margin-bottom: 24px;
+    font-size: 12px;
+    line-height: 16px;
+    p {
+      margin: 0;
+    }
+    p + p {
+      margin-top: 16px;
+    }
   }
 }
