@@ -58,6 +58,10 @@
       height: 40px;
       border-radius: 50%;
       background-color: #eaecf9;
+      &:hover,
+      &:focus {
+        animation: pulse 0.4s;
+      }
     }
   }
   &__details {
