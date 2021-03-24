@@ -53,14 +53,16 @@ import 'glightbox/dist/css/glightbox.min.css'
       initSliderGoods()
     }
     function initSliderGoods() {
-      ;(() =>
-        new Swiper('.goods-slider__container', {
-          speed: 500,
-          freeMode: true,
-          spaceBetween: 24,
-          slidesPerView: 3,
-          slideToClickedSlide: true
-        }))()
+      const swiper = new Swiper('.goods-slider__container', {
+        speed: 500,
+        freeMode: true,
+        spaceBetween: 24,
+        slidesPerView: 3,
+        slideToClickedSlide: true
+      })
+      setTimeout(function () {
+        swiper.update()
+      }, 300)
     }
 
     // Reviews slider
@@ -329,7 +331,7 @@ import 'glightbox/dist/css/glightbox.min.css'
       })
       setTimeout(function () {
         swiper.update()
-      }, 100)
+      }, 300)
     }
   })
 })()
