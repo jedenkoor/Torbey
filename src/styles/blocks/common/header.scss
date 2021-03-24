@@ -5,7 +5,9 @@
       display: block;
     }
     & ~ .popup--menu {
+      transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
+      visibility: visible;
     }
   }
 }
@@ -17,7 +19,9 @@
       display: block;
     }
     & ~ .content .popup--filter {
+      transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
+      visibility: visible;
     }
   }
 }
@@ -29,7 +33,9 @@
       display: block;
     }
     & ~ .content .popup--offers {
+      transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
+      visibility: visible;
     }
   }
 }
@@ -41,7 +47,9 @@
       display: block;
     }
     & ~ .popup--content {
+      transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
+      visibility: visible;
     }
   }
 }
@@ -126,12 +134,19 @@
     justify-content: space-between;
   }
   &__burger {
-    position: absolute;
-    left: -40px;
+    display: flex;
     padding: 0;
     background: none;
     border: none;
     cursor: pointer;
+    &:hover,
+    &:focus {
+      animation: pulse 0.4s;
+    }
+  }
+  &__logo {
+    margin-right: auto;
+    margin-left: 40px;
   }
   &__info {
     display: flex;
@@ -196,7 +211,7 @@
     }
     &__link {
       &--actions {
-        color: $primary-color;
+        color: $primary-color !important;
       }
     }
     &__open {
@@ -290,6 +305,7 @@
     padding: 0;
     list-style: none;
     &__item {
+      position: relative;
       &:not(:last-child) {
         margin-right: 32px;
       }
@@ -298,9 +314,13 @@
       position: relative;
       display: flex;
       cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
       &[data-count]:before {
         content: attr(data-count);
         position: absolute;
+        z-index: 2;
         top: -6px;
         right: -6px;
         display: flex;
@@ -313,6 +333,12 @@
         background-color: $secondary-color;
         font-size: 10px;
         color: #ffffff;
+      }
+      &:hover,
+      &:focus {
+        > svg {
+          animation: pulse 0.4s;
+        }
       }
     }
     &__search {
@@ -345,6 +371,12 @@
         background: none;
         border: none;
         cursor: pointer;
+        &:hover,
+        &:focus {
+          > svg {
+            animation: pulse 0.4s;
+          }
+        }
       }
     }
   }

@@ -9,14 +9,24 @@
     padding: 0;
     list-style: none;
   }
+  &__slide {
+    position: relative;
+    &:hover {
+      .goods-slider-slide__cart {
+        opacity: 1;
+      }
+    }
+  }
   &__link {
     &:hover,
     &:focus {
       img {
         transform: scale(1.13);
       }
-      .goods-slider-slide__cart {
-        opacity: 1;
+      & ~ .goods-slider-slide__info {
+        .goods-slider-slide__cart {
+          opacity: 1;
+        }
       }
     }
   }
@@ -143,6 +153,7 @@
       text-decoration: line-through;
     }
     &__name {
+      display: inline-block;
       margin-top: 0;
       margin-bottom: 0;
       font-weight: normal;

@@ -15,14 +15,14 @@ include popup-content.pug
 header.header
   .header__row
     .container.header__container
-      label.header__burger(for="menu-burger") 
+      label.header__burger(for="menu-burger" tabindex="0") 
         svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
           path(d="M7 5C7 6.10457 6.10457 7 5 7C3.89543 7 3 6.10457 3 5C3 3.89543 3.89543 3 5 3C6.10457 3 7 3.89543 7 5ZM7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12ZM5 21C6.10457 21 7 20.1046 7 19C7 17.8954 6.10457 17 5 17C3.89543 17 3 17.8954 3 19C3 20.1046 3.89543 21 5 21ZM14 5C14 6.10457 13.1046 7 12 7C10.8954 7 10 6.10457 10 5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14ZM14 19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19C10 17.8954 10.8954 17 12 17C13.1046 17 14 17.8954 14 19ZM19 7C20.1046 7 21 6.10457 21 5C21 3.89543 20.1046 3 19 3C17.8954 3 17 3.89543 17 5C17 6.10457 17.8954 7 19 7ZM21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12ZM19 21C20.1046 21 21 20.1046 21 19C21 17.8954 20.1046 17 19 17C17.8954 17 17 17.8954 17 19C17 20.1046 17.8954 21 19 21Z" fill="#A94A24")
       a.header__logo
         img(src="images/logo.svg" alt="Логотип")
       .header__info
         .header__time
-          a.header__phone(href="tel:84992880170") +7 499 288 01 70
+          a.header__phone.hover-link(href="tel:84992880170") +7 499 288 01 70
           .header__status.header__status--closed Закрыто. откроемся в 10.00
         label.header__btn.btn-border(for="callback" tabindex="0")  Заказать звонок
 
@@ -32,9 +32,9 @@ header.header
         nav.header__menu.header-menu 
           ul.header-menu__list 
             li.header-menu__item 
-              a.header-menu__link.header-menu__link--actions(href="#")  Акции
+              a.header-menu__link.header-menu__link--actions.hover-link(href="#")  Акции
             li.header-menu__item 
-              a.header-menu__link(href="#") Матрасы
+              a.header-menu__link.hover-link(href="#") Матрасы
               .overlay.overlay--open
               .header-menu__open.header-menu-open
                 .container.header-menu-open__container 
@@ -42,33 +42,33 @@ header.header
                     .header-menu-open__title Матрасы
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Односпальные
+                        a.header-menu-open__link.hover-link(href="#") Односпальные
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Двуспальные
+                        a.header-menu-open__link.hover-link(href="#") Двуспальные
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Детские
+                        a.header-menu-open__link.hover-link(href="#") Детские
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Матрасы для животных
+                        a.header-menu-open__link.hover-link(href="#") Матрасы для животных
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Топперы
+                        a.header-menu-open__link.hover-link(href="#") Топперы
                   .header-menu-open__col
                     .header-menu-open__title По жёсткости
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Мягкие
+                        a.header-menu-open__link.hover-link(href="#") Мягкие
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Средние
+                        a.header-menu-open__link.hover-link(href="#") Средние
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Жёсткие
+                        a.header-menu-open__link.hover-link(href="#") Жёсткие
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Разносторонние
+                        a.header-menu-open__link.hover-link(href="#") Разносторонние
                   a.header-menu-open__col(href="#") 
                     picture 
                       source(type="image/webp" srcset="images/header1.jpg")
                       img.header-menu-open__img(src="images/header1.jpg" alt="Матрасы")
                     .header-menu-open__arr.arrow-after Ко всем матрасам
             li.header-menu__item 
-              a.header-menu__link(href="#") Наматрасники
+              a.header-menu__link.hover-link(href="#") Наматрасники
               .overlay.overlay--open
               .header-menu__open.header-menu-open
                 .container.header-menu-open__container 
@@ -76,25 +76,25 @@ header.header
                     .header-menu-open__title Наматрасники
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Односпальные
+                        a.header-menu-open__link.hover-link(href="#") Односпальные
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Двуспальные
+                        a.header-menu-open__link.hover-link(href="#") Двуспальные
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Детские
+                        a.header-menu-open__link.hover-link(href="#") Детские
                   .header-menu-open__col
                     .header-menu-open__title По типу
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Гигиенические
+                        a.header-menu-open__link.hover-link(href="#") Гигиенические
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Для комфорта
+                        a.header-menu-open__link.hover-link(href="#") Для комфорта
                   a.header-menu-open__col(href="#") 
                     picture 
                       source(type="image/webp" srcset="images/header2.jpg")
                       img.header-menu-open__img(src="images/header2.jpg" alt="Наматрасники")
                     .header-menu-open__arr.arrow-after Ко всем наматрасникам
             li.header-menu__item 
-              a.header-menu__link(href="#") Подушки
+              a.header-menu__link.hover-link(href="#") Подушки
               .overlay.overlay--open
               .header-menu__open.header-menu-open
                 .container.header-menu-open__container 
@@ -102,25 +102,25 @@ header.header
                     .header-menu-open__title Подушки
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Взрослые
+                        a.header-menu-open__link.hover-link(href="#") Взрослые
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Детские
+                        a.header-menu-open__link.hover-link(href="#") Детские
                   .header-menu-open__col
                     .header-menu-open__title По материалу
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Вязко-эластичные
+                        a.header-menu-open__link.hover-link(href="#") Вязко-эластичные
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Watergel
+                        a.header-menu-open__link.hover-link(href="#") Watergel
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Memory Foam
+                        a.header-menu-open__link.hover-link(href="#") Memory Foam
                   a.header-menu-open__col(href="#") 
                     picture 
                       source(type="image/webp" srcset="images/header3.jpg")
                       img.header-menu-open__img(src="images/header3.jpg" alt="Подушки")
                     .header-menu-open__arr.arrow-after Ко всем подушкам
             li.header-menu__item 
-              a.header-menu__link(href="#") Кроватные основания
+              a.header-menu__link.hover-link(href="#") Кроватные основания
               .overlay.overlay--open
               .header-menu__open.header-menu-open
                 .container.header-menu-open__container 
@@ -128,18 +128,18 @@ header.header
                     .header-menu-open__title Кроватные основания
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Односпальные
+                        a.header-menu-open__link.hover-link(href="#") Односпальные
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Двуспальные
+                        a.header-menu-open__link.hover-link(href="#") Двуспальные
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") Детские
+                        a.header-menu-open__link.hover-link(href="#") Детские
                   .header-menu-open__col
                     .header-menu-open__title По типу
                     ul.header-menu-open__list 
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") С узкими ламелями
+                        a.header-menu-open__link.hover-link(href="#") С узкими ламелями
                       li.header-menu-open__item 
-                        a.header-menu-open__link(href="#") С широкими ламелями
+                        a.header-menu-open__link.hover-link(href="#") С широкими ламелями
                   a.header-menu-open__col(href="#") 
                     picture 
                       source(type="image/webp" srcset="images/header4.jpg")
@@ -147,20 +147,20 @@ header.header
                     .header-menu-open__arr.arrow-after Ко всем кроватным основаниям
         ul.header__icons.header-icons
           li.header-icons__item 
-            .header-icons__link.header-icons__link--search
+            button.header-icons__link.header-icons__link--search
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.5944 6.8076C13.168 4.38119 9.23401 4.38119 6.8076 6.8076C4.38119 9.23401 4.38119 13.168 6.8076 15.5944C9.23401 18.0208 13.168 18.0208 15.5944 15.5944C18.0208 13.168 18.0208 9.23401 15.5944 6.8076ZM5.39338 5.39338C8.60084 2.18593 13.8012 2.18593 17.0086 5.39338C19.9767 8.36148 20.1982 13.0361 17.6731 16.2589L21.799 20.3848C22.1895 20.7753 22.1895 21.4085 21.799 21.799C21.4084 22.1895 20.7753 22.1895 20.3848 21.799L16.2589 17.6731C13.0361 20.1982 8.36148 19.9767 5.39338 17.0086C2.18593 13.8012 2.18593 8.60084 5.39338 5.39338Z" fill="#A94A24"/>
               </svg>
-              form.header-icons__search.header-icons-search(action="#") 
-                label.header-icons-search__icon(for="search") 
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.5944 6.8076C13.168 4.38119 9.23401 4.38119 6.8076 6.8076C4.38119 9.23401 4.38119 13.168 6.8076 15.5944C9.23401 18.0208 13.168 18.0208 15.5944 15.5944C18.0208 13.168 18.0208 9.23401 15.5944 6.8076ZM5.39338 5.39338C8.60084 2.18593 13.8012 2.18593 17.0086 5.39338C19.9767 8.36148 20.1982 13.0361 17.6731 16.2589L21.799 20.3848C22.1895 20.7753 22.1895 21.4085 21.799 21.799C21.4084 22.1895 20.7753 22.1895 20.3848 21.799L16.2589 17.6731C13.0361 20.1982 8.36148 19.9767 5.39338 17.0086C2.18593 13.8012 2.18593 8.60084 5.39338 5.39338Z" fill="#B1B1B1"/>
-                  </svg>
-                input.header-icons-search__input(type="text" id="search" placeholder="Поиск")
-                button.header-icons-search__btn(type="submit")
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#B1B1B1"/>
-                  </svg>
+            form.header-icons__search.header-icons-search(action="#") 
+              label.header-icons-search__icon(for="search") 
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5944 6.8076C13.168 4.38119 9.23401 4.38119 6.8076 6.8076C4.38119 9.23401 4.38119 13.168 6.8076 15.5944C9.23401 18.0208 13.168 18.0208 15.5944 15.5944C18.0208 13.168 18.0208 9.23401 15.5944 6.8076ZM5.39338 5.39338C8.60084 2.18593 13.8012 2.18593 17.0086 5.39338C19.9767 8.36148 20.1982 13.0361 17.6731 16.2589L21.799 20.3848C22.1895 20.7753 22.1895 21.4085 21.799 21.799C21.4084 22.1895 20.7753 22.1895 20.3848 21.799L16.2589 17.6731C13.0361 20.1982 8.36148 19.9767 5.39338 17.0086C2.18593 13.8012 2.18593 8.60084 5.39338 5.39338Z" fill="#B1B1B1"/>
+                </svg>
+              input.header-icons-search__input(type="text" id="search" placeholder="Поиск")
+              button.header-icons-search__btn(type="submit")
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#B1B1B1"/>
+                </svg>
 
           li.header-icons__item 
             a.header-icons__link(href="#" data-count="13") 

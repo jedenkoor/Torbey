@@ -55,6 +55,10 @@
     margin-right: 16px;
     background: #eaecf9;
     border-radius: 50%;
+    &:hover,
+    &:focus {
+      animation: pulse 0.4s;
+    }
   }
   &__copy {
     margin: 0;

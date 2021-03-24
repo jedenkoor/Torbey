@@ -41,6 +41,10 @@
       border: none;
       background: none;
       cursor: pointer;
+      &:hover,
+      &:focus {
+        animation: pulse 0.4s;
+      }
       &:after {
         content: '';
         width: 10px;
@@ -62,6 +66,8 @@
       left: 0;
       display: none;
       width: 100%;
+      padding: 0;
+      list-style: none;
       background: #ffffff;
       border: 1px solid #e1e1e1;
       box-shadow: 0px 2px 12px #e9eaec;
@@ -72,9 +78,13 @@
       }
     }
     &__item {
+      width: 100%;
       padding: 8px 15px;
       line-height: 24px;
       cursor: pointer;
+      background: none;
+      border: none;
+      text-align: left;
       &:hover,
       &:focus {
         background: $neutral-color-10;

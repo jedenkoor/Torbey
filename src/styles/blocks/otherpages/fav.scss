@@ -1,0 +1,19 @@
+.fav {
+  &__empty {
+    display: flex;
+    justify-content: space-between;
+    .catalog__col {
+      padding-top: 0;
+    }
+  }
+  &__text {
+    margin-top: 0;
+    margin-bottom: 32px;
+    font-size: 31px;
+    line-height: 40px;
+  }
+  &__link {
+    display: inline-block;
+    padding: 12px 25px;
+  }
+}

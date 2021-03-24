@@ -1,0 +1,76 @@
+extends ../template
+
+block variables
+  - var title = 'Блог'
+  - var breadrumbs = 1
+
+block content
+  section.blog.margin-section
+    .container
+      h1.h1title Блог
+      .catalog__filters 
+        ul.catalog__tags.catalog-tags 
+          li.catalog-tags__item 
+            input(type="radio" name="blog" id="blog1" checked)
+            label.catalog-tags__btn(for="blog1" tabindex="0") Статьи
+          li.catalog-tags__item 
+            input(type="radio" name="blog" id="blog2")
+            label.catalog-tags__btn(for="blog2" tabindex="0") Новости
+        .catalog__sort.catalog-sort
+          span.catalog-sort__num 314 позиций
+          .catalog-sort__select.select
+            button.catalog-sort__current.select-open.hover-link Сортировать по
+            ul.catalog-sort__list.select-block
+              li.catalog-sort__item.select-item 
+                button Цене по возрастанию
+              li.catalog-sort__item.select-item 
+                button Цене по убыванию
+              li.catalog-sort__item.select-item 
+                button Названию
+              li.catalog-sort__item.select-item 
+                button Размеру
+              li.catalog-sort__item.select-item 
+                button Новизне
+      .catalog__wrapper
+        ul.articles__list 
+          -for(i = 0; i < 2; i++)
+            li.articles__item.articles-item
+              a.articles-item__link(href="#") 
+                .articles-item__img
+                  picture 
+                    source(type="image/webp" srcset="images/good1.jpg")
+                    img(src="images/good1.jpg" alt="Анатомические матрасы")
+                h3.articles-item__title Анатомические матрасы
+                span.articles-item__date 12.07.2020 
+            li.articles__item.articles-item
+              a.articles-item__link(href="#") 
+                .articles-item__img
+                  picture 
+                    source(type="image/webp" srcset="images/good1.jpg")
+                    img(src="images/good1.jpg" alt="Как выбрать наматрасник")
+                h3.articles-item__title Как выбрать наматрасник
+                span.articles-item__date 12.07.2020 
+            li.articles__item.articles-item
+              a.articles-item__link(href="#") 
+                .articles-item__img
+                  picture 
+                    source(type="image/webp" srcset="images/good1.jpg")
+                    img(src="images/good1.jpg" alt="Что такое топпер?")
+                h3.articles-item__title Что такое топпер?
+                span.articles-item__date 12.07.2020 
+
+        ul.catalog__pagination.catalog-pagination
+          li.catalog-pagination__item 
+            .catalog-pagination__link.catalog-pagination__link--arr ← назад
+          li.catalog-pagination__item 
+            .catalog-pagination__link.catalog-pagination__link--active 1
+          li.catalog-pagination__item 
+            a.catalog-pagination__link(href="#") 2
+          li.catalog-pagination__item 
+            a.catalog-pagination__link(href="#") 3
+          li.catalog-pagination__item 
+            a.catalog-pagination__link(href="#") 4
+          li.catalog-pagination__item 
+            a.catalog-pagination__link.catalog-pagination__link--arr(href="#") далее →
+
+  include ../includes/form.pug

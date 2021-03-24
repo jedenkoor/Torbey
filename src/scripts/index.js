@@ -13,23 +13,40 @@ import 'glightbox/dist/css/glightbox.min.css'
       document.querySelector('body').style.opacity = 1
     }, 300)
 
-    // Header behavior
-    let directionScroll = []
-    document.addEventListener('scroll', (e) => {
-      directionScroll.push(window.pageYOffset)
-      if (directionScroll[0] < directionScroll[1]) {
-        directionScroll = directionScroll.slice(0, 0)
-        document
-          .querySelector('.header__row:nth-child(2)')
-          .classList.add('header__row--hidden')
-      }
-      if (directionScroll[0] > directionScroll[1]) {
-        directionScroll = directionScroll.slice(0, 0)
-        document
-          .querySelector('.header__row:nth-child(2)')
-          .classList.remove('header__row--hidden')
-      }
-    })
+    // Click checkboxes
+    const labels = document.querySelectorAll('label[for]')
+    if (labels.length) {
+      labels.forEach((item) => {
+        item.addEventListener('keyup', (e) => {
+          if (e.keyCode === 13) {
+            e.preventDefault()
+            item.click()
+          }
+        })
+        item.addEventListener('click', (e) => {
+          const id = item.getAttribute('for')
+          const elemId = document.getElementById(id)
+          e.preventDefault()
+          if (elemId.checked) {
+            if (elemId.getAttribute('type') !== 'radio') {
+              elemId.checked = false
+            }
+          } else {
+            elemId.checked = true
+          }
+        })
+      })
+    }
+
+    // Select input on focus
+    const inputs = document.querySelectorAll('input')
+    if (inputs.length) {
+      inputs.forEach((item) => {
+        item.addEventListener('focus', function () {
+          this.select()
+        })
+      })
+    }
 
     // Goods slider
     if (document.querySelectorAll('.goods-slider__container').length) {
@@ -226,10 +243,6 @@ import 'glightbox/dist/css/glightbox.min.css'
         maxInput.addEventListener('change', function () {
           this.value = numberFormat(this.value)
           item.noUiSlider.set([null, this.value.replace(/\s/g, '')])
-        })
-
-        maxInput.addEventListener('focus', function () {
-          this.select()
         })
       })
     }

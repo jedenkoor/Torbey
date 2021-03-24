@@ -25,6 +25,10 @@
     top: 28px;
     right: 28px;
     cursor: pointer;
+    &:hover,
+    &:focus {
+      animation: pulse 0.4s;
+    }
   }
   &__title {
     margin-top: 0;

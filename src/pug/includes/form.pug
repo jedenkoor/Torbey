@@ -7,9 +7,11 @@ section.form
         input(type="tel" id="form-input" placeholder=" " data-type="tel" data-required)
         label(for="form-input") Телефон
         button.form-select__show.select-open
-      .form-select__block.select-block
-        .form-select__item.form-select__item--current.select-item(data-select="tel") Телефон
-        .form-select__item.select-item(data-select="email") E-mail
+      ul.form-select__block.select-block
+        li
+          button.form-select__item.form-select__item--current.select-item(data-select="tel") Телефон
+        li
+          button.form-select__item.select-item(data-select="email") E-mail
     .form__col
       button.form__btn.btn-background(type="submit") Проконсультироваться
       p.form__subtext Нажимая на кнопку, вы соглашаетесь на 

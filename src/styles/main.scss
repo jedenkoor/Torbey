@@ -248,6 +248,30 @@ input[type='number'] {
   overflow: visible;
 }
 
+.hover-link {
+  transition: color 0.1s;
+  &:hover {
+    text-decoration: underline;
+    color: $neutral-color-4;
+  }
+  &:focus {
+    text-decoration: underline;
+    color: $text-color;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @import 'blocks/common/popup';
 @import 'blocks/common/callback';
 @import 'blocks/common/header';
@@ -266,3 +290,6 @@ input[type='number'] {
 @import 'blocks/otherpages/good';
 @import 'blocks/otherpages/about';
 @import 'blocks/otherpages/achievements';
+@import 'blocks/otherpages/fav';
+@import 'blocks/otherpages/basket';
+@import 'blocks/otherpages/contacts';
