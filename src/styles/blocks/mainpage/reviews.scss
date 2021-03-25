@@ -90,7 +90,7 @@
     &__slide {
       width: 400px;
       &.swiper-slide-thumb-active .reviews-authors__wrap {
-        border: 1px solid #30c18a;
+        border: 1px solid $tertiary-tint-color;
       }
     }
     &__wrap {

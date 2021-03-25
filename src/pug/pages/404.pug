@@ -1,0 +1,14 @@
+extends ../template
+
+block variables
+  - var title = '404'
+
+block content
+  section.page404
+    picture
+      source(type="image/webp" srcset="images/404.jpg")
+      img.page404__img(src="images/404.jpg" alt="404")
+    .page404__content 
+      h1.page404__title 404
+      h2.page404__subtitle Страница не найдена
+      p.page404__text Проверьте написание адреса или вернитесь на <a class="popup-link" href="#">главную</a>

@@ -175,16 +175,9 @@ import 'glightbox/dist/css/glightbox.min.css'
         })
         document.addEventListener('click', (e) => {
           const container = document.querySelector('.select-block')
-          if (
-            e.target !== container &&
-            e.target.closest('.select-block') === null &&
-            e.target !== item
-          ) {
+          if (e.target !== container && e.target.closest('.select-block') === null && e.target !== item) {
             item.classList.remove('active')
-            item
-              .closest('.select')
-              .querySelector('.select-block')
-              .classList.remove('active')
+            item.closest('.select').querySelector('.select-block').classList.remove('active')
           }
         })
       })
@@ -197,10 +190,7 @@ import 'glightbox/dist/css/glightbox.min.css'
     }
     function toggleOptions(btn) {
       btn.classList.toggle('active')
-      btn
-        .closest('.select')
-        .querySelector('.select-block')
-        .classList.toggle('active')
+      btn.closest('.select').querySelector('.select-block').classList.toggle('active')
     }
 
     // Init price range slider
@@ -287,20 +277,14 @@ import 'glightbox/dist/css/glightbox.min.css'
     // Tabs
     if (document.querySelectorAll('.tabs').length) {
       const allTabsNavigationItems = document.querySelectorAll('.tabs__btn')
-      allTabsNavigationItems.forEach((item) =>
-        item.addEventListener('click', tabChange)
-      )
+      allTabsNavigationItems.forEach((item) => item.addEventListener('click', tabChange))
     }
 
     function tabChange(e) {
       e.preventDefault()
       const tabDataAttr = e.target.getAttribute('data-tab')
-      const tabContainers = e.target
-        .closest('.tabs')
-        .querySelectorAll('.tabs__container')
-      const tabNavigationItem = e.target
-        .closest('.tabs')
-        .querySelectorAll('.tabs__btn')
+      const tabContainers = e.target.closest('.tabs').querySelectorAll('.tabs__container')
+      const tabNavigationItem = e.target.closest('.tabs').querySelectorAll('.tabs__btn')
 
       tabContainers.forEach((item) => {
         item.classList.remove('tabs__container--active')
@@ -332,6 +316,78 @@ import 'glightbox/dist/css/glightbox.min.css'
       setTimeout(function () {
         swiper.update()
       }, 300)
+    }
+
+    // Show reviews
+    const reviews = document.querySelectorAll('.reviews-page__item')
+    if (reviews.length) {
+      reviews.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          const reviewText = item.querySelector('.reviews-page-item__content').innerHTML
+          const reviewLink = item.querySelector('.reviews-page-item__source')
+          if (e.target === reviewLink) {
+            return false
+          }
+
+          if (!item.classList.contains('reviews-page__item--active')) {
+            reviews.forEach((item) => {
+              item.classList.remove('reviews-page__item--active')
+              item.querySelector('.reviews-page-item__show').innerText = 'Развернуть'
+              if (document.querySelector('.reviews-page__item--full')) {
+                document.querySelector('.reviews-page__item--full').remove()
+              }
+            })
+
+            item.classList.add('reviews-page__item--active')
+            item.querySelector('.reviews-page-item__show').innerText = 'Свернуть'
+            if (Array.from(reviews).indexOf(item) % 2) {
+              item.insertAdjacentHTML(
+                'afterend',
+                `
+                  <li class="reviews-page__item reviews-page-item reviews-page__item--full" style="grid-column: 1 / 3;">
+                    <p class="reviews-page-item__content" style="margin-bottom: 0; -webkit-line-clamp: initial;">${reviewText}</p>
+                  </li>
+                `
+              )
+            } else {
+              item.nextElementSibling.insertAdjacentHTML(
+                'afterend',
+                `
+                  <li class="reviews-page__item reviews-page-item reviews-page__item--full" style="grid-column: 1 / 3;">
+                    <p class="reviews-page-item__content" style="margin-bottom: 0; -webkit-line-clamp: initial;">${reviewText}</p>
+                  </li>
+                `
+              )
+            }
+          } else {
+            item.classList.remove('reviews-page__item--active')
+            item.querySelector('.reviews-page-item__show').innerText = 'Развернуть'
+            if (document.querySelector('.reviews-page__item--full')) {
+              document.querySelector('.reviews-page__item--full').remove()
+            }
+          }
+        })
+      })
+    }
+
+    // Text-page aside slider
+    if (document.querySelectorAll('.text-aside-slider__container').length) {
+      initSliderTextAside()
+    }
+    function initSliderTextAside() {
+      ;(() =>
+        new Swiper('.text-aside-slider__container', {
+          effect: 'fade',
+          speed: 500,
+          pagination: {
+            el: '.text-aside-slider__container .swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            prevEl: '.text-aside__slider .swiper-button-prev',
+            nextEl: '.text-aside__slider .swiper-button-next'
+          }
+        }))()
     }
   })
 })()
