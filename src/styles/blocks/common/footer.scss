@@ -1,6 +1,9 @@
 .footer {
   background: #ffffff;
   box-shadow: 0px 2px 12px #e9eaec;
+  @include w1200 {
+    margin-bottom: 56px;
+  }
   &__row {
     &:first-child {
       padding: 64px 0;
