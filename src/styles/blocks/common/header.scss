@@ -207,6 +207,9 @@
       }
       &:not(:last-child) {
         margin-right: 56px;
+        @include w1366 {
+          margin-right: 40px;
+        }
       }
     }
     &__link {
@@ -228,7 +231,7 @@
     &-open {
       &__container {
         display: grid;
-        grid-template-columns: 312px 312px 1fr;
+        grid-template-columns: 23.7% 23.7% 1fr;
         grid-gap: 24px;
       }
       &__col {
@@ -236,7 +239,7 @@
         transform: translateY(-8px);
         &:last-child {
           transform: none;
-          width: 480px;
+          width: 74.3%;
           margin-left: auto;
           border-top: none;
           picture {

@@ -141,13 +141,22 @@
         &:not(:last-child) {
           margin-bottom: 16px;
         }
+        &--download {
+          &:before {
+            background: url('../images/icon-file.svg') center/contain no-repeat;
+          }
+        }
+        &--popup {
+          &:before {
+            background: url('../images/icon-popup.svg') center/contain no-repeat;
+          }
+        }
         &:before {
           content: '';
           width: 24px;
           height: 24px;
           flex-shrink: 0;
           margin-right: 12px;
-          background: url('../images/icon-file.svg') center/contain no-repeat;
         }
       }
     }

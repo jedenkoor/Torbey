@@ -344,7 +344,7 @@ import 'glightbox/dist/css/glightbox.min.css'
               item.insertAdjacentHTML(
                 'afterend',
                 `
-                  <li class="reviews-page__item reviews-page-item reviews-page__item--full" style="grid-column: 1 / 3;">
+                  <li class="reviews-page__item reviews-page-item reviews-page__item--full">
                     <p class="reviews-page-item__content" style="margin-bottom: 0; -webkit-line-clamp: initial;">${reviewText}</p>
                   </li>
                 `
@@ -353,7 +353,7 @@ import 'glightbox/dist/css/glightbox.min.css'
               item.nextElementSibling.insertAdjacentHTML(
                 'afterend',
                 `
-                  <li class="reviews-page__item reviews-page-item reviews-page__item--full" style="grid-column: 1 / 3;">
+                  <li class="reviews-page__item reviews-page-item reviews-page__item--full">
                     <p class="reviews-page-item__content" style="margin-bottom: 0; -webkit-line-clamp: initial;">${reviewText}</p>
                   </li>
                 `

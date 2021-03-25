@@ -191,12 +191,6 @@
           background: $tertiary-background-color;
           color: $tertiary-color;
         }
-        &.tabs__btn--active {
-          &:hover,
-          &:focus {
-            text-decoration: underline;
-          }
-        }
       }
     }
     &__tab {
