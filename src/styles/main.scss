@@ -26,6 +26,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   transition: opacity 0.2s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .wrapper {
@@ -43,18 +44,18 @@ body {
   max-width: 1368px;
   margin: 0 auto;
   padding: $padding-container;
-  @include w767 {
+  @include w1023 {
     padding: $mobile-padding-container;
   }
 }
 
 .margin-section {
   margin-bottom: $margin-section;
-  @include w1023 {
-    // margin-bottom: $tablet-margin-section;
+  @include w1200 {
+    margin-bottom: $laptop-margin-section;
   }
-  @include w767 {
-    // margin-bottom: $mobile-margin-section;
+  @include w1023 {
+    margin-bottom: $tablet-margin-section;
   }
 }
 
@@ -140,6 +141,17 @@ input[type='number'] {
   font-weight: normal;
   font-size: 61px;
   line-height: 72px;
+  @include w1200 {
+    margin-bottom: 24px;
+    font-size: 39px;
+    line-height: 48px;
+  }
+  line-height: 72px;
+  @include w767 {
+    margin-bottom: 16px;
+    font-size: 31px;
+    line-height: 40px;
+  }
 }
 
 .h2title {
@@ -148,6 +160,16 @@ input[type='number'] {
   font-weight: normal;
   font-size: 48px;
   line-height: 56px;
+  @include w1200 {
+    margin-bottom: 32px;
+    font-size: 31px;
+    line-height: 40px;
+  }
+  line-height: 72px;
+  @include w767 {
+    font-size: 25px;
+    line-height: 32px;
+  }
 }
 
 .popup-link {
@@ -176,6 +198,10 @@ input[type='number'] {
     margin-left: 12px;
     transition: transform 0.3s;
     background: url('../images/arrow-right.svg') center/contain no-repeat;
+    @include w1023 {
+      width: 17px;
+      height: 10px;
+    }
   }
   &:hover {
     &:after {

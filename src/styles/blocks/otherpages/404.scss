@@ -5,6 +5,12 @@
     height: 888px;
     object-fit: cover;
     object-position: right bottom;
+    @include w1023 {
+      height: 702px;
+    }
+    @include w767 {
+      height: 516px;
+    }
   }
   &__content {
     position: absolute;
@@ -12,6 +18,12 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    @include w1023 {
+      top: 72px;
+    }
+    @include w767 {
+      top: 40px;
+    }
   }
   &__title {
     margin-top: 0;
@@ -21,6 +33,15 @@
     line-height: 312px;
     letter-spacing: 0.01em;
     color: $neutral-color-2;
+    @include w1023 {
+      font-size: 233px;
+      line-height: 226px;
+    }
+    @include w767 {
+      margin-bottom: 16px;
+      font-size: 126px;
+      line-height: 140px;
+    }
   }
   &__subtitle {
     margin-top: 0;
@@ -28,10 +49,20 @@
     font-weight: normal;
     font-size: 61px;
     line-height: 72px;
+    white-space: nowrap;
+    @include w767 {
+      margin-bottom: 8px;
+      font-size: 25px;
+      line-height: 32px;
+    }
   }
   &__text {
     margin: 0;
     font-size: 20px;
     line-height: 24px;
+    @include w767 {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 }

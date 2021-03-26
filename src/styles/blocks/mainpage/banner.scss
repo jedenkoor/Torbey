@@ -7,6 +7,13 @@
   padding-bottom: 64px;
   color: #ffffff;
   margin-bottom: 120px;
+  @include w1200 {
+    margin-bottom: 100px;
+  }
+  @include w1023 {
+    margin-bottom: 80px;
+    padding-bottom: 40px;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -14,11 +21,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(9, 14, 42, 0.54) 50.44%,
-      rgba(9, 14, 42, 0) 100%
-    );
+    background: linear-gradient(90deg, rgba(9, 14, 42, 0.54) 50.44%, rgba(9, 14, 42, 0) 100%);
   }
   &__img {
     position: absolute;
@@ -37,18 +40,25 @@
     max-width: 990px;
     margin-top: 0;
     margin-bottom: 29px;
-    font-size: 61px;
-    line-height: 72px;
-    font-weight: normal;
+    @include w1023 {
+      max-width: 630px;
+      margin-bottom: 15px;
+    }
   }
   &__text {
+    margin-top: 0;
     margin-bottom: 44px;
     font-size: 20px;
+    @include w1023 {
+      margin-bottom: 32px;
+    }
   }
   &__btns {
     display: flex;
   }
   &__btn {
+    display: flex;
+    align-items: center;
     margin-right: 25px;
     padding: 10px 24px;
     background: none;
@@ -58,6 +68,9 @@
     line-height: 24px;
     cursor: pointer;
     transition: 0.1s;
+    @include w1023 {
+      padding: 6px 15px;
+    }
     &--background {
       background-color: #fff;
       color: #222222;

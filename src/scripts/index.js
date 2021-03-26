@@ -56,9 +56,14 @@ import 'glightbox/dist/css/glightbox.min.css'
       const swiper = new Swiper('.goods-slider__container', {
         speed: 500,
         freeMode: true,
-        spaceBetween: 24,
+        spaceBetween: 16,
         slidesPerView: 3,
-        slideToClickedSlide: true
+        slideToClickedSlide: true,
+        breakpoints: {
+          1024: {
+            spaceBetween: 24
+          }
+        }
       })
       setTimeout(function () {
         swiper.update()
@@ -71,12 +76,17 @@ import 'glightbox/dist/css/glightbox.min.css'
     }
     function initSliderReviews() {
       const galleryThumbs = new Swiper('.reviews__authors', {
-        spaceBetween: 24,
+        spaceBetween: 16,
         slidesPerView: 'auto',
         slidesOffsetAfter: 64,
         navigation: {
           prevEl: '.reviews__col .swiper-button-prev',
           nextEl: '.reviews__col .swiper-button-next'
+        },
+        breakpoints: {
+          1024: {
+            spaceBetween: 24
+          }
         }
       })
 
@@ -85,8 +95,7 @@ import 'glightbox/dist/css/glightbox.min.css'
           effect: 'fade',
           allowTouchMove: false,
           thumbs: {
-            swiper: galleryThumbs,
-            autoScrollOffset: 1
+            swiper: galleryThumbs
           }
         }))()
     }

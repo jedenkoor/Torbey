@@ -2,12 +2,30 @@
   margin-bottom: 120px;
   padding: 65px 0 66px;
   background-color: $neutral-color-10;
+  @include w1200 {
+    margin-bottom: 100px;
+    padding: 52px 0;
+  }
+  @include w1023 {
+    margin-bottom: 80px;
+    padding: 40px 0;
+  }
   &__title {
     margin-top: 0;
     margin-bottom: 63px;
     font-weight: normal;
     font-size: 39px;
     line-height: 48px;
+    @include w1200 {
+      margin-bottom: 52px;
+      font-size: 35px;
+      line-height: 44px;
+    }
+    @include w1023 {
+      margin-bottom: 40px;
+      font-size: 31px;
+      line-height: 40px;
+    }
   }
   &__list {
     display: grid;
@@ -15,10 +33,18 @@
     grid-gap: 24px;
     padding: 0;
     list-style: none;
+    @include w1023 {
+      grid-gap: 16px;
+    }
   }
   &-item {
     &__icon {
       margin-bottom: 10px;
+      @include w1023 {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 6px;
+      }
     }
     &__title {
       margin-top: 0;
@@ -26,11 +52,27 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 28px;
+      @include w1200 {
+        font-size: 18px;
+        line-height: 26px;
+      }
+      @include w1023 {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
     &__text {
       margin: 0;
       line-height: 24px;
       color: $neutral-color-6;
+      @include w1200 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include w1023 {
+        font-size: 12px;
+        line-height: 17px;
+      }
     }
   }
 }

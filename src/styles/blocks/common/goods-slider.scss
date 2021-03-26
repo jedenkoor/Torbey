@@ -36,8 +36,14 @@
       margin-bottom: 13px;
       border-radius: 8px;
       overflow: hidden;
-      width: 424px;
       height: 280px;
+      @include w1200 {
+        height: 215px;
+      }
+      @include w1023 {
+        height: 149px;
+        margin-bottom: 8px;
+      }
       &:after {
         content: '';
         position: absolute;
@@ -65,6 +71,11 @@
       flex-wrap: wrap;
       padding: 0;
       list-style: none;
+      @include w1023 {
+        top: 5px;
+        right: 6px;
+        left: 6px;
+      }
     }
     &__tag {
       margin-right: 12px;
@@ -73,6 +84,10 @@
       border-radius: 4px;
       font-size: 12px;
       line-height: 16px;
+      @include w1023 {
+        padding: 0 4px;
+        font-size: 10px;
+      }
       &--best {
         color: $secondary-color;
         background: #e6e9f8;
@@ -87,6 +102,17 @@
       background: none;
       border: none;
       cursor: pointer;
+      @include w1023 {
+        padding: 5px 6px;
+        top: 0;
+        right: 0;
+      }
+      svg {
+        @include w1023 {
+          width: 16px;
+          height: 16px;
+        }
+      }
       path {
         transition: 0.2s;
       }
@@ -121,6 +147,20 @@
       cursor: pointer;
       opacity: 0;
       transition: 0.2s;
+      @include w1200 {
+        opacity: 1;
+      }
+      @include w1023 {
+        width: 32px;
+        height: 32px;
+        border: 1px solid $primary-color;
+      }
+      svg {
+        @include w1023 {
+          width: 16px;
+          height: 16px;
+        }
+      }
       path {
         transition: opacity 0.2s;
       }
@@ -140,10 +180,25 @@
         }
       }
     }
+    &__row {
+      @include w1023 {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
     &__price {
       margin-right: 5px;
       font-size: 25px;
       line-height: 32px;
+      @include w1200 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      @include w1023 {
+        margin-top: 2px;
+        font-size: 16px;
+        line-height: 24px;
+      }
       &--newprice {
         color: $system-error-color;
       }
@@ -151,6 +206,14 @@
     &__oldprice {
       color: $neutral-color-6;
       text-decoration: line-through;
+      @include w1200 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include w1023 {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
     &__name {
       display: inline-block;
@@ -159,6 +222,14 @@
       font-weight: normal;
       font-size: 20px;
       line-height: 32px;
+      @include w1200 {
+        font-size: 18px;
+        line-height: 28px;
+      }
+      @include w1023 {
+        font-size: 16px;
+        line-height: 24px;
+      }
     }
   }
 }

@@ -37,6 +37,9 @@
       margin-bottom: 13px;
       border-radius: 8px;
       overflow: hidden;
+      @include w1200 {
+        height: 214px;
+      }
       &:after {
         content: '';
         position: absolute;
@@ -60,10 +63,17 @@
       font-weight: normal;
       font-size: 25px;
       line-height: 32px;
+      @include w1200 {
+        font-size: 22px;
+        line-height: 28px;
+      }
     }
     &__date {
-      line-height: 24px;
       color: $neutral-color-5;
+      @include w1200 {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
   }
 }

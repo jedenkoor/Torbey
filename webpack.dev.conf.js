@@ -13,8 +13,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
 
   devServer: {
-    open: true
-    //host: '0.0.0.0'
+    //open: true
+    host: '0.0.0.0'
   },
 
   entry: {

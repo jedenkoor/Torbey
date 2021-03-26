@@ -5,12 +5,33 @@
     object-fit: cover;
     margin-bottom: 40px;
     border-radius: 8px;
+    @include w1200 {
+      height: 475px;
+    }
+    @include w1023 {
+      transform: translateX(-16px);
+      width: calc(100% + 32px);
+      max-width: none;
+      height: 349px;
+      margin-bottom: 24px;
+      border-radius: 0;
+    }
   }
   &__content {
     display: grid;
     grid-template-columns: 1fr 424px;
     grid-gap: 125px;
     padding-right: 11px;
+    @include w1200 {
+      grid-template-columns: 1fr 364px;
+      grid-gap: 40px;
+      padding-right: 0;
+    }
+    @include w1023 {
+      position: relative;
+      display: block;
+      padding-bottom: 73px;
+    }
     p {
       margin-top: 0;
       margin-bottom: 0;
@@ -27,6 +48,9 @@
     padding-top: 6px;
     line-height: 24px;
     color: $neutral-color-3;
+    @include w1023 {
+      padding-top: 16px;
+    }
   }
   &__btn {
     display: inline-block;
@@ -34,5 +58,12 @@
     padding: 8px 24px;
     font-weight: 500;
     font-size: 16px;
+    @include w1023 {
+      position: absolute;
+      bottom: 1px;
+    }
+    @include w1023 {
+      padding: 4px 16px;
+    }
   }
 }

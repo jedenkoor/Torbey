@@ -11,7 +11,7 @@ block content
       source(type="image/webp" srcset="images/banner.jpg")
       img.banner__img(src="images/banner.jpg" alt="Эргономичные матрасы и изделия для комфортного сна")
     .container.banner__container
-      h1.banner__title Эргономичные матрасы и изделия для комфортного сна
+      h1.banner__title.h1title Эргономичные матрасы и изделия для комфортного сна
       p.banner__text Производство фабрики «Торбеевские матрасы»
       .banner__btns 
         a.banner__btn.banner__btn--background(href="#") Выбрать матрас
@@ -26,20 +26,23 @@ block content
             picture 
               source(type="image/webp" srcset="images/action1.jpg")
               img.cards-actions__img(src="images/action1.jpg" alt="Бесплатно утилизируем матрас")
-            h3.cards-actions__title Бесплатно утилизируем матрас
+            .cards-actions__info
+              h3.cards-actions__title Бесплатно утилизируем матрас
         li.cards-actions__item
           a.cards-actions__link(href="#") 
             picture 
               source(type="image/webp" srcset="images/action2.jpg")
               img.cards-actions__img(src="images/action2.jpg" alt="-10% на вторую покупку")
-            h3.cards-actions__title -10% на вторую покупку
-            p.cards-actions__text Кроме подушки
+            .cards-actions__info
+              h3.cards-actions__title -10% на вторую покупку
+              p.cards-actions__text Кроме подушки
         li.cards-actions__item
           a.cards-actions__link(href="#") 
             picture 
               source(type="image/webp" srcset="images/action3.jpg")
               img.cards-actions__img(src="images/action3.jpg" alt="Подарки от 10 000 руб.")
-            h3.cards-actions__title Подарки от 10 000 руб.
+            .cards-actions__info
+              h3.cards-actions__title Подарки от 10 000 руб.
 
   section.cards 
     .container

@@ -100,6 +100,7 @@
   top: 0;
   &-mobile {
     position: fixed;
+    z-index: 10;
     bottom: 0;
     left: 0;
     right: 0;
@@ -128,27 +129,33 @@
       justify-content: center;
       height: 100%;
       font-size: 12px;
+      line-height: 16px;
       color: $neutral-color-6;
+      @include w360 {
+        font-size: 10px;
+      }
     }
   }
   &__row {
     position: relative;
     background-color: #fff;
-    &:not(:first-child) {
-      border-top: 1px solid #e1e1e1;
-    }
-    &:last-child {
-      box-shadow: 0px 1px 24px rgba(59, 59, 59, 0.12);
-    }
-    &:nth-child(1) {
+    &:first-child {
       z-index: 2;
       padding: 4px 0;
-      .header__container {
-        position: relative;
+      @include w1200 {
+        box-shadow: 0px 1px 24px rgba(59, 59, 59, 0.12);
+      }
+      @include w1023 {
+        padding: 8px 0;
       }
     }
-    &:nth-child(2) {
+    &:last-child {
+      border-top: 1px solid #e1e1e1;
+      box-shadow: 0px 1px 24px rgba(59, 59, 59, 0.12);
       transition: transform 0.3s;
+      @include w1200 {
+        display: none;
+      }
     }
     &--hidden {
       transform: translateY(-56px);
@@ -172,6 +179,9 @@
     background: none;
     border: none;
     cursor: pointer;
+    @include w1200 {
+      display: none;
+    }
     &:hover,
     &:focus {
       animation: pulse 0.4s;
@@ -180,6 +190,14 @@
   &__logo {
     margin-right: auto;
     margin-left: 40px;
+    @include w1200 {
+      margin-left: 0;
+    }
+    img {
+      @include w1023 {
+        width: 137px;
+      }
+    }
   }
   &__info {
     display: flex;
@@ -189,6 +207,9 @@
     display: inline-block;
     font-weight: 500;
     font-size: 20px;
+    @include w1023 {
+      font-size: 16px;
+    }
   }
   &__status {
     display: flex;
@@ -217,6 +238,9 @@
     margin-left: 39px;
     padding: 6px 15px;
     cursor: pointer;
+    @include w1023 {
+      display: none;
+    }
   }
   &-menu {
     &__list {
@@ -228,8 +252,6 @@
       padding: 15px 28px 16px;
       @include w1366 {
         padding: 15px 20px 16px;
-      }
-      .overlay {
       }
       &:hover {
         .overlay,
@@ -244,9 +266,6 @@
       }
       &:first-child {
         padding-left: 0;
-        @include w1366 {
-          margin-right: 40px;
-        }
       }
     }
     &__link {
