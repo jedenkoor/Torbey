@@ -49,7 +49,7 @@ import 'glightbox/dist/css/glightbox.min.css'
     }
 
     // Goods slider
-    if (document.querySelectorAll('.goods-slider__container').length) {
+    if (document.querySelectorAll('.goods-slider__container').length && document.documentElement.clientWidth > 767) {
       initSliderGoods()
     }
     function initSliderGoods() {
@@ -78,14 +78,14 @@ import 'glightbox/dist/css/glightbox.min.css'
       const galleryThumbs = new Swiper('.reviews__authors', {
         spaceBetween: 16,
         slidesPerView: 'auto',
-        slidesOffsetAfter: 64,
+        slidesOffsetAfter: 16,
         navigation: {
           prevEl: '.reviews__col .swiper-button-prev',
           nextEl: '.reviews__col .swiper-button-next'
         },
         breakpoints: {
-          1024: {
-            spaceBetween: 24
+          768: {
+            slidesOffsetAfter: 64
           }
         }
       })
@@ -254,14 +254,24 @@ import 'glightbox/dist/css/glightbox.min.css'
     }
     function initSliderGood() {
       const galleryThumbs = new Swiper('.good-content__thumbs', {
-        spaceBetween: 24,
+        spaceBetween: 16,
         slidesPerView: 'auto',
         slideToClickedSlide: true,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
+        slidesOffsetAfter: 16,
         navigation: {
           prevEl: '.good-content__wrap .swiper-button-prev',
           nextEl: '.good-content__wrap .swiper-button-next'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        breakpoints: {
+          1024: {
+            slidesOffsetAfter: 24
+          }
         }
       })
 
@@ -349,8 +359,8 @@ import 'glightbox/dist/css/glightbox.min.css'
 
             item.classList.add('reviews-page__item--active')
             item.querySelector('.reviews-page-item__show').innerText = 'Свернуть'
-            if (Array.from(reviews).indexOf(item) % 2) {
-              item.insertAdjacentHTML(
+            if (Array.from(reviews).indexOf(item) % 2 === 0 && document.documentElement.clientWidth > 767) {
+              item.nextElementSibling.insertAdjacentHTML(
                 'afterend',
                 `
                   <li class="reviews-page__item reviews-page-item reviews-page__item--full">
@@ -359,7 +369,7 @@ import 'glightbox/dist/css/glightbox.min.css'
                 `
               )
             } else {
-              item.nextElementSibling.insertAdjacentHTML(
+              item.insertAdjacentHTML(
                 'afterend',
                 `
                   <li class="reviews-page__item reviews-page-item reviews-page__item--full">
@@ -398,5 +408,16 @@ import 'glightbox/dist/css/glightbox.min.css'
           }
         }))()
     }
+
+    // // Reviews show all
+    // const reviewsBtns = document.querySelectorAll('.reviews-page-aside__show')
+    // if (reviewsBtns.length) {
+    //   reviewsBtns.forEach((item) => {
+    //     item.addEventListener('click', (e) => {
+    //       item.classList.toggle('reviews-page-aside__show--active')
+    //       item.nextElementSibling.classList.toggle('reviews-page-aside__content--active')
+    //     })
+    //   })
+    // }
   })
 })()

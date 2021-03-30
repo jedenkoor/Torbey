@@ -2,8 +2,15 @@
   &__empty {
     display: flex;
     justify-content: space-between;
+    @include w767 {
+      display: block;
+      padding-top: 16px;
+    }
     .catalog__col {
       padding-top: 0;
+      @include w767 {
+        margin-top: 24px;
+      }
     }
   }
   &__text {
@@ -11,9 +18,25 @@
     margin-bottom: 32px;
     font-size: 31px;
     line-height: 40px;
+    @include w1023 {
+      margin-bottom: 24px;
+      font-size: 25px;
+      line-height: 32px;
+    }
+    @include w767 {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   &__link {
     display: inline-block;
     padding: 12px 25px;
+    @include w1023 {
+      padding: 8px 17px;
+    }
+    @include w767 {
+      display: block;
+      text-align: center;
+    }
   }
 }

@@ -13,9 +13,9 @@ block content
           .text__tabs.tabs 
             ul.good-content__navigation.good-content-navigation
               li.good-content-navigation__item
-                button.good-content-navigation__btn.tabs__btn.tabs__btn--active(data-tab="1") Как ухаживать за матрасом
+                button.good-content-navigation__btn.tabs__btn(data-tab="1") Как ухаживать за матрасом
               li.good-content-navigation__item
-                button.good-content-navigation__btn.tabs__btn(data-tab="2") Матрасы на заказ
+                button.good-content-navigation__btn.tabs__btn.tabs__btn--active(data-tab="2") Матрасы на заказ
             .good-content__tab.good-content-tab.tabs__container(data-tab="1")
               h2.text__title Рекомендации по использованию матраса
               ul.text__list
@@ -92,54 +92,56 @@ block content
                       .good-content-slider__col 
                         p Высокий беспружинный матрас, предназначен для человека с индексом повышенного веса.
                         a.arrow-after(href="#") Заказать
-            .good-content__wrap
-              .good-content__thumbs.good-content-thumbs.swiper-container
-                ul.good-content-thumbs__wrapper.swiper-wrapper
-                  li.good-content-thumbs__slide.swiper-slide
-                    picture
-                      source(type="image/webp" srcset="images/text3.jpg")
-                      img(src="images/text3.jpg" alt="Матрас Царь")
-                  li.good-content-thumbs__slide.swiper-slide
-                    picture
-                      source(type="image/webp" srcset="images/text4.jpg")
-                      img(src="images/text4.jpg" alt="Матрас Царь")
-                  li.good-content-thumbs__slide.swiper-slide
-                    picture
-                      source(type="image/webp" srcset="images/text5.jpg")
-                      img(src="images/text5.jpg" alt="Матрас Царь")
-                  li.good-content-thumbs__slide.swiper-slide
-                    picture
-                      source(type="image/webp" srcset="images/text6.jpg")
-                      img(src="images/text6.jpg" alt="Матрас Царь")
-              .swiper-button-prev 
-                <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.66284 0.17157L0.117254 2.71715C-0.038956 2.87336 -0.038956 3.12663 0.117254 3.28284L2.66284 5.82842C2.81905 5.98463 3.07231 5.98463 3.22852 5.82842C3.38473 5.67222 3.38473 5.41895 3.22852 5.26274L1.36578 3.4H19.6001V2.6H1.36578L3.22852 0.737256C3.38473 0.581046 3.38473 0.32778 3.22852 0.17157C3.07231 0.0153604 2.81905 0.0153604 2.66284 0.17157Z" fill="#00996E"/>
-                </svg>
-              .swiper-button-next
-                <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3372 0.171601L19.8827 2.71719C20.039 2.87339 20.039 3.12666 19.8827 3.28287L17.3372 5.82846C17.181 5.98467 16.9277 5.98467 16.7715 5.82846C16.6153 5.67225 16.6153 5.41898 16.7715 5.26277L18.6342 3.40003H0.399902V2.60003H18.6342L16.7715 0.737286C16.6153 0.581076 16.6153 0.32781 16.7715 0.171601C16.9277 0.0153909 17.181 0.0153909 17.3372 0.171601Z" fill="#00996e"/>
-                </svg>
+              .good-content__wrap
+                .good-content__thumbs.good-content-thumbs.swiper-container
+                  ul.good-content-thumbs__wrapper.swiper-wrapper
+                    li.good-content-thumbs__slide.swiper-slide
+                      picture
+                        source(type="image/webp" srcset="images/text3.jpg")
+                        img(src="images/text3.jpg" alt="Матрас Царь")
+                    li.good-content-thumbs__slide.swiper-slide
+                      picture
+                        source(type="image/webp" srcset="images/text4.jpg")
+                        img(src="images/text4.jpg" alt="Матрас Царь")
+                    li.good-content-thumbs__slide.swiper-slide
+                      picture
+                        source(type="image/webp" srcset="images/text5.jpg")
+                        img(src="images/text5.jpg" alt="Матрас Царь")
+                    li.good-content-thumbs__slide.swiper-slide
+                      picture
+                        source(type="image/webp" srcset="images/text6.jpg")
+                        img(src="images/text6.jpg" alt="Матрас Царь")
+                .swiper-button-prev 
+                  <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.66284 0.17157L0.117254 2.71715C-0.038956 2.87336 -0.038956 3.12663 0.117254 3.28284L2.66284 5.82842C2.81905 5.98463 3.07231 5.98463 3.22852 5.82842C3.38473 5.67222 3.38473 5.41895 3.22852 5.26274L1.36578 3.4H19.6001V2.6H1.36578L3.22852 0.737256C3.38473 0.581046 3.38473 0.32778 3.22852 0.17157C3.07231 0.0153604 2.81905 0.0153604 2.66284 0.17157Z" fill="#00996E"/>
+                  </svg>
+                .swiper-button-next
+                  <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3372 0.171601L19.8827 2.71719C20.039 2.87339 20.039 3.12666 19.8827 3.28287L17.3372 5.82846C17.181 5.98467 16.9277 5.98467 16.7715 5.82846C16.6153 5.67225 16.6153 5.41898 16.7715 5.26277L18.6342 3.40003H0.399902V2.60003H18.6342L16.7715 0.737286C16.6153 0.581076 16.6153 0.32781 16.7715 0.171601C16.9277 0.0153909 17.181 0.0153909 17.3372 0.171601Z" fill="#00996e"/>
+                  </svg>
         aside.text__aside.text-aside
           .text-aside__content
-            .text-aside__slider.text-aside-slider
-              .text-aside-slider__container.swiper-container 
-                ul.text-aside-slider__wrapper.swiper-wrapper 
-                  -for(i = 0; i < 5; i++)
-                    li.text-aside-slider__slide.swiper-slide
-                      picture
-                        source(type="image/webp" srcset="images/text2.jpg")
-                        img.text-aside-slider__img(src="images/text2.jpg" alt="Шоурум")
-                .swiper-pagination
-              .swiper-button-prev 
-                <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.66284 0.17157L0.117254 2.71715C-0.038956 2.87336 -0.038956 3.12663 0.117254 3.28284L2.66284 5.82842C2.81905 5.98463 3.07231 5.98463 3.22852 5.82842C3.38473 5.67222 3.38473 5.41895 3.22852 5.26274L1.36578 3.4H19.6001V2.6H1.36578L3.22852 0.737256C3.38473 0.581046 3.38473 0.32778 3.22852 0.17157C3.07231 0.0153604 2.81905 0.0153604 2.66284 0.17157Z" fill="#00996E"/>
-                </svg>
-              .swiper-button-next
-                <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3372 0.171601L19.8827 2.71719C20.039 2.87339 20.039 3.12666 19.8827 3.28287L17.3372 5.82846C17.181 5.98467 16.9277 5.98467 16.7715 5.82846C16.6153 5.67225 16.6153 5.41898 16.7715 5.26277L18.6342 3.40003H0.399902V2.60003H18.6342L16.7715 0.737286C16.6153 0.581076 16.6153 0.32781 16.7715 0.171601C16.9277 0.0153909 17.181 0.0153909 17.3372 0.171601Z" fill="#00996e"/>
-                </svg>
-            p.text-aside__title В нашем шоуруме можно полежать
-            p.text-aside__text Ждем вас в пн–пт с 8-30 до 17-30, в сб и вс — по предварительному звонку на номера <a class="popup-link" href="tel:84992880170">+7 499 288 01 70</a> и <a class="popup-link" href="tel:89032479499">+7 903 247 94 99</a>
+            .text-aside__row
+              .text-aside__slider.text-aside-slider
+                .text-aside-slider__container.swiper-container 
+                  ul.text-aside-slider__wrapper.swiper-wrapper 
+                    -for(i = 0; i < 5; i++)
+                      li.text-aside-slider__slide.swiper-slide
+                        picture
+                          source(type="image/webp" srcset="images/text2.jpg")
+                          img.text-aside-slider__img(src="images/text2.jpg" alt="Шоурум")
+                  .swiper-pagination
+                .swiper-button-prev 
+                  <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.66284 0.17157L0.117254 2.71715C-0.038956 2.87336 -0.038956 3.12663 0.117254 3.28284L2.66284 5.82842C2.81905 5.98463 3.07231 5.98463 3.22852 5.82842C3.38473 5.67222 3.38473 5.41895 3.22852 5.26274L1.36578 3.4H19.6001V2.6H1.36578L3.22852 0.737256C3.38473 0.581046 3.38473 0.32778 3.22852 0.17157C3.07231 0.0153604 2.81905 0.0153604 2.66284 0.17157Z" fill="#00996E"/>
+                  </svg>
+                .swiper-button-next
+                  <svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3372 0.171601L19.8827 2.71719C20.039 2.87339 20.039 3.12666 19.8827 3.28287L17.3372 5.82846C17.181 5.98467 16.9277 5.98467 16.7715 5.82846C16.6153 5.67225 16.6153 5.41898 16.7715 5.26277L18.6342 3.40003H0.399902V2.60003H18.6342L16.7715 0.737286C16.6153 0.581076 16.6153 0.32781 16.7715 0.171601C16.9277 0.0153909 17.181 0.0153909 17.3372 0.171601Z" fill="#00996e"/>
+                  </svg>
+              .text-aside__col
+                p.text-aside__title В нашем шоуруме можно полежать
+                p.text-aside__text Ждем вас в пн–пт с 8-30 до 17-30, в сб и вс — по предварительному звонку на номера <a class="popup-link" href="tel:84992880170">+7 499 288 01 70</a> и <a class="popup-link" href="tel:89032479499">+7 903 247 94 99</a>
 
 
   section.text.margin-section
@@ -258,6 +260,11 @@ block content
               p Обращаем Ваше внимание на то, что в случае, если матрас забирают на экспертизу, на основании Постановления Правительства РФ от 19 января 1998 г. №55 на мебель (и матрасы, в частности) не распространяется требование покупателя о безвозмездном предоставлении ему на период ремонта или замены аналогичного товара. На основании того же Постановления матрасы входят в перечень непродовольственных товаров надлежащего качества, не подлежащих возврату или обмену на аналогичный товар других размера, формы, габарита, фасона, расцветки или комплектации. В частности, это относится к матрасам, не подошедшим по степени жесткости и размеру.
         aside.text__aside.text-aside 
           .text-aside__content
+            .text-aside-docs__wrap
+              .text-aside-docs__show 
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.5 3.33366C2.03976 3.33366 1.66667 3.70675 1.66667 4.16699V15.8337C1.66667 16.2939 2.03976 16.667 2.5 16.667H17.5C17.9602 16.667 18.3333 16.2939 18.3333 15.8337V6.66699C18.3333 6.20676 17.9602 5.83366 17.5 5.83366H11.4499C10.8531 5.83366 10.276 5.62018 9.82289 5.2318L7.84245 3.53428C7.69142 3.40482 7.49905 3.33366 7.30013 3.33366H2.5ZM0 4.16699C0 2.78628 1.11929 1.66699 2.5 1.66699H7.30013C7.8969 1.66699 8.474 1.88047 8.9271 2.26885L10.9075 3.96637C11.0586 4.09583 11.2509 4.16699 11.4499 4.16699H17.5C18.8807 4.16699 20 5.28628 20 6.66699V15.8337C20 17.2144 18.8807 18.3337 17.5 18.3337H2.5C1.11929 18.3337 0 17.2144 0 15.8337V4.16699Z" fill="#2437A9"/>
+                </svg>
             ul.text-aside__docs.text-aside-docs
               li.text-aside-docs__item.text-aside-docs__item--popup
                 a.popup-link.glightbox(href="images/garatiya1.jpg" data-gallery="gallery2") Пример гарантийного талона

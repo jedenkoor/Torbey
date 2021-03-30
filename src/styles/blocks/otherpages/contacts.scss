@@ -3,6 +3,25 @@
     display: grid;
     grid-template-columns: 57.6% 1fr;
     grid-gap: 136px;
+    @include w1366 {
+      grid-template-columns: 63% 1fr;
+      grid-gap: 48px;
+    }
+    @include w1200 {
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse;
+      grid-gap: 0;
+      padding-top: 72px;
+    }
+  }
+  &__content {
+    .h1title {
+      @include w1200 {
+        position: absolute;
+        top: 0;
+      }
+    }
   }
   &__row {
     display: grid;
@@ -11,6 +30,20 @@
     margin-bottom: 40px;
     padding: 0;
     list-style: none;
+    @include w1200 {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0;
+    }
+    @include w767 {
+      display: block;
+    }
+  }
+  &__col {
+    &:not(:last-child) {
+      @include w767 {
+        margin-bottom: 28px;
+      }
+    }
   }
   &__title {
     margin-top: 0;
@@ -18,6 +51,9 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
+    @include w767 {
+      margin-bottom: 8px;
+    }
   }
   &__text {
     margin: 0;
@@ -35,32 +71,66 @@
     grid-gap: 24px;
     padding: 0;
     list-style: none;
+    @include w1200 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0;
+    }
+    @include w767 {
+      display: block;
+    }
   }
   &__aside {
     padding-top: 17px;
+    @include w1200 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-top: 0;
+    }
+    @include w767 {
+      position: relative;
+    }
   }
   &__socials {
     display: flex;
     padding: 0;
     list-style: none;
+    @include w767 {
+      position: absolute;
+      display: block;
+      top: calc(100% + 32px);
+      right: 0;
+    }
   }
   &__social {
     margin-top: 47px;
     margin-bottom: 64px;
+    @include w1200 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
     &:not(:last-child) {
       margin-right: 24px;
+      @include w1200 {
+        margin-right: 16px;
+      }
+      @include w767 {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
     }
     a {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #eaecf9;
       &:hover,
       &:focus {
         animation: pulse 0.4s;
+      }
+    }
+    svg {
+      @include w767 {
+        width: 32px;
+        height: 32px;
       }
     }
   }
@@ -68,8 +138,51 @@
     padding: 24px;
     box-shadow: 0px 2px 12px #e9eaec;
     border-radius: 8px;
+    background-color: #fff;
+    @include w1200 {
+      position: absolute;
+      top: calc(100% + 3px);
+      right: 0;
+      display: none;
+      width: 328px;
+      max-width: calc(100vw - 32px);
+    }
+    &.active {
+      display: block;
+    }
   }
   &-details {
+    &__wrap {
+      @include w1200 {
+        position: absolute;
+        top: 3px;
+        right: 24px;
+      }
+      @include w1023 {
+        top: 5px;
+        right: 16px;
+      }
+      @include w767 {
+        top: auto;
+        bottom: calc(100% + 32px);
+        right: 0;
+      }
+    }
+    &__show {
+      display: none;
+      padding: 9px 16px;
+      background: #ffffff;
+      box-shadow: 0px 2px 12px #e9eaec;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      @include w1200 {
+        display: block;
+      }
+      &:hover,
+      &:focus {
+        border: 2px solid $neutral-color-9;
+      }
+    }
     &__list {
       margin-top: 15px;
       padding-top: 16px;

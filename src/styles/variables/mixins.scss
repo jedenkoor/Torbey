@@ -34,7 +34,7 @@
   }
 }
 @mixin w360 {
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 359px) {
     @content;
   }
 }

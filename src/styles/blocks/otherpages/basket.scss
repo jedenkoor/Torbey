@@ -4,6 +4,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 64px;
+    @include w1023 {
+      margin-bottom: 32px;
+    }
+    @include w767 {
+      margin-bottom: 16px;
+    }
   }
   &__title {
     margin-bottom: 0;
@@ -20,6 +26,21 @@
     margin-left: 32px;
     padding: 9px 15px;
     cursor: pointer;
+    @include w767 {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      padding: 0;
+      border: none;
+      background: url('../images/icon-delete.svg') center/contain no-repeat;
+      font-size: 0;
+    }
+    &:hover,
+    &:focus {
+      @include w767 {
+        background: url('../images/icon-delete.svg') center/contain no-repeat;
+      }
+    }
   }
   &__header {
     display: flex;
@@ -30,14 +51,31 @@
     line-height: 24px;
     color: $neutral-color-4;
     border-bottom: 1px solid $neutral-color-9;
+    @include w1023 {
+      display: none;
+    }
   }
   &__col {
     display: flex;
     align-items: center;
     font-size: 20px;
+    @include w1023 {
+      align-items: flex-start;
+      padding-right: 40px;
+      padding-left: 102px;
+      font-size: 16px;
+    }
+    &:not(:last-child) {
+      @include w1023 {
+        margin-bottom: 12px;
+      }
+    }
     &:nth-child(1) {
       flex: 0 0 50.9%;
       padding-left: 64px;
+      @include w1023 {
+        padding-left: 16px;
+      }
     }
     &:nth-child(2) {
       flex: 0 0 20%;
@@ -51,17 +89,28 @@
       padding-right: 16px;
       text-align: right;
       font-weight: 500;
+      @include w1023 {
+        justify-content: flex-start;
+        font-size: 20px;
+      }
     }
   }
   &__items {
     padding: 0;
     list-style: none;
+    @include w1023 {
+      transform: translateX(-16px);
+      width: calc(100% + 32px);
+    }
   }
   &__item {
     position: relative;
     display: flex;
     padding: 16px 0;
     border-radius: 8px;
+    @include w1023 {
+      display: block;
+    }
     &:not(:last-child) {
       margin-bottom: 16px;
     }
@@ -70,6 +119,17 @@
     }
     &--deleted {
       box-shadow: 0px 2px 12px #e9eaec;
+      .basket__col {
+        @include w1023 {
+          padding-left: 16px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          @include w1023 {
+            display: none;
+          }
+        }
+      }
     }
   }
   &-item {
@@ -80,6 +140,11 @@
       margin-right: 24px;
       border-radius: 4px;
       overflow: hidden;
+      @include w1023 {
+        width: 70px;
+        height: 70px;
+        margin-right: 16px;
+      }
       &:hover,
       &:focus {
         img {
@@ -107,6 +172,12 @@
       background: $neutral-color-8;
       border: none;
       cursor: pointer;
+      @include w1023 {
+        top: 16px;
+        right: 16px;
+        left: auto;
+        transform: none;
+      }
     }
     &__gift {
       display: flex;
@@ -134,6 +205,9 @@
       padding-right: 20%;
       font-size: 16px;
       line-height: 24px;
+      @include w1023 {
+        padding-right: 0;
+      }
       span {
         font-weight: 500;
       }
@@ -144,14 +218,63 @@
       cursor: pointer;
     }
   }
+  &__wrap {
+    @include w767 {
+      position: sticky;
+      bottom: 56px;
+      padding-bottom: 16px;
+      background: #fff;
+    }
+  }
   &__bot {
+    position: relative;
     display: flex;
     margin-top: 16px;
     margin-bottom: 39px;
     padding-top: 40px;
     border-top: 1px solid $neutral-color-9;
+    @include w1023 {
+      padding-top: 32px;
+    }
+    @include w767 {
+      margin-bottom: 16px;
+      padding-top: 16px;
+    }
     .basket__col {
       display: block;
+      @include w1023 {
+        padding-left: 86px;
+      }
+      @include w767 {
+        padding: 0;
+      }
+      &:nth-child(1) {
+        @include w1023 {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        @include w1023 {
+          padding-top: 3px;
+          font-size: 20px;
+        }
+        @include w767 {
+          padding-top: 0;
+          font-size: 16px;
+        }
+      }
+      &:nth-child(3) {
+        @include w1023 {
+          position: absolute;
+          top: 64px;
+          left: 0;
+        }
+        @include w767 {
+          top: 48px;
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
     }
   }
   &__total {
@@ -159,12 +282,27 @@
     font-weight: 500;
     font-size: 25px;
     line-height: 32px;
+    @include w1200 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @include w1023 {
+      font-size: 25px;
+      line-height: 32px;
+    }
+    @include w767 {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   &__hint {
     display: block;
     font-size: 12px;
     line-height: 16px;
     color: $neutral-color-6;
+    @include w767 {
+      font-size: 10px;
+    }
   }
   &__checkout {
     display: block;
@@ -172,5 +310,30 @@
     margin-left: auto;
     padding: 12px 24px;
     font-size: 16px;
+    @include w1023 {
+      padding: 8px 16px;
+    }
+    @include w767 {
+      padding: 8px;
+    }
+    &:not(:first-child) {
+      margin-left: 24px;
+      @include w1023 {
+        margin-left: 16px;
+      }
+      @include w767 {
+        flex: 1;
+        text-align: center;
+      }
+    }
+    &.btn-border {
+      padding: 10px 24px;
+      @include w1023 {
+        padding: 6px 16px;
+      }
+      @include w767 {
+        padding: 6px 10px;
+      }
+    }
   }
 }

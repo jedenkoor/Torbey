@@ -10,6 +10,10 @@
     margin-bottom: 80px;
     padding: 40px 0;
   }
+  @include w767 {
+    margin-bottom: 104px;
+    padding: 25px 0 24px;
+  }
   &__title {
     margin-top: 0;
     margin-bottom: 63px;
@@ -26,6 +30,11 @@
       font-size: 31px;
       line-height: 40px;
     }
+    @include w767 {
+      margin-bottom: 31px;
+      font-size: 25px;
+      line-height: 32px;
+    }
   }
   &__list {
     display: grid;
@@ -35,6 +44,16 @@
     list-style: none;
     @include w1023 {
       grid-gap: 16px;
+    }
+    @include w767 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      @include w767 {
+        margin-bottom: 16px;
+      }
     }
   }
   &-item {
@@ -60,6 +79,12 @@
         font-size: 14px;
         line-height: 20px;
       }
+      @include w767 {
+        max-width: 250px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 24px;
+      }
     }
     &__text {
       margin: 0;
@@ -72,6 +97,10 @@
       @include w1023 {
         font-size: 12px;
         line-height: 17px;
+      }
+      @include w767 {
+        line-height: 16px;
+        max-width: 260px;
       }
     }
   }

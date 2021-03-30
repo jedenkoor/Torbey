@@ -123,13 +123,16 @@ block content
               input.good-aside-num__input(type="number" value="2")
               button.good-aside-num__btn +
           .basket__col 43 200 руб.
-      .basket__bot
-        .basket__col 
-        .basket__col Итого
-        .basket__col 5 товаров
-        .basket__col
-          .basket__total 86 400 руб.
-          span.basket__hint без доставки, с учётом НДС
-      a.basket__checkout.btn-background(href="#")  Перейти к оформлению
+      .basket__wrap
+        .basket__bot
+          .basket__col 
+          .basket__col Итого
+          .basket__col 5 товаров
+          .basket__col
+            .basket__total 86 400 руб.
+            span.basket__hint без доставки, с учётом НДС
+        .basket__row
+          a.basket__checkout.btn-border(href="#") К покупкам
+          a.basket__checkout.btn-background(href="#") Оформить заказ
 
   include ../includes/form.pug

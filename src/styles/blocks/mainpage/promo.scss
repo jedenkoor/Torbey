@@ -16,6 +16,10 @@
       margin-bottom: 24px;
       border-radius: 0;
     }
+    @include w767 {
+      height: 164px;
+      margin-bottom: 16px;
+    }
   }
   &__content {
     display: grid;
@@ -32,6 +36,9 @@
       display: block;
       padding-bottom: 73px;
     }
+    @include w767 {
+      padding-bottom: 65px;
+    }
     p {
       margin-top: 0;
       margin-bottom: 0;
@@ -43,6 +50,10 @@
   &__main {
     font-size: 20px;
     line-height: 32px;
+    @include w767 {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
   &__aside {
     padding-top: 6px;
@@ -62,8 +73,9 @@
       position: absolute;
       bottom: 1px;
     }
-    @include w1023 {
-      padding: 4px 16px;
+    @include w767 {
+      width: 100%;
+      text-align: center;
     }
   }
 }

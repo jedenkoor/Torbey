@@ -1,17 +1,57 @@
 .articles {
+  .articles__list {
+    @include w767 {
+      display: flex;
+      grid-gap: 0;
+      width: calc(100% + 32px);
+      padding-left: 16px;
+      transform: translateX(-16px);
+      overflow-x: scroll;
+    }
+    &:after {
+      @include w767 {
+        content: '';
+        flex: 0 0 16px;
+      }
+    }
+  }
+  .articles__item {
+    @include w767 {
+      flex: 0 0 242px;
+    }
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    @include w1023 {
+      margin-bottom: 32px;
+    }
+    @include w767 {
+      display: block;
+    }
   }
   &__title {
     margin: 0;
+    @include w767 {
+      max-width: 250px;
+      margin-bottom: 15px;
+    }
   }
   &__link {
     margin-top: 16px;
     font-size: 20px;
     line-height: 32px;
+    @include w1023 {
+      margin-top: 1px;
+      margin-right: 3px;
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
   &__list {
     display: grid;
@@ -19,6 +59,12 @@
     grid-gap: 64px 24px;
     padding: 0;
     list-style: none;
+    @include w1023 {
+      grid-gap: 24px 16px;
+    }
+    @include w767 {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   &-item {
     &__link {
@@ -39,6 +85,13 @@
       overflow: hidden;
       @include w1200 {
         height: 214px;
+      }
+      @include w1023 {
+        height: 148px;
+        margin-bottom: 8px;
+      }
+      @include w767 {
+        height: 160px;
       }
       &:after {
         content: '';
@@ -67,12 +120,26 @@
         font-size: 22px;
         line-height: 28px;
       }
+      @include w1023 {
+        margin-bottom: -1px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+      @include w767 {
+        font-size: 16px;
+      }
     }
     &__date {
       color: $neutral-color-5;
       @include w1200 {
-        font-size: 14px;
-        line-height: 20px;
+        margin-bottom: -1px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+      @include w1023 {
+        margin-bottom: 0;
+        font-size: 12px;
+        line-height: 16px;
       }
     }
   }

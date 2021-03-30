@@ -8,6 +8,11 @@
   &__wrapper {
     padding: 0;
     list-style: none;
+    @include w767 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 25px 16px;
+    }
   }
   &__slide {
     position: relative;
@@ -43,6 +48,9 @@
       @include w1023 {
         height: 149px;
         margin-bottom: 8px;
+      }
+      @include w767 {
+        height: 104px;
       }
       &:after {
         content: '';

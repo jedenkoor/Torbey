@@ -6,6 +6,9 @@
   @include w1023 {
     margin-bottom: 80px;
   }
+  @include w767 {
+    margin-bottom: 64px;
+  }
   &__actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -15,8 +18,30 @@
     @include w1023 {
       grid-gap: 16px;
     }
+    @include w767 {
+      display: flex;
+      grid-gap: 0;
+      width: calc(100% + 32px);
+      padding-left: 16px;
+      transform: translateX(-16px);
+      overflow-x: scroll;
+    }
+    &:after {
+      @include w767 {
+        content: '';
+        flex: 0 0 16px;
+      }
+    }
   }
   &-actions {
+    &__item {
+      @include w767 {
+        flex: 0 0 272px;
+      }
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
     &__link {
       position: relative;
       display: flex;
@@ -29,6 +54,9 @@
       transition: 0.3s;
       @include w1023 {
         padding-left: 12px;
+      }
+      @include w767 {
+        padding-left: 24px;
       }
       &:hover,
       &:focus {
@@ -46,6 +74,9 @@
       }
       @include w1023 {
         height: 108px;
+      }
+      @include w767 {
+        height: 117px;
       }
     }
     &__img {
@@ -88,6 +119,7 @@
         line-height: 20px;
       }
       @include w1023 {
+        margin-top: 7px;
         font-size: 12px;
         line-height: 16px;
       }
@@ -101,6 +133,10 @@
     list-style: none;
     @include w1023 {
       grid-gap: 16px;
+    }
+    @include w767 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px 16px;
     }
   }
   &-categories {
@@ -136,6 +172,9 @@
       @include w1023 {
         height: 116px;
       }
+      @include w767 {
+        height: 118px;
+      }
     }
     &__img {
       width: 100%;
@@ -159,6 +198,9 @@
         margin-top: 8px;
         font-size: 16px;
         line-height: 24px;
+      }
+      @include w767 {
+        margin-top: 7px;
       }
       &:after {
         @include w1200 {

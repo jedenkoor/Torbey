@@ -1,6 +1,9 @@
 .breadcrumbs {
   margin-top: 64px;
   margin-bottom: 36px;
+  @include w1023 {
+    display: none;
+  }
   &__container {
     display: flex;
     align-items: center;
@@ -18,8 +21,7 @@
         width: 12px;
         height: 24px;
         margin-left: 12px;
-        background: url('../images/arrow-right-grey.svg') center/contain
-          no-repeat;
+        background: url('../images/arrow-right-grey.svg') center/contain no-repeat;
       }
     }
   }

@@ -2,6 +2,12 @@
   &__row {
     display: flex;
     align-items: center;
+    &:first-child {
+      @include w767 {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+    }
   }
   &__tags {
     display: flex;
@@ -15,6 +21,12 @@
       font-size: 12px;
       line-height: 16px;
       border-radius: 4px;
+      @include w767 {
+        margin-right: 8px;
+        padding: 0px 4px;
+        font-size: 10px;
+        line-height: 16px;
+      }
       &--best {
         color: $accent-indigo-color;
         background: $secondary-background-color;
@@ -29,6 +41,9 @@
     font-size: 12px;
     line-height: 16px;
     color: $neutral-color-4;
+    @include w767 {
+      margin-bottom: 8px;
+    }
   }
   &__title {
     margin-top: 9px;
@@ -36,6 +51,12 @@
     font-weight: normal;
     font-size: 39px;
     line-height: 48px;
+    @include w1023 {
+      margin-top: 8px;
+      margin-bottom: 7px;
+      font-size: 25px;
+      line-height: 32px;
+    }
   }
   &__rate {
     display: flex;
@@ -46,6 +67,9 @@
     margin-right: 24px;
     svg {
       margin-right: 8px;
+      @include w767 {
+        width: 76px;
+      }
     }
   }
   &__fav {
@@ -71,6 +95,10 @@
     }
     svg {
       margin-right: 8px;
+      @include w767 {
+        width: 12px;
+        height: 12px;
+      }
     }
   }
   &__main {
@@ -78,6 +106,19 @@
     grid-template-columns: calc(67% - 28px) calc(33% - 28px);
     grid-gap: 56px;
     margin-top: 40px;
+    @include w1200 {
+      grid-template-columns: calc(64% - 16px) calc(36% - 16px);
+      grid-gap: 32px;
+    }
+    @include w1023 {
+      display: flex;
+      flex-direction: column-reverse;
+      position: relative;
+      padding-top: 608px;
+    }
+    @include w767 {
+      padding-top: 352px;
+    }
   }
   &-content {
     &__wrap {
@@ -95,6 +136,9 @@
         border-radius: 850%;
         margin-top: 0;
         transform: translateY(-50%);
+        @include w1023 {
+          display: none;
+        }
         &:hover,
         &:focus {
           box-shadow: 0px 2px 12px #e9eaec;
@@ -114,8 +158,19 @@
         right: -16px;
       }
     }
+    &__gallery {
+      @include w1023 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+    }
     &__slider {
       margin-bottom: 24px;
+      @include w767 {
+        display: none;
+      }
     }
     &-slider {
       &__wrapper {
@@ -124,12 +179,40 @@
       }
       &__slide {
         height: 496px;
+        @include w1023 {
+          height: 424px;
+        }
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           border-radius: 8px;
         }
+      }
+    }
+    &__thumbs {
+      .swiper-pagination {
+        display: none;
+        @include w767 {
+          display: block;
+          .swiper-pagination-bullet {
+            width: 6px;
+            height: 6px;
+            opacity: 1;
+            background: #fff;
+          }
+          .swiper-pagination-bullet-active {
+            background: $tertiary-color;
+          }
+          .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 3px;
+          }
+        }
+      }
+      @include w1023 {
+        width: calc(100% + 32px);
+        padding-left: 16px;
+        transform: translateX(-16px);
       }
     }
     &-thumbs {
@@ -140,9 +223,21 @@
       &__slide {
         width: 160px;
         height: 160px;
+        @include w1023 {
+          width: 120px;
+          height: 120px;
+        }
+        @include w767 {
+          width: 312px;
+          height: 312px;
+        }
         &.swiper-slide-thumb-active {
           img {
             border-color: $tertiary-tint-color !important;
+            @include w767 {
+              box-shadow: none !important;
+              border-color: $neutral-color-9 !important;
+            }
           }
         }
         img {
@@ -163,6 +258,13 @@
       margin-top: 39px;
       padding-top: 39px;
       border-top: 1px solid $neutral-color-9;
+      @include w1023 {
+        margin-top: 16px;
+        padding-top: 23px;
+      }
+      @include w767 {
+        padding-top: 0;
+      }
     }
     &__navigation {
       display: flex;
@@ -170,6 +272,27 @@
       margin-bottom: 24px;
       padding: 0;
       list-style: none;
+      @include w1023 {
+        transform: translateX(-16px);
+        width: calc(100% + 32px);
+        padding-left: 16px;
+        overflow-x: scroll;
+      }
+      @include w767 {
+        position: sticky;
+        top: 65px;
+        margin-bottom: 0;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: #fff;
+      }
+      &:after {
+        @include w1023 {
+          content: '';
+          flex: 0 0 16px;
+          height: 1px;
+        }
+      }
     }
     &-navigation {
       &__item {
@@ -184,6 +307,7 @@
         border-radius: 8px;
         line-height: 24px;
         color: $neutral-color-5;
+        white-space: nowrap;
         cursor: pointer;
         &:hover,
         &:focus,
@@ -203,6 +327,18 @@
         margin: 0;
         font-size: 20px;
         line-height: 32px;
+        @include w1200 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        @include w1023 {
+          font-size: 20px;
+          line-height: 32px;
+        }
+        @include w767 {
+          font-size: 16px;
+          line-height: 24px;
+        }
         &:not(:last-child) {
           margin-bottom: 16px;
         }
@@ -211,26 +347,50 @@
     &-tab {
       &__row {
         display: grid;
-        grid-template-columns: 41% 59%;
+        grid-template-columns: calc(41% - 12px) calc(59% - 12px);
         grid-gap: 24px;
+        @include w1023 {
+          grid-template-columns: calc(32.4% - 12px) calc(67.6% - 12px);
+        }
+        @include w767 {
+          display: block;
+        }
       }
       &__subrow {
         display: flex;
         &:not(:last-child) {
           margin-bottom: 16px;
+          @include w1023 {
+            margin-bottom: 8px;
+          }
         }
       }
       &__col {
         padding: 0;
         list-style: none;
         &:first-child {
+          @include w767 {
+            margin-bottom: 40px;
+          }
           .good-content-tab__name {
             flex: 0 0 115px;
+            @include w1023 {
+              flex: 0 0 99px;
+            }
+            @include w767 {
+              flex: 0 0 50%;
+            }
           }
         }
         &:last-child {
           .good-content-tab__name {
             flex: 0 0 167px;
+            @include w1023 {
+              flex: 0 0 151px;
+            }
+            @include w767 {
+              flex: 0 0 50%;
+            }
           }
         }
       }
@@ -240,6 +400,11 @@
         font-weight: normal;
         font-size: 25px;
         line-height: 32px;
+        @include w1023 {
+          margin-bottom: 16px;
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
       &__list {
         padding: 0;
@@ -273,6 +438,10 @@
       margin-right: 5px;
       font-size: 25px;
       line-height: 32px;
+      @include w767 {
+        font-size: 20px;
+        line-height: 24px;
+      }
       &--newprice {
         color: $system-error-color;
       }
@@ -280,14 +449,26 @@
     &__oldprice {
       color: $neutral-color-6;
       text-decoration: line-through;
+      @include w767 {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
     &__size {
       display: block;
       margin-top: 23px;
       margin-bottom: 24px;
+      @include w1023 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
       input {
         background: $neutral-color-10;
         cursor: pointer;
+        @include w1023 {
+          height: 48px;
+          font-size: 16px;
+        }
       }
       .form-select__show:after {
         transform: translateY(0px) rotate(225deg);
@@ -310,6 +491,9 @@
       display: flex;
       align-items: center;
       margin-bottom: 72px;
+      @include w1023 {
+        margin-bottom: 48px;
+      }
     }
     &__num {
       display: flex;
@@ -352,12 +536,19 @@
       flex: 1;
       padding: 15px 0;
       cursor: pointer;
+      @include w767 {
+        padding: 11px 0;
+      }
     }
     &__info {
       &:not(:last-child) {
         margin-bottom: 23px;
         padding-bottom: 24px;
         border-bottom: 1px solid $neutral-color-9;
+        @include w767 {
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+        }
       }
       label {
         display: flex;
