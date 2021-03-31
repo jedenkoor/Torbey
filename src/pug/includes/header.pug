@@ -1,15 +1,18 @@
-input(type="checkbox" id="menu-burger")
-input(type="checkbox" id="callback")
-input(type="checkbox" id="filter")
-input(type="checkbox" id="offers")
-input(type="checkbox" id="content")
+input.popup-input(type="checkbox" id="menu-burger")
+input.popup-input(type="checkbox" id="mobile-search")
+input.popup-input(type="checkbox" id="callback")
+input.popup-input(type="checkbox" id="filter")
+input.popup-input(type="checkbox" id="offers")
+input.popup-input(type="checkbox" id="content")
 
 label.overlay.overlay--menu(for="menu-burger") 
+label.overlay.overlay--search(for="mobile-search") 
 label.overlay.overlay--filter(for="filter") 
 label.overlay.overlay--offers(for="offers") 
 label.overlay.overlay--content(for="content") 
 
 include popup-menu.pug
+include popup-search.pug
 include popup-content.pug
 
 header.header
@@ -24,7 +27,7 @@ header.header
         .header__time
           a.header__phone.hover-link(href="tel:84992880170") +7 499 288 01 70
           .header__status.header__status--closed Закрыто. до 10:00
-        label.header__btn.btn-border(for="callback" tabindex="0")  Заказать звонок
+        label.header__btn.btn-border(for="callback" tabindex="0") Заказать звонок
 
   .header__row
     .header__wrap
@@ -161,14 +164,86 @@ header.header
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#B1B1B1"/>
                 </svg>
+            ul.header-icons-search__popup 
+              li.header-icons-search__item.header-icons-search-item
+                a.header-icons-search-item__link(href="#") 
+                  img.header-icons-search-item__img(src="images/good1.jpg" alt="")
+                  .header-icons-search-item__info 
+                    p.header-icons-search-item__way Матрасы → Двуспальные матрасы
+                    p.header-icons-search-item__name Двуспальные матрасы
+                  .header-icons-search-item__btn(type="submit")
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#B1B1B1"/>
+                    </svg>
+              li.header-icons-search__item.header-icons-search-item
+                a.header-icons-search-item__link(href="#") 
+                  img.header-icons-search-item__img(src="images/good1.jpg" alt="")
+                  .header-icons-search-item__info 
+                    p.header-icons-search-item__way Матрасы → Двуспальные матрасы
+                    p.header-icons-search-item__name Двуспальные матрасы
+                  .header-icons-search-item__btn(type="submit")
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#B1B1B1"/>
+                    </svg>
 
-          li.header-icons__item 
-            a.header-icons__link(href="#" data-count="13") 
+
+          li.header-icons__item.popup-wrap
+            a.header-icons__link(href="#" data-count="13" id="basket") 
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.3284 2.4941C15.0906 2.16819 15.9088 2 16.7359 2C17.563 2 18.3811 2.16819 19.1434 2.4941C19.9055 2.81992 20.5958 3.29656 21.1758 3.89523C21.756 4.49371 22.2147 5.20261 22.5272 5.98065C22.8396 6.75864 23 7.59148 23 8.43187C23 9.27225 22.8396 10.1051 22.5272 10.8831C22.2148 11.6611 21.7561 12.3699 21.1759 12.9683C21.1759 12.9684 21.176 12.9683 21.1759 12.9683L12.7179 21.6959C12.5295 21.8903 12.2704 22 11.9997 22C11.7291 22 11.47 21.8903 11.2816 21.6959L2.82357 12.9683C1.65254 11.76 1 10.1276 1 8.43187C1 6.73612 1.65254 5.10375 2.82357 3.8954C3.99563 2.68599 5.59209 2.00053 7.26361 2.00053C8.93512 2.00053 10.5316 2.68599 11.7036 3.8954L11.9997 4.20093L12.2957 3.89557C12.2957 3.89551 12.2956 3.89562 12.2957 3.89557C12.8757 3.29682 13.5662 2.81995 14.3284 2.4941ZM19.7395 5.28709C19.3422 4.87692 18.8722 4.55328 18.3571 4.33307C17.8422 4.11289 17.2914 4 16.7359 4C16.1804 4 15.6296 4.11289 15.1146 4.33307C14.5996 4.55328 14.1295 4.87692 13.7322 5.28709L12.7179 6.33378C12.5295 6.52814 12.2704 6.63785 11.9997 6.63785C11.7291 6.63785 11.47 6.52814 11.2816 6.33378L10.2674 5.28726C9.46526 4.45953 8.38409 4.00053 7.26361 4.00053C6.14313 4.00053 5.06196 4.45953 4.25978 5.28726C3.45658 6.11606 3 7.24666 3 8.43187C3 9.61708 3.45658 10.7477 4.25978 11.5765L11.9997 19.5631L19.7397 11.5765C20.1373 11.1664 20.4544 10.6777 20.6712 10.1378C20.888 9.59786 21 9.01809 21 8.43187C21 7.84565 20.888 7.26587 20.6712 6.72592C20.4544 6.18601 20.1371 5.69713 19.7395 5.28709Z" fill="#A94A24"/>
               </svg>
-          li.header-icons__item 
-            a.header-icons__link(href="#" data-count="2") 
+            .header-icons__popup 
+              h3.addtobasket__title 4 товара в корзине
+              ul.addtobasket__list
+                li.addtobasket__item.addtobasket-item
+                  .addtobasket-item__img(data-count="2")
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  .addtobasket-item__info 
+                    .addtobasket-item__title Кроватное основание с широкими ламелями (врезными)
+                    .addtobasket-item__desc Двуспальное 160 × 200 cm
+                li.addtobasket__item.addtobasket-item
+                  .addtobasket-item__img(data-count="2")
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  .addtobasket-item__info 
+                    .addtobasket-item__title Кроватное основание с широкими ламелями (врезными)
+                    .addtobasket-item__desc Двуспальное 160 × 200 cm
+                li.addtobasket__item.addtobasket-item
+                  .addtobasket-item__img(data-count="2")
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  .addtobasket-item__info 
+                    .addtobasket-item__title Кроватное основание с широкими ламелями (врезными)
+                    .addtobasket-item__desc Двуспальное 160 × 200 cm
+                li.addtobasket__item.addtobasket-item
+                  .addtobasket-item__img(data-count="2")
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  .addtobasket-item__info 
+                    .addtobasket-item__title Кроватное основание с широкими ламелями (врезными)
+                    .addtobasket-item__desc Двуспальное 160 × 200 cm
+                li.addtobasket__item.addtobasket-item
+                  .addtobasket-item__img(data-count="2")
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  .addtobasket-item__info 
+                    .addtobasket-item__title Кроватное основание с широкими ламелями (врезными)
+                    .addtobasket-item__desc Двуспальное 160 × 200 cm
+              .addtobasket__bot 
+                .addtobasket__row 
+                  span.addtobasket__pricetext Стоимость
+                  span.addtobasket__price 86 400 руб.
+                .addtobasket__row 
+                  button.addtobasket__btn.btn-border Очистить
+                  button.addtobasket__btn.btn-background Оформить заказ
+          li.header-icons__item.popup-wrap
+            a.header-icons__link(href="#" data-count="2" id="fav") 
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0)">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L2.19297 0.778755C2.69116 1.27694 2.99811 1.93458 3.06004 2.63639L3.18036 4H22C22.2911 4 22.5678 4.12686 22.7577 4.34744C22.9477 4.56803 23.0321 4.86045 22.9889 5.14834L21.7444 13.445C21.5242 14.9136 20.2626 16 18.7776 16H4.23918L4.33517 17.0879C4.38072 17.6041 4.81308 18 5.3313 18H18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21C15 20.6494 15.0602 20.3128 15.1707 20H7.82929C7.93985 20.3128 8 20.6494 8 21C8 22.6569 6.65685 24 5 24C3.34315 24 2 22.6569 2 21C2 20.1392 2.36251 19.3632 2.94318 18.8161C2.61057 18.3793 2.39439 17.8471 2.34291 17.2637L1.06778 2.81218C1.04714 2.57824 0.944817 2.35903 0.778755 2.19297L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893ZM18 20C17.4477 20 17 20.4477 17 21C17 21.5523 17.4477 22 18 22C18.5523 22 19 21.5523 19 21C19 20.4477 18.5523 20 18 20ZM4.06271 14H18.7776C19.2726 14 19.6931 13.6379 19.7666 13.1483L20.8388 6H3.35683L4.06271 14ZM5 20C4.44772 20 4 20.4477 4 21C4 21.5523 4.44772 22 5 22C5.55228 22 6 21.5523 6 21C6 20.4477 5.55228 20 5 20Z" fill="#A94A24"/>
@@ -179,12 +254,38 @@ header.header
                 </clipPath>
                 </defs>
               </svg>
+            .header-icons__popup 
+              h3.addtobasket__title 4 товара в избранном
+              ul.addtobasket__list
+                li.addtobasket__item.addtobasket-item
+                  .addtobasket-item__img(data-count="2")
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  .addtobasket-item__info 
+                    .addtobasket-item__title Кроватное основание с широкими ламелями (врезными)
+                    .addtobasket-item__desc Двуспальное 160 × 200 cm
+                li.addtobasket__item.addtobasket-item
+                  .addtobasket-item__img(data-count="2")
+                    picture
+                      source(type="image/webp" srcset="images/good1.jpg")
+                      img(src="images/good1.jpg" alt="Матрас Царь")
+                  .addtobasket-item__info 
+                    .addtobasket-item__title Кроватное основание с широкими ламелями (врезными)
+                    .addtobasket-item__desc Двуспальное 160 × 200 cm
+              .addtobasket__bot 
+                .addtobasket__row 
+                  span.addtobasket__pricetext Стоимость
+                  span.addtobasket__price 86 400 руб.
+                .addtobasket__row 
+                  button.addtobasket__btn.btn-border Очистить
+                  button.addtobasket__btn.btn-background Перейти в избранное
 
 
 nav.header-mobile
   ul.header-mobile__list 
     li.header-mobile__item 
-      a.header-mobile__link(href="#") 
+      label.header-mobile__link(for="mobile-search") 
         .header-mobile__wrap
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.9519 15.5376C19.088 12.713 18.8686 8.67423 16.2934 6.09909C13.4783 3.28401 8.91418 3.28401 6.0991 6.09909C3.28402 8.91417 3.28402 13.4783 6.0991 16.2934C8.67425 18.8685 12.713 19.088 15.5377 16.9518L20.2807 21.6949C20.6712 22.0854 21.3044 22.0854 21.6949 21.6949C22.0854 21.3044 22.0854 20.6712 21.6949 20.2807L16.9519 15.5376Z" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -205,14 +306,14 @@ nav.header-mobile
           </svg>
         | Корзина
     li.header-mobile__item 
-      a.header-mobile__link(href="#") 
+      label.header-mobile__link(for="callback" tabindex="0")
         .header-mobile__wrap
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.25624 8.95404C3.47141 8.22243 3.84274 7.25425 4.46455 6.29325C5.6824 4.41111 7.88627 2.5 12 2.5C16.1137 2.5 18.3176 4.41111 19.5354 6.29325C20.1573 7.25425 20.5286 8.22243 20.7438 8.95404L20.7572 9H19.4185C18.2317 6.06817 15.3574 4 12 4C8.64262 4 5.76829 6.06817 4.58152 9H3.24283L3.25624 8.95404ZM22.973 9.74005C22.9617 9.66677 22.9449 9.56724 22.9213 9.445C22.8712 9.18565 22.7898 8.82243 22.6625 8.38971C22.4089 7.52757 21.9677 6.37075 21.2146 5.20675C19.6824 2.83889 16.8863 0.5 12 0.5C7.11367 0.5 4.31755 2.83889 2.78541 5.20675C2.03224 6.37075 1.59107 7.52757 1.3375 8.38971C1.21023 8.82243 1.12884 9.18566 1.07871 9.445C1.05509 9.56724 1.03834 9.66677 1.02697 9.74005C0.397588 10.29 0 11.0986 0 12V14C0 15.6569 1.34315 17 3 17H4.25204C5.14012 20.4505 8.27232 23 12 23C15.7277 23 18.8599 20.4505 19.748 17H21C22.6569 17 24 15.6569 24 14V12C24 11.0986 23.6024 10.29 22.973 9.74005ZM20.0001 15L20 14.9875V12C20 11.6613 19.979 11.3276 19.9381 11H21C21.5523 11 22 11.4477 22 12V14C22 14.5523 21.5523 15 21 15H20.0001ZM18 12V14.4648C17.1383 14.993 15.5853 15.7249 13.755 16.04C13.4152 15.4202 12.7567 15 12 15C10.8954 15 10 15.8954 10 17C10 18.1046 10.8954 19 12 19C12.709 19 13.3319 18.631 13.6871 18.0746C15.2292 17.8589 16.6158 17.3808 17.6988 16.8824C16.9092 19.274 14.6562 21 12 21C8.68629 21 6 18.3137 6 15V12C6 11.3425 6.10577 10.7096 6.30123 10.1176C7.09078 7.72598 9.34383 6 12 6C14.656 6 16.9089 7.72571 17.6986 10.117C17.8942 10.7092 18 11.3422 18 12ZM3 11H4.06189C4.02104 11.3276 4 11.6613 4 12V15H3C2.44772 15 2 14.5523 2 14V12C2 11.4477 2.44772 11 3 11Z" fill="#9E9E9E"/>
           </svg>
         | Помощь
     li.header-mobile__item 
-      a.header-mobile__link(href="#") 
+      label.header-mobile__link(for="menu-burger" tabindex="0")  
         .header-mobile__wrap
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 5C7 6.10457 6.10457 7 5 7C3.89543 7 3 6.10457 3 5C3 3.89543 3.89543 3 5 3C6.10457 3 7 3.89543 7 5ZM7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12ZM5 21C6.10457 21 7 20.1046 7 19C7 17.8954 6.10457 17 5 17C3.89543 17 3 17.8954 3 19C3 20.1046 3.89543 21 5 21ZM14 5C14 6.10457 13.1046 7 12 7C10.8954 7 10 6.10457 10 5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14ZM14 19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19C10 17.8954 10.8954 17 12 17C13.1046 17 14 17.8954 14 19ZM19 7C20.1046 7 21 6.10457 21 5C21 3.89543 20.1046 3 19 3C17.8954 3 17 3.89543 17 5C17 6.10457 17.8954 7 19 7ZM21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12ZM19 21C20.1046 21 21 20.1046 21 19C21 17.8954 20.1046 17 19 17C17.8954 17 17 17.8954 17 19C17 20.1046 17.8954 21 19 21Z" fill="#9E9E9E"/>

@@ -38,7 +38,7 @@ import 'glightbox/dist/css/glightbox.min.css'
       })
     }
 
-    // Select input on focus
+    // Select content input on focus
     const inputs = document.querySelectorAll('input')
     if (inputs.length) {
       inputs.forEach((item) => {
@@ -184,7 +184,12 @@ import 'glightbox/dist/css/glightbox.min.css'
         })
         document.addEventListener('click', (e) => {
           const container = document.querySelector('.select-block')
-          if (e.target !== container && e.target.closest('.select-block') === null && e.target !== item) {
+          if (
+            e.target !== container &&
+            e.target.closest('.select-block') === null &&
+            e.target !== item &&
+            e.target.closest('.select-open') === null
+          ) {
             item.classList.remove('active')
             item.closest('.select').querySelector('.select-block').classList.remove('active')
           }
@@ -409,15 +414,66 @@ import 'glightbox/dist/css/glightbox.min.css'
         }))()
     }
 
-    // // Reviews show all
-    // const reviewsBtns = document.querySelectorAll('.reviews-page-aside__show')
-    // if (reviewsBtns.length) {
-    //   reviewsBtns.forEach((item) => {
-    //     item.addEventListener('click', (e) => {
-    //       item.classList.toggle('reviews-page-aside__show--active')
-    //       item.nextElementSibling.classList.toggle('reviews-page-aside__content--active')
-    //     })
-    //   })
-    // }
+    // Mobile popups
+    const mobileLinksPopup = document.querySelectorAll('label.header-mobile__link')
+    const popupOverlays = document.querySelectorAll('.overlay')
+    const callbackClose = document.querySelectorAll('.callback__close')
+    const popupClose = document.querySelectorAll('.popup__close')
+    if (mobileLinksPopup.length) {
+      mobileLinksPopup.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault()
+          if (item.classList.contains('active')) {
+            item.classList.remove('active')
+            document.querySelector(`#${item.getAttribute('for')}`).checked = false
+          } else {
+            const popupInputs = document.querySelectorAll('.popup-input')
+            popupInputs.forEach((item) => {
+              item.checked = false
+            })
+            mobileLinksPopup.forEach((item) => {
+              item.classList.remove('active')
+            })
+            document.querySelector(`#${item.getAttribute('for')}`).checked = true
+            item.classList.add('active')
+          }
+        })
+      })
+      popupOverlays.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          hideAllPopups()
+        })
+      })
+      callbackClose.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          hideAllPopups()
+        })
+      })
+      popupClose.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          hideAllPopups()
+        })
+      })
+      function hideAllPopups() {
+        const popupInputs = document.querySelectorAll('.popup-input')
+        popupInputs.forEach((item) => {
+          item.checked = false
+        })
+        mobileLinksPopup.forEach((item) => {
+          item.classList.remove('active')
+        })
+      }
+    }
+
+    // Show callback on search page
+    const searchBtn = document.querySelectorAll('.search__btn--callback')
+    if (searchBtn.length) {
+      searchBtn.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          console.log(document.querySelector(`[for="${item.getAttribute('for')}"]`))
+          document.querySelector(`.header-mobile [for="${item.getAttribute('for')}"]`).classList.add('active')
+        })
+      })
+    }
   })
 })()

@@ -260,16 +260,16 @@ block content
               p Обращаем Ваше внимание на то, что в случае, если матрас забирают на экспертизу, на основании Постановления Правительства РФ от 19 января 1998 г. №55 на мебель (и матрасы, в частности) не распространяется требование покупателя о безвозмездном предоставлении ему на период ремонта или замены аналогичного товара. На основании того же Постановления матрасы входят в перечень непродовольственных товаров надлежащего качества, не подлежащих возврату или обмену на аналогичный товар других размера, формы, габарита, фасона, расцветки или комплектации. В частности, это относится к матрасам, не подошедшим по степени жесткости и размеру.
         aside.text__aside.text-aside 
           .text-aside__content
-            .text-aside-docs__wrap
-              .text-aside-docs__show 
+            .text-aside-docs__wrap.select
+              button.text-aside-docs__show.select-open
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.5 3.33366C2.03976 3.33366 1.66667 3.70675 1.66667 4.16699V15.8337C1.66667 16.2939 2.03976 16.667 2.5 16.667H17.5C17.9602 16.667 18.3333 16.2939 18.3333 15.8337V6.66699C18.3333 6.20676 17.9602 5.83366 17.5 5.83366H11.4499C10.8531 5.83366 10.276 5.62018 9.82289 5.2318L7.84245 3.53428C7.69142 3.40482 7.49905 3.33366 7.30013 3.33366H2.5ZM0 4.16699C0 2.78628 1.11929 1.66699 2.5 1.66699H7.30013C7.8969 1.66699 8.474 1.88047 8.9271 2.26885L10.9075 3.96637C11.0586 4.09583 11.2509 4.16699 11.4499 4.16699H17.5C18.8807 4.16699 20 5.28628 20 6.66699V15.8337C20 17.2144 18.8807 18.3337 17.5 18.3337H2.5C1.11929 18.3337 0 17.2144 0 15.8337V4.16699Z" fill="#2437A9"/>
                 </svg>
-            ul.text-aside__docs.text-aside-docs
-              li.text-aside-docs__item.text-aside-docs__item--popup
-                a.popup-link.glightbox(href="images/garatiya1.jpg" data-gallery="gallery2") Пример гарантийного талона
-              li.text-aside-docs__item.text-aside-docs__item--download
-                a.popup-link(href="images/garatiya2.jpg" download) Декларация о соответсвии
+              ul.text-aside__docs.text-aside-docs.select-block
+                li.text-aside-docs__item.text-aside-docs__item--popup
+                  a.popup-link.glightbox(href="images/garatiya1.jpg" data-gallery="gallery2") Пример гарантийного талона
+                li.text-aside-docs__item.text-aside-docs__item--download
+                  a.popup-link(href="images/garatiya2.jpg" download) Декларация о соответсвии
             .text-aside__info.text-aside-info
               p По уточнениям и вопросам о возврате по гарантии звоните по телефонам <a class="popup-link" href="tel:84992880170">+7 499 288 01 70</a> и <a class="popup-link" href="tel:89032479499">+7 903 247 94 99</a>
               .text-aside-info__bot 
@@ -278,7 +278,7 @@ block content
 
   section.text.margin-section
     .container
-      h1.h1title Политика конфиденциальности
+      h1.h2title Политика конфиденциальности
       .text__main
         .text__content
           p Я согласен(на) на обработку моих персональных данных

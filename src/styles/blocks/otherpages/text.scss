@@ -12,10 +12,17 @@
   &__content {
     font-size: 20px;
     line-height: 32px;
+    @include w767 {
+      font-size: 16px;
+      line-height: 24px;
+    }
     p {
       margin: 0;
       &:not(:first-child) {
         margin-top: 16px;
+        @include w767 {
+          margin-top: 12px;
+        }
       }
     }
     .tabs {
@@ -32,9 +39,14 @@
         max-width: none;
       }
       p {
+        margin-bottom: 0;
         @include w1200 {
           font-size: 20px;
           line-height: 32px;
+        }
+        @include w767 {
+          font-size: 16px;
+          line-height: 24px;
         }
       }
     }
@@ -50,13 +62,25 @@
     .good-content-tab__value {
       flex: 0 0 50%;
     }
+    .good-content-tab__name {
+      @include w767 {
+        padding-right: 16px;
+      }
+    }
     .good-content-slider {
       @include w1200 {
         max-width: 760px;
         margin-left: 0;
       }
+      @include w767 {
+        display: block;
+        margin-bottom: 0;
+      }
       &:not(:first-child) {
         margin-top: 24px;
+        @include w767 {
+          margin-top: 16px;
+        }
       }
       &__slide {
         height: auto;
@@ -84,6 +108,9 @@
         display: flex;
         font-size: 20px;
         line-height: 24px;
+        @include w767 {
+          display: block;
+        }
       }
       &__col {
         &:first-child {
@@ -97,14 +124,26 @@
         }
       }
     }
+    .good-content__wrap {
+      @include w767 {
+        display: none;
+      }
+    }
   }
   &__title {
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
     font-size: 25px;
+    @include w767 {
+      font-weight: normal;
+      font-size: 20px;
+    }
     &:not(:first-child) {
       margin-top: 32px;
+      @include w767 {
+        margin-top: 24px;
+      }
     }
   }
   &__list {
@@ -112,11 +151,17 @@
     list-style: none;
     &:not(:first-child) {
       margin-top: 16px;
+      @include w767 {
+        margin-top: 12px;
+      }
     }
     li {
       text-indent: -24px;
       &:not(:last-child) {
         margin-bottom: 16px;
+        @include w767 {
+          margin-bottom: 8px;
+        }
       }
     }
     li:before {
@@ -144,7 +189,7 @@
   }
   &__aside {
     @include w1200 {
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
   }
   &-aside {
@@ -157,10 +202,22 @@
       padding: 24px;
       list-style: none;
       box-shadow: 0px 2px 12px #e9eaec;
+      background-color: #fff;
       border-radius: 8px;
+      @include w1200 {
+        display: none;
+      }
+      &.active {
+        display: block;
+      }
     }
     &-docs {
       &__wrap {
+        @include w1200 {
+          position: absolute;
+          top: -67px;
+          right: 0px;
+        }
       }
       &__show {
         display: none;
@@ -168,11 +225,17 @@
         justify-content: center;
         width: 40px;
         height: 40px;
+        margin-left: auto;
+        margin-bottom: 16px;
         background: #ffffff;
         border: 1px solid $neutral-color-10;
         box-sizing: border-box;
         box-shadow: 0px 2px 12px #e9eaec;
         border-radius: 50%;
+        &:hover,
+        &:focus {
+          border: 1px solid $neutral-color-9;
+        }
         @include w1200 {
           display: flex;
         }
@@ -206,6 +269,13 @@
       padding: 24px;
       background: $neutral-color-10;
       border-radius: 8px;
+      @include w767 {
+        width: calc(100% + 32px);
+        padding: 16px;
+        transform: translateX(-16px);
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
     &-info {
       p {
@@ -231,6 +301,10 @@
       @include w1200 {
         width: 57%;
         margin-bottom: 0;
+      }
+      @include w767 {
+        width: 100%;
+        margin-bottom: 16px;
       }
       .swiper-button-prev,
       .swiper-button-next {
@@ -281,6 +355,9 @@
         height: 272px;
         object-fit: cover;
         border-radius: 8px;
+        @include w767 {
+          height: 210px;
+        }
       }
     }
     &__title {
@@ -288,20 +365,32 @@
       margin-bottom: 8px;
       font-weight: 500;
       font-size: 20px;
-      line-height: 24px;
       color: $secondary-color;
+      @include w767 {
+        font-size: 16px;
+      }
     }
     &__text {
       margin: 0;
+      @include w767 {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
     &__row {
       @include w1200 {
         display: flex;
       }
+      @include w767 {
+        display: block;
+      }
     }
     &__col {
       @include w1200 {
         padding-left: 40px;
+      }
+      @include w767 {
+        padding-left: 0;
       }
     }
   }

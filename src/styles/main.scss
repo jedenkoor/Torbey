@@ -37,6 +37,7 @@ body {
 }
 
 .content {
+  flex: 1;
   @include w1023 {
     padding-top: 40px;
   }
@@ -337,3 +338,4 @@ input[type='number'] {
 @import 'blocks/otherpages/reviews-page';
 @import 'blocks/otherpages/404';
 @import 'blocks/otherpages/text';
+@import 'blocks/otherpages/search';

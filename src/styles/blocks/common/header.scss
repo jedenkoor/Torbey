@@ -8,6 +8,23 @@
       transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
       visibility: visible;
+      @include w1200 {
+        transform: translateY(0) !important;
+      }
+    }
+  }
+}
+
+#mobile-search {
+  display: none;
+  &:checked {
+    & ~ .overlay--search {
+      display: block;
+    }
+    & ~ .popup--search {
+      transition: transform 0.3s, visibility 0s;
+      visibility: visible;
+      transform: translateY(0) !important;
     }
   }
 }
@@ -22,6 +39,9 @@
       transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
       visibility: visible;
+      @include w1200 {
+        transform: translateY(0) !important;
+      }
     }
   }
 }
@@ -36,6 +56,9 @@
       transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
       visibility: visible;
+      @include w1200 {
+        transform: translateY(0) !important;
+      }
     }
   }
 }
@@ -50,6 +73,9 @@
       transition: transform 0.3s, visibility 0s;
       transform: translateX(0);
       visibility: visible;
+      @include w1200 {
+        transform: translateY(0) !important;
+      }
     }
   }
 }
@@ -61,6 +87,19 @@
       opacity: 1;
       visibility: visible;
       transition: visibility 0s linear, opacity 0.2s linear;
+      @include w1200 {
+        transition: initial;
+      }
+      .overlay {
+        @include w1200 {
+          display: block;
+        }
+      }
+      .callback__content {
+        @include w1200 {
+          transform: translateY(0) !important;
+        }
+      }
     }
   }
 }
@@ -73,7 +112,13 @@
   left: 0;
   display: none;
   background-color: rgba(0, 8, 20, 0.26) !important;
+  &--search {
+    @media screen and (min-width: 1201px) {
+      display: none !important;
+    }
+  }
   &--menu,
+  &--search,
   &--filter,
   &--offers,
   &--content {
@@ -100,7 +145,7 @@
   top: 0;
   &-mobile {
     position: fixed;
-    z-index: 10;
+    z-index: 50;
     bottom: 0;
     left: 0;
     right: 0;
@@ -124,7 +169,8 @@
       &:nth-child(1),
       &:nth-child(2) {
         .header-mobile__link:hover,
-        .header-mobile__link:focus {
+        .header-mobile__link:focus,
+        .header-mobile__link.active {
           color: $primary-color;
           path {
             stroke: $primary-color;
@@ -135,7 +181,8 @@
       &:nth-child(4),
       &:nth-child(5) {
         .header-mobile__link:hover,
-        .header-mobile__link:focus {
+        .header-mobile__link:focus,
+        .header-mobile__link.active {
           color: $primary-color;
           path {
             fill: $primary-color;
@@ -152,6 +199,7 @@
       font-size: 12px;
       line-height: 16px;
       color: $neutral-color-6;
+      cursor: pointer;
       @include w360 {
         font-size: 10px;
       }
@@ -299,7 +347,7 @@
     margin-left: 39px;
     padding: 6px 15px;
     cursor: pointer;
-    @include w1023 {
+    @include w1200 {
       display: none;
     }
   }
@@ -429,6 +477,9 @@
       &:not(:last-child) {
         margin-right: 32px;
       }
+      &.popup-wrap:hover .header-icons__popup {
+        display: block;
+      }
     }
     &__link {
       position: relative;
@@ -498,6 +549,71 @@
           }
         }
       }
+      &__popup {
+        position: absolute;
+        padding-left: 0;
+        list-style: none;
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #e1e1e1;
+        border-radius: 8px;
+        padding: 16px;
+        display: none;
+        max-height: 330px;
+        overflow-y: auto;
+      }
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
+      &-item {
+        &__link {
+          display: flex;
+          align-items: center;
+          &:hover,
+          &:focus {
+            .header-icons-search-item__name {
+              color: $primary-color;
+            }
+            path {
+              fill: $primary-color;
+            }
+          }
+        }
+        &__img {
+          width: 24px;
+          height: 24px;
+          object-fit: cover;
+          margin-right: 12px;
+          border: 1px solid #e1e1e1;
+        }
+        &__way {
+          margin: 0;
+          font-size: 10px;
+          line-height: 16px;
+          color: $neutral-color-7;
+        }
+        &__name {
+          margin: 0;
+        }
+        &__btn {
+          margin-left: auto;
+          border: none;
+          background: none;
+          transform: translateX(4px);
+        }
+      }
+    }
+    &__popup {
+      position: absolute;
+      right: 0;
+      display: none;
+      width: 424px;
+      padding: 16px;
+      background: #fff;
+      box-shadow: 0px 1px 24px rgb(59 59 59 / 12%);
+      border-radius: 8px;
     }
   }
 }

@@ -1,0 +1,59 @@
+extends ../template
+
+block variables
+  - var title = 'Страница поиска'
+  - var breadrumbs = 1
+
+block content
+  section.search.margin-section
+    .container
+      h1.h1title Поиск по сайту
+      .search__content 
+        .search__wrap
+          form.search__form(action="#") 
+            label.header-icons-search__icon(for="search-page") 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5944 6.8076C13.168 4.38119 9.23401 4.38119 6.8076 6.8076C4.38119 9.23401 4.38119 13.168 6.8076 15.5944C9.23401 18.0208 13.168 18.0208 15.5944 15.5944C18.0208 13.168 18.0208 9.23401 15.5944 6.8076ZM5.39338 5.39338C8.60084 2.18593 13.8012 2.18593 17.0086 5.39338C19.9767 8.36148 20.1982 13.0361 17.6731 16.2589L21.799 20.3848C22.1895 20.7753 22.1895 21.4085 21.799 21.799C21.4084 22.1895 20.7753 22.1895 20.3848 21.799L16.2589 17.6731C13.0361 20.1982 8.36148 19.9767 5.39338 17.0086C2.18593 13.8012 2.18593 8.60084 5.39338 5.39338Z" fill="#B1B1B1"/>
+              </svg> 
+            input.header-icons-search__input(type="text" id="search-page" placeholder="Поиск")
+            button.header-icons-search__btn(type="reset")
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2Z" fill="#B1B1B1" stroke="#B1B1B1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.66667 6.66663L10 9.99996M13.3333 13.3333L10 9.99996M10 9.99996L13.3333 6.66663M10 9.99996L6.66667 13.3333" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+          p.search__title Результатов не найдено
+          .search__row 
+            label.search__btn.search__btn--callback.btn-border(for="callback" tabindex="0") Связаться с нами
+            a.search__btn.btn-background(href="#") На главную
+
+  section.search.margin-section
+    .container
+      h1.h1title Поиск по сайту
+      .search__content 
+        .search__wrap
+          p.search__title Найдено 40 результатов 
+          ul.search__list
+            -for(i = 0; i < 10; i++)
+              li.header-icons-search__item.header-icons-search-item
+                a.header-icons-search-item__link(href="#") 
+                  img.header-icons-search-item__img(src="images/good1.jpg" alt="")
+                  .header-icons-search-item__info 
+                    p.header-icons-search-item__way Матрасы → Двуспальные матрасы
+                    p.header-icons-search-item__name Двуспальные матрасы
+                  .header-icons-search-item__btn(type="submit")
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0828 4.25853L17.7397 9.87585C18.0868 10.2206 18.0868 10.7794 17.7397 11.1241L12.0828 16.7415C11.7357 17.0862 11.1728 17.0862 10.8257 16.7415C10.4786 16.3968 10.4786 15.8379 10.8257 15.4932L14.9651 11.3827H2.88889C2.39797 11.3827 2 10.9875 2 10.5C2 10.0125 2.39797 9.61732 2.88889 9.61732H14.9651L10.8257 5.50682C10.4786 5.16212 10.4786 4.60324 10.8257 4.25853C11.1728 3.91382 11.7357 3.91382 12.0828 4.25853Z" fill="#B1B1B1"/>
+                    </svg>
+          ul.catalog__pagination.catalog-pagination
+            li.catalog-pagination__item 
+              .catalog-pagination__link.catalog-pagination__link--arr ← назад
+            li.catalog-pagination__item 
+              .catalog-pagination__link.catalog-pagination__link--active 1
+            li.catalog-pagination__item 
+              a.catalog-pagination__link(href="#") 2
+            li.catalog-pagination__item 
+              a.catalog-pagination__link(href="#") 3
+            li.catalog-pagination__item 
+              a.catalog-pagination__link(href="#") 4
+            li.catalog-pagination__item 
+              a.catalog-pagination__link.catalog-pagination__link--arr(href="#") далее →

@@ -9,6 +9,20 @@
   background-color: #fff;
   transition: transform 0.3s, visibility 0s 0.3s;
   visibility: hidden;
+  @include w1200 {
+    top: auto;
+    right: 0 !important;
+    bottom: 56px;
+    left: 0 !important;
+    width: auto;
+    max-height: calc(100vh - 56px);
+    border-radius: 8px 8px 0px 0px;
+    transform: translateY(100%) !important;
+  }
+  @include w767 {
+    top: 0;
+    border-radius: 0;
+  }
   &--left {
     left: 0;
     transform: translateX(-100%);
@@ -30,6 +44,9 @@
     }
     .popup__content {
       transform: scaleX(-1);
+      @include w1200 {
+        transform: none;
+      }
     }
   }
   &--menu {
@@ -40,9 +57,33 @@
     }
     .popup-top__title {
       font-weight: 500;
+      @include w767 {
+        font-size: 20px;
+      }
+      @include w360 {
+        font-size: 16px;
+      }
     }
     .popup-top__nav {
       padding-left: 0;
+    }
+    .popup__bot {
+      @include w1200 {
+        display: none;
+      }
+    }
+  }
+  &--search {
+    top: 0;
+    @media screen and (min-width: 1201px) {
+      display: none;
+    }
+  }
+  &--filter {
+    @include w1200 {
+      bottom: 0;
+      z-index: 60;
+      max-height: 100vh;
     }
   }
   &__content {
@@ -50,25 +91,114 @@
     flex: 1;
     padding: 64px 40px 24px;
     overflow-y: scroll;
+    @include w1200 {
+      padding-top: 80px;
+      padding-bottom: 104px;
+    }
+    @include w1023 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @include w767 {
+      padding-top: 72px;
+      padding-bottom: 64px;
+    }
   }
   &__inverse {
     transform: scaleX(-1);
+    @include w1200 {
+      transform: none;
+    }
   }
   &__bot {
     padding: 26px 40px;
     border-top: 1px solid $neutral-color-8;
+    @include w767 {
+      padding: 16px;
+    }
   }
   &__container {
     max-width: 408px;
+    @include w1200 {
+      max-width: none;
+    }
   }
   &__close {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 28px;
     cursor: pointer;
+    @include w1200 {
+      top: 17px;
+      left: 40px !important;
+      right: auto !important;
+    }
+    @include w1023 {
+      left: 16px !important;
+    }
     &:hover,
     &:focus {
       animation: pulse 0.4s;
+    }
+  }
+  &__head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 16px 0 15px 88px;
+    border-bottom: 1px solid $neutral-color-8;
+    background-color: #fff;
+    border-radius: 8px 8px 0px 0px;
+    @include w1200 {
+      display: block;
+    }
+    @include w1023 {
+      padding-left: 72px;
+    }
+    @include w360 {
+      font-size: 16px;
+    }
+  }
+  &__search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 8px 40px 7px 88px;
+    border-bottom: 1px solid $neutral-color-8;
+    background-color: #fff;
+    border-radius: 8px 8px 0px 0px;
+    @include w1023 {
+      padding: 8px 16px 7px 72px;
+    }
+    .header-icons-search__input {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+  &-search {
+    &__form {
+      position: relative;
+    }
+    &__list {
+      padding-left: 0;
+      list-style: none;
+      .header-icons-search-item__btn {
+        transform: translateX(-7px);
+        @include w1023 {
+          transform: translateX(-11px);
+        }
+      }
     }
   }
   &__title {
@@ -76,12 +206,23 @@
     font-weight: 500;
     font-size: 25px;
     line-height: 32px;
+    @include w1200 {
+      display: none;
+    }
   }
   &__top {
     &:not(:last-child) {
       margin-bottom: 32px;
       padding-bottom: 32px;
       border-bottom: 1px solid $neutral-color-8;
+      @include w1200 {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+      }
+      @include w767 {
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+      }
     }
   }
   &-top {
@@ -105,6 +246,11 @@
       font-size: 20px;
       line-height: 24px;
       cursor: pointer;
+      @include w767 {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+      }
       &:after {
         content: '';
         width: 10px;
@@ -137,6 +283,9 @@
     }
     &__price {
       padding-top: 42px;
+      @include w767 {
+        padding-top: 24px;
+      }
     }
     &-price {
       &__slider {
@@ -227,11 +376,18 @@
       padding-top: 32px;
       padding-left: 16px;
       list-style: none;
+      @include w767 {
+        padding-top: 16px;
+        padding-left: 0;
+      }
     }
     &-category {
       &__item {
         &:not(:last-child) {
           margin-bottom: 32px;
+          @include w767 {
+            margin-bottom: 16px;
+          }
         }
         > input {
           display: none;
@@ -268,11 +424,17 @@
         padding-top: 24px;
         padding-left: 0;
         list-style: none;
+        @include w767 {
+          padding-top: 12px;
+        }
       }
       &__subitem {
         position: relative;
         &:not(:last-child) {
           margin-bottom: 24px;
+          @include w767 {
+            margin-bottom: 12px;
+          }
         }
         &:before {
           content: attr(data-price);
@@ -282,8 +444,10 @@
           top: 50%;
           transform: translateY(-50%);
           font-size: 16px;
-          line-height: 24px;
           color: $neutral-color-5;
+          @include w767 {
+            font-size: 12px;
+          }
         }
         input {
           display: none;
@@ -296,9 +460,12 @@
           padding: 15px;
           border: 1px solid $neutral-color-9;
           border-radius: 8px;
-          line-height: 24px;
           cursor: pointer;
           transition: box-shadow 0.2s;
+          @include w767 {
+            font-size: 12px;
+            line-height: 16px;
+          }
           &:hover,
           &:focus {
             box-shadow: 0px 2px 12px #e9eaec;
@@ -311,6 +478,10 @@
       .good-content-tab__name,
       .good-content-tab__value {
         flex: 0 0 50%;
+        @include w767 {
+          font-size: 12px;
+          line-height: 16px;
+        }
       }
     }
   }
@@ -336,22 +507,43 @@
     flex: 0 0 calc(50% - 12px);
     padding: 9px 0;
     cursor: pointer;
+    @include w767 {
+      flex: 1;
+    }
+    &:first-child {
+      @include w767 {
+        flex: 0;
+        padding: 9px 16px;
+        margin-right: 16px;
+      }
+    }
   }
 
   &__subtitle {
     margin-bottom: 16px;
     font-size: 20px;
-    line-height: 32px;
+    @include w767 {
+      font-size: 16px;
+    }
   }
   &__text {
     margin-bottom: 32px;
     padding-bottom: 32px;
     border-bottom: 1px solid $neutral-color-9;
+    @include w767 {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      font-size: 12px;
+      line-height: 16px;
+    }
     p {
       margin: 0;
     }
     p + p {
       margin-top: 16px;
+      @include w767 {
+        margin-top: 8px;
+      }
     }
   }
   &__subtext {
