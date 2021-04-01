@@ -106,6 +106,14 @@ import 'glightbox/dist/css/glightbox.min.css'
             swiper: galleryThumbs
           }
         }))()
+
+      galleryThumbs.on('slideChange', function () {
+        if (galleryThumbs.isEnd) {
+          document.querySelector('.reviews__authors').classList.add('isEnd')
+        } else {
+          document.querySelector('.reviews__authors').classList.remove('isEnd')
+        }
+      })
     }
 
     // Hide reviews

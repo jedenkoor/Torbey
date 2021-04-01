@@ -111,6 +111,9 @@
       width: calc(100% + 16px);
       padding-left: 0;
     }
+    &.isEnd::after {
+      display: none;
+    }
     &:after {
       content: '';
       position: absolute;
@@ -129,6 +132,7 @@
     }
     &__slide {
       width: 400px;
+      cursor: pointer;
       @include w1200 {
         width: 350px;
       }
