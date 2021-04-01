@@ -414,6 +414,7 @@ import 'glightbox/dist/css/glightbox.min.css'
       ;(() =>
         new Swiper('.text-aside-slider__container', {
           speed: 500,
+          spaceBetween: 16,
           pagination: {
             el: '.text-aside-slider__container .swiper-pagination',
             clickable: true
