@@ -20,6 +20,13 @@
   }
 }
 
+html.fixed {
+  overflow: hidden;
+  body {
+    overflow: hidden;
+  }
+}
+
 body {
   font-family: 'Golos', sans-serif;
   color: $text-color;
@@ -27,6 +34,7 @@ body {
   line-height: 24px;
   transition: opacity 0.2s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
@@ -38,9 +46,6 @@ body {
 
 .content {
   flex: 1;
-  @include w1023 {
-    padding-top: 40px;
-  }
 }
 
 .container {
@@ -90,6 +95,7 @@ img {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type='number'] {

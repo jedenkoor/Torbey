@@ -8,6 +8,14 @@ import GLightbox from 'glightbox'
 import 'glightbox/dist/css/glightbox.min.css'
 ;(() => {
   window.addEventListener('DOMContentLoaded', () => {
+    initVhVar()
+    window.addEventListener('resize', () => {
+      initVhVar()
+    })
+    function initVhVar() {
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
     // Load opacity
     setTimeout(() => {
       document.querySelector('body').style.opacity = 1
@@ -286,6 +294,10 @@ import 'glightbox/dist/css/glightbox.min.css'
           thumbs: {
             swiper: galleryThumbs,
             autoScrollOffset: 1
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
           }
         }))()
     }
@@ -401,7 +413,6 @@ import 'glightbox/dist/css/glightbox.min.css'
     function initSliderTextAside() {
       ;(() =>
         new Swiper('.text-aside-slider__container', {
-          effect: 'fade',
           speed: 500,
           pagination: {
             el: '.text-aside-slider__container .swiper-pagination',
@@ -470,8 +481,24 @@ import 'glightbox/dist/css/glightbox.min.css'
     if (searchBtn.length) {
       searchBtn.forEach((item) => {
         item.addEventListener('click', (e) => {
-          console.log(document.querySelector(`[for="${item.getAttribute('for')}"]`))
           document.querySelector(`.header-mobile [for="${item.getAttribute('for')}"]`).classList.add('active')
+        })
+      })
+    }
+
+    const showCatalog = document.querySelectorAll('.catalog-tags__all')
+    const catalogClose = document.querySelector('.popup--filter .popup__close')
+    const catalogOverlay = document.querySelector('.overlay--filter')
+    if (showCatalog.length && document.documentElement.clientWidth <= 1200) {
+      showCatalog.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          document.querySelector('html').classList.add('fixed')
+          catalogClose.addEventListener('click', (e) => {
+            document.querySelector('html').classList.remove('fixed')
+          })
+          catalogOverlay.addEventListener('click', (e) => {
+            document.querySelector('html').classList.remove('fixed')
+          })
         })
       })
     }

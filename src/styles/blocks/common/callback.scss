@@ -31,18 +31,18 @@
       position: absolute;
       top: auto;
       right: 0 !important;
-      bottom: 56px;
+      bottom: -56px;
       left: 0 !important;
       width: auto;
       max-height: calc(100vh - 56px);
-      padding: 96px 28% 64px;
+      padding: 96px 28% 174px;
       border-radius: 8px 8px 0px 0px;
       transition: transform 0.3s !important;
       transform: translateY(100%) !important;
       box-shadow: none;
     }
     @include w767 {
-      padding: 72px 16px 24px;
+      padding: 72px 16px 134px;
     }
   }
   &__close {

@@ -168,8 +168,6 @@
       flex: 1;
       &:nth-child(1),
       &:nth-child(2) {
-        .header-mobile__link:hover,
-        .header-mobile__link:focus,
         .header-mobile__link.active {
           color: $primary-color;
           path {
@@ -180,8 +178,6 @@
       &:nth-child(3),
       &:nth-child(4),
       &:nth-child(5) {
-        .header-mobile__link:hover,
-        .header-mobile__link:focus,
         .header-mobile__link.active {
           color: $primary-color;
           path {
@@ -372,6 +368,9 @@
         .overlay {
           pointer-events: none;
         }
+        .header-menu-open__container {
+          opacity: 1;
+        }
       }
       &:first-child {
         padding-left: 0;
@@ -398,6 +397,8 @@
         display: grid;
         grid-template-columns: 23.7% 23.7% 1fr;
         grid-gap: 24px;
+        opacity: 0;
+        transition: opacity 0.5s;
       }
       &__col {
         border-top: 1px solid $neutral-color-9;

@@ -154,7 +154,8 @@
       background: none;
       cursor: pointer;
       opacity: 0;
-      transition: 0.2s;
+      transition: opacity 0.2s;
+      background: url('../images/icon-cart.svg') center/24px 24px no-repeat;
       @include w1200 {
         opacity: 1;
       }
@@ -162,30 +163,21 @@
         width: 32px;
         height: 32px;
         border: 1px solid $primary-color;
+        background-size: 16px 16px;
       }
       svg {
-        @include w1023 {
-          width: 16px;
-          height: 16px;
-        }
-      }
-      path {
-        transition: opacity 0.2s;
+        display: none;
       }
       &:hover {
         opacity: 1;
-        background: $primary-color;
-        path {
-          fill: #fff;
-        }
+        background-color: $primary-color;
+        background-image: url('../images/icon-cart-white.svg');
       }
       &:focus {
         opacity: 1;
         border-color: $primary-shade-color;
-        background: $primary-shade-color;
-        path {
-          fill: #fff;
-        }
+        background-color: $primary-shade-color;
+        background-image: url('../images/icon-cart-white.svg');
       }
     }
     &__row {

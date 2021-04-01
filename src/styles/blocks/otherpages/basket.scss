@@ -39,6 +39,7 @@
     &:focus {
       @include w767 {
         background: url('../images/icon-delete.svg') center/contain no-repeat;
+        animation: pulse 0.4s;
       }
     }
   }
@@ -169,6 +170,7 @@
       width: 22px;
       height: 22px;
       border-radius: 50%;
+      padding: 0;
       background: $neutral-color-8;
       border: none;
       cursor: pointer;

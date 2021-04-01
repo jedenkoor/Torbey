@@ -12,16 +12,19 @@
   @include w1200 {
     top: auto;
     right: 0 !important;
-    bottom: 56px;
+    bottom: -56px;
     left: 0 !important;
     width: auto;
-    max-height: calc(100vh - 56px);
+    max-height: 100vh;
+    padding-bottom: 108px;
     border-radius: 8px 8px 0px 0px;
     transform: translateY(100%) !important;
+    background-color: #fff;
   }
   @include w767 {
     top: 0;
     border-radius: 0;
+    min-height: 100vh;
   }
   &--left {
     left: 0;
@@ -81,9 +84,11 @@
   }
   &--filter {
     @include w1200 {
-      bottom: 0;
+      min-height: auto;
       z-index: 60;
-      max-height: 100vh;
+      bottom: 0;
+      padding-bottom: 0;
+      overflow: hidden;
     }
   }
   &__content {
@@ -101,7 +106,7 @@
     }
     @include w767 {
       padding-top: 72px;
-      padding-bottom: 64px;
+      padding-bottom: 40px;
     }
   }
   &__inverse {
@@ -110,9 +115,35 @@
       transform: none;
     }
   }
+  &__scroll {
+    @include w1200 {
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    @include w1200 {
+      min-height: calc(100vh + 1px);
+      min-height: calc((var(--vh, 1vh) * 100) + 1px);
+      padding-bottom: 73px;
+    }
+  }
   &__bot {
     padding: 26px 40px;
     border-top: 1px solid $neutral-color-8;
+    @include w1200 {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+    }
     @include w767 {
       padding: 16px;
     }
