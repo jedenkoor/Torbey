@@ -8,10 +8,7 @@ export default function () {
 
     let flagInput = true
     item.addEventListener('input', (e) => {
-      if (
-        (e.target.value === '+7 8' || e.target.value === '+7') &&
-        flagInput === true
-      ) {
+      if ((e.target.value === '+7 8' || e.target.value === '+7') && flagInput === true) {
         e.target.value = '+7'
         telMask.masked.reset()
         telMask.value = '+7'
@@ -30,7 +27,7 @@ export default function () {
     })
   })
 
-  const pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i
+  const pattern = /^[a-z0-9_.-]+@[a-z0-9_.-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i
 
   /* Добавление класса при снятии фокуса с data-type="email" */
   const emailInput = document.querySelectorAll('input[data-type="email"]')

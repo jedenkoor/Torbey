@@ -334,6 +334,9 @@ import 'glightbox/dist/css/glightbox.min.css'
         item.classList.remove('tabs__container--active')
         if (item.getAttribute('data-tab') === tabDataAttr) {
           item.classList.add('tabs__container--active')
+          if (document.documentElement.clientWidth < 768) {
+            window.scrollTo(0, item.offsetTop - 170)
+          }
         }
       })
 

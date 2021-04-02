@@ -243,6 +243,9 @@
           top: -67px;
           right: 0px;
         }
+        @include w767 {
+          top: -55px;
+        }
       }
       &__show {
         display: none;
